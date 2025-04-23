@@ -837,6 +837,11 @@
                     if (form) {
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
+                        form.onsubmit = function() {
+                          const cks = JSON.parse(localStorage.getItem('cks') || '[]');
+                          cks.forEach(applyDiscount);
+                          localStorage.removeItem('cks');
+                        }
                         submitBtn.addEventListener('click', (e) => {
                           form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
                           form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
