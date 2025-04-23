@@ -216,7 +216,7 @@
 
                 <div class="payment-icons-wrapper" {{ block.shopify_attributes }}>
                   <span class="visually-hidden">Payment methods</span>
-                  <ul class="list-payment" role="list">
+                  <ul class="list-payment" role="list" style = "justify-content:center;">
                     {%- for type in shop.enabled_payment_types -%}
                       {% if wanted_types_array contains type %}
                         <li class="list-payment__item">
