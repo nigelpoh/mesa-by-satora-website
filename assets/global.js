@@ -1530,8 +1530,9 @@ function waitForCartChange(previousItems, callback) {
         const newItems = cart.items.map(i => i.variant_id).join(',');
         const oldItems = previousItems.map(i => i.variant_id).join(',');
         if (newItems !== oldItems) {
-          clearInterval(interval);
+          console.log("Worked")
           callback();
+          clearInterval(interval);
         }
       });
   }, 300);
