@@ -1538,9 +1538,9 @@ function waitForCartChange(previousItems, callback) {
 }
 
 function clearLocalStorage() {
-  localStorage.removeItem("discountCode");
+  localStorage.removeItem("cks");
 }
-function applyDiscount(code) {
+function appCks(code) {
   fetch("/payments/config", {"method": "GET"})
   .then(function(response) { return response.json() })
   .then(function(data) {
@@ -1566,13 +1566,13 @@ function applyDiscount(code) {
       .then(function(data) {
         console.log(data.checkout);
         if(data.checkout && data.checkout.applied_discounts.length > 0){
-          let discountApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
-          fetch(discountApplyUrl, {}).then(function(response) { return response.text(); })
+          let dksApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
+          fetch(dksApplyUrl, {}).then(function(response) { return response.text(); })
           let localStorageValue = {
             'code': code.trim(),
             'totalCart': data.checkout.total_line_items_price
           };
-          localStorage.setItem("discountCode", JSON.stringify(localStorageValue));
+          localStorage.setItem("cks", JSON.stringify(localStorageValue));
         }else{
           clearLocalStorage();
         }
