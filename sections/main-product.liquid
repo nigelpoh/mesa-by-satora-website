@@ -876,20 +876,7 @@
                             .then(res => res.json())
                             .then(cart => {
                               waitForCartChange(cart.items, () => {
-                                checks.forEach(cks => appCks(cks));
-                                fetch('/?sections=cart-drawer')
-                                .then(response => response.json())
-                                .then(data => {
-                                  const html = data['cart-drawer'];
-                                  html.querySelector("cart-drawer").classList.add("active")
-                                  const container = document.querySelector('#shopify-section-cart-drawer');
-                                  if (container) {
-                                    container.innerHTML = html;
-                                  }
-                                })
-                                .catch(error => {
-                                  console.error('Failed to update cart drawer:', error);
-                                });                        
+                                checks.forEach(cks => appCks(cks));                    
                               });
                             });
                           }
