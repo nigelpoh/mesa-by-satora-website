@@ -469,8 +469,10 @@
                         </bundle-option-info>
 
                         {% assign discounts = block.settings.add_on_discounts | split: ',' %}
+                        {% assign discount_codes = block.settings.add_on_discount_codes | split: ',' %}
                         {% for product in block.settings.add_on_products %}
                           {% assign discount = discounts[forloop.index0] | strip %}
+                          {% assign discount_code = discount_codes[forloop.index0] | strip %}
                           {% assign original_price = product.price %}
                           {% assign compare_at_price = original_price %}
                           {% if product.compare_at_price and product.compare_at_price > original_price %}
@@ -494,6 +496,7 @@
                                     data-price="{{ discounted_price | money_without_currency }}" 
                                     data-compare-price="{{ compare_at_price | money_without_currency }}"
                                     value="{{ product.selected_or_first_available_variant.id }}"
+                                    checker="{{ discount_code }}"
                                   >
                                   <div class="bundle-addon-images">
                                     {% if product.variants.size > 1 %}
@@ -844,6 +847,7 @@
                             if (checkbox.checked) {
                               anyChecked = true;
                               const variantId = checkbox.getAttribute('value');
+                              const checker = checkbox.getAttribute('checker');
                               const inputID = document.createElement('input');
                               inputID.type = 'hidden';
                               inputID.name = 'items[' + index + '][id]';
@@ -855,6 +859,11 @@
                               inputQuantity.name = 'items[' + index + '][quantity]';
                               inputQuantity.value = 1;
                               inputQuantity.classList.add('bundle-cart-item');
+                              const inputDiscount = document.createElement('input');
+                              inputDiscount.type = 'hidden';
+                              inputDiscount.name = 'items[' + index + '][discount]';
+                              inputDiscount.value = checker;
+                              inputDiscount.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
                               index++;
                             }
