@@ -863,11 +863,16 @@
                               form.appendChild(inputQuantity);
                               index++;
                               if (checker != null) {
+                                if (discount_coupons != "") {
+                                  discount_coupons += ","
+                                }
                                 discount_coupons += checker
                               }
                             }
                           });
-                          console.log("Coupons", discount_coupons)
+                          const baseAction = form.getAttribute('action');
+                          console.log(baseAction)
+                          
                           if (!anyChecked) {
                             e.preventDefault();
                           }
