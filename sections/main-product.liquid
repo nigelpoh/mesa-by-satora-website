@@ -876,7 +876,7 @@
                             .then(res => res.json())
                             .then(cart => {
                               waitForCartChange(cart.items, () => {
-                                checks.forEach(code => appCks(checker));
+                                checks.forEach(cks => appCks(cks));
                               });
                             });
                           }
