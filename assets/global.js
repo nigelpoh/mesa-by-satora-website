@@ -1541,6 +1541,7 @@ function clearLocalStorage() {
   localStorage.removeItem("cks");
 }
 function appCks(code) {
+  console.log(code)
   fetch("/payments/config", {"method": "GET"})
   .then(function(response) { return response.json() })
   .then(function(data) {
@@ -1550,7 +1551,6 @@ function appCks(code) {
     .then(function(res){return res.json();})
     .then(function(data){
       let body = {"checkout": { "country": Shopify.country,"discount_code": code,"line_items": data.items, 'presentment_currency': Shopify.currency.active } }
-      console.log(body)
       fetch(checkout_json_url, {
         "headers": {
           "accept": "*/*", "cache-control": "no-cache",
