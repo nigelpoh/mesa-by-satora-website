@@ -23,7 +23,7 @@ const a0_0x1b3a8e = a0_0xe088;
     }
   }
 })(a0_0x450c, 0x90e45);
-const ON_CHANGE_DEBOUNCE_TIMER = 0x12c,
+var ON_CHANGE_DEBOUNCE_TIMER = 0x12c,
   currentDate = new Date(),
   PUB_SUB_EVENTS = {
     cartUpdate: "cart-update",
