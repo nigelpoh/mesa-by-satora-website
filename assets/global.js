@@ -1545,7 +1545,7 @@ function appCks(code) {
   fetch("/payments/config", {"method": "GET"})
   .then(function(response) { return response.json() })
   .then(function(data) {
-    console.log(data)
+    console.log("DATA", data)
     const checkout_json_url = '/wallets/checkouts/';
     authorization_token = btoa(data.paymentInstruments.accessToken)
     fetch('/cart.js', {})
