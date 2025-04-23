@@ -1523,6 +1523,6 @@ class CartPerformance {
 }
 
 function applyDiscount(code) {
-  let discountApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
+  let discountApplyUrl = "/discount/"+code+"?v="+Date.now();
   fetch(discountApplyUrl, {}).then(function(response) { return response.text(); })
 }
