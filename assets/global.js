@@ -1521,6 +1521,9 @@ class CartPerformance {
     );
   }
 }
+function clearLocalStorage() {
+  localStorage.removeItem("discountCode");
+}
 
 function applyDiscount(code) {
   fetch("/payments/config", {"method": "GET"})
