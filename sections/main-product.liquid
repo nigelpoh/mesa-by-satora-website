@@ -838,6 +838,8 @@
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
                         submitBtn.addEventListener('click', (e) => {
+              
+                          e.preventDefault();
                           form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
                           form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
                   
@@ -870,15 +872,14 @@
                               }
                             }
                           });
-                          console.log("DC", discount_coupons != "")
                           if (discount_coupons != "") {
                             const baseAction = form.getAttribute('action');
                             form.action = `${baseAction}?discount=${discount_coupons}`;
                             console.log(form.action)
                           }
               
-                          if (!anyChecked) {
-                            e.preventDefault();
+                          if (anyChecked) {
+                            form.submit();
                           }
                         });
                       }
