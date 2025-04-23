@@ -863,7 +863,7 @@
                               inputQuantity.value = 1;
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
-                              if(checker != null) {
+                              if(checker != null && checker.trim() != "") {
                                 console.log("CH", checker)
                                 appCks(checker);
                               }
