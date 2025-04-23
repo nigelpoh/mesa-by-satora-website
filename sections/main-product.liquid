@@ -863,21 +863,13 @@
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
                               if(checker != null) {
-                                checks.push(checker)
+                                applyDiscount(checker);
                               }
                               index++;
                             }
                           });
                           if (!anyChecked) {
                             e.preventDefault();
-                          } else {
-                            fetch('/cart.js')
-                            .then(res => res.json())
-                            .then(cart => {
-                              waitForCartChange(cart.items, () => {
-                                checks.forEach(cks => applyDiscount(cks));
-                              });
-                            });
                           }
                         });
                       }
