@@ -864,14 +864,22 @@
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
                               if(checker != null && checker.trim() != "") {
-                                console.log("CH", checker)
-                                appCks(checker);
+                                checks.push(checker);
                               }
                               index++;
                             }
                           });
                           if (!anyChecked) {
                             e.preventDefault();
+                          } else {
+                            fetch('/cart.js')
+                            .then(res => res.json())
+                            .then(cart => {
+                              const discountCodes = [];
+                              waitForCartChange(cart.items, () => {
+                                discountCodes.forEach(code => appCks(checker));
+                              });
+                            });
                           }
                         });
                       }
