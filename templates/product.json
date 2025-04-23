@@ -189,6 +189,15 @@
             "free_gifts_always": [
               "lombok-necessity-bag"
             ],
+            "selection_background_colour": "#f7f7f7",
+            "selection_text_colour": "#000000",
+            "add_on_background_colour": "#000",
+            "add_on_text_colour": "#fff",
+            "info_background_colour": "#000",
+            "info_text_colour": "#fff",
+            "gift_background_colour": "#dedede",
+            "gift_text_colour": "#000",
+            "stroke_colour": "#ddd",
             "bundle_title": "Exclusive Lombok Bundle",
             "bundle_description": "Get a Lombok Necessity Bag free now with a purchase of the Lombok Carry-on Pack!",
             "incomplete_text": "Complete the bundle to get this FREE!",
