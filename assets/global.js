@@ -1522,29 +1522,40 @@ class CartPerformance {
   }
 }
 
-async applyDiscount(discount) {
-   const shopify_features_script = document.querySelector("script[id='shopify-features']");
-   const shopify_features_json = JSON.parse(shopify_features_script.innerHTML);
-   const cart = await fetch(`${Shopify.routes.root}cart.js`).then(response => response.json());
-   const headers = {
-      Authorization: 'Basic ' + btoa(shopify_features_json.accessToken),
-      Accept: '*/*',
-      'Content-Type': 'application/json',
-    };
-    const body = {
-      checkout: {
-        line_items: cart.items,
-        discount_code: discount,
-        country: Shopify.country,
-        presentment_currency: cart.currency,
-      },
-    };
-    const wallet = await fetch('/wallets/checkouts/', {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(body),
-      referrerPolicy: 'no-referrer',
+function applyDiscount(discount) {
+  const shopify_features_script = document.querySelector("script[id='shopify-features']");
+  const shopify_features_json = JSON.parse(shopify_features_script.innerHTML);
+
+  fetch(`${Shopify.routes.root}cart.js`)
+    .then(response => response.json())
+    .then(cart => {
+      const headers = {
+        Authorization: 'Basic ' + btoa(shopify_features_json.accessToken),
+        Accept: '*/*',
+        'Content-Type': 'application/json',
+      };
+
+      const body = {
+        checkout: {
+          line_items: cart.items,
+          discount_code: discount,
+          country: Shopify.country,
+          presentment_currency: cart.currency,
+        },
+      };
+
+      return fetch('/wallets/checkouts/', {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(body),
+        referrerPolicy: 'no-referrer',
+      });
+    })
+    .then(wallet => wallet.json())
+    .then(response => {
+      console.log('🚀 ~ response:', response);
+    })
+    .catch(error => {
+      console.error('Discount application failed:', error);
     });
-    const response = await wallet.json();
-    console.log('🚀 ~ response:', response);
 }
