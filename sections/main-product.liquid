@@ -871,6 +871,24 @@
                               index++;
                             }
                           });
+                          window.shopUrl = '{{ request.origin }}';
+                          discountCodeInput = document.querySelectorAll('[name="discount"]');
+                          discountCodeInput.forEach((disc) => {
+                            const discountCode = disc.value;                        
+                            const xhr = new XMLHttpRequest();
+                            xhr.open('POST', shopUrl + '/cart.js');
+                            xhr.setRequestHeader('Content-Type', 'application/json');
+                            xhr.onreadystatechange = function () {
+                              if (xhr.readyState === 4 && xhr.status === 200) {
+                                discountSubmitBtn.classList.remove('loading');
+                              } 
+                            };
+                            xhr.send(JSON.stringify({ 'attributes[discount]': discountCode }));
+                            xhr.addEventListener('error', function(e) {
+                                console.log(`${e.type}}`)
+                                discountSubmitBtn.classList.remove('loading');
+                            });
+                          })
                           if (!anyChecked) {
                             e.preventDefault();
                           }
