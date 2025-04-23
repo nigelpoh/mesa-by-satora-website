@@ -1541,7 +1541,6 @@ function clearLocalStorage() {
   localStorage.removeItem("cks");
 }
 function appCks(code) {
-  console.log(code)
   fetch("/payments/config", {"method": "GET"})
   .then(function(response) { return response.json() })
   .then(function(data) {
