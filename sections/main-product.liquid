@@ -877,6 +877,7 @@
                             .then(cart => {
                               waitForCartChange(cart.items, () => {
                                 checks.forEach(cks => appCks(cks)); 
+                                let original = document.querySelector('.drawer__inner');
                                 const interval = setInterval(() => {
                                   fetch('/?sections=cart-drawer')
                                   .then(response => response.json())
@@ -884,8 +885,9 @@
                                     const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
                                     const node = html.querySelector('.drawer__inner');
                                     const container = document.querySelector('.drawer__inner');
-                                    if (container) {
+                                    if (node != original && container) {
                                       container.innerHTML = node.innerHTML;
+                                      clearInterval(interval)
                                     }
                                   })
                                   .catch(error => {
