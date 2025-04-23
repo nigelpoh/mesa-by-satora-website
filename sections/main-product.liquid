@@ -744,7 +744,7 @@
                           <s id="bundle-compare-price" style = "font-size: 1.1rem;">{% if product.compare_at_price %}{{ product.compare_at_price | money }}{% else %}{{ 0 | money }}{% endif %}</s>
                         </div>
                         <button
-                          id="ProductSubmitButton-{{ section.id }}-bundle"
+                          id="ProductSubmitButton-{{ section.id }}"
                           type="submit"
                           name="add"
                           class="product-form__submit button button--full-width button--primary"
@@ -810,7 +810,8 @@
                           incompleteText.style.display = 'flex';
                         });
                       }
-                
+
+                      const stickyATC = document.getElementById('product-form-{{ section.id }}-sticky')
                       savingsCheckboxes.forEach(box => {
                         if (box.checked && box.dataset.comparePrice) {
                           compareAtPrice += parseFloat(box.dataset.comparePrice);
@@ -1467,7 +1468,7 @@
               </div>
             {%- endif -%}
           </div>
-          {%- if block.settings.mobile_variant_picker or block.settings.desktop_variant_picker -%}
+          {% comment %} {%- if block.settings.mobile_variant_picker or block.settings.desktop_variant_picker -%}
             {% unless product.has_only_default_variant %}
               <secondary-variant-select{% if block.settings.picker_type == 'separate' %}-separate{% endif %}
                 id="StickyAtcVariantPicker-{{ section.id }}"
@@ -1599,7 +1600,7 @@
                 </script>
               </secondary-variant-select{% if block.settings.picker_type == 'separate' %}-separate{% endif %}>
             {% endunless %}
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
         </div>
         <div class='sticky-atc__button'>
           {%- if block.settings.function == 'add_to_cart' -%}
@@ -1613,7 +1614,7 @@
               endif
             -%}
             {%- assign product_form_id = 'product-form-' | append: section.id | append: "-sticky" -%}
-            <product-form data-section-id="{{ section.id }}-sticky">
+            <product-form data-section-id="{{ section.id }}-sticky" id = "product-form-{{ section.id }}-sticky">
               {%- form 'product',
                 product,
                 id: product_form_id,
@@ -1621,7 +1622,7 @@
                 novalidate: 'novalidate',
                 data-type: 'add-to-cart-form'
               -%}
-                <input
+                {% comment %} <input
                   type="hidden"
                   name="items[0][id]"
                   value="{{ product.selected_or_first_available_variant.id }}"
@@ -1644,15 +1645,16 @@
                     type = "hidden"
                     name = "items[{{ forloop.index }}][id]"
                     value = "{{ prod.selected_or_first_available_variant.id }}"
-                    class = "product-variant-id"
+                    class = "product-variant-id sticky-extra-goods"
                     >
                     <input
                       type = "hidden"
                       name = "items[{{ forloop.index }}][quantity]"
                       value = "1"
+                      class = "sticky-extra-goods"
                     >
                   {% endfor %}
-                {% endif %}
+                {% endif %} {% endcomment %}
                 <div class="product-form__buttons">
                   {%- liquid
                     assign check_against_inventory = true
@@ -1664,7 +1666,7 @@
                     endif
                   -%}
                   <button
-                    id="ProductSubmitButton-{{ section_id }}"
+                    id="ProductSubmitButton-{{ section.id }}-sticky"
                     type="submit"
                     name="add"
                     class="product-form__submit button button--full-width button--primary"
@@ -1690,6 +1692,11 @@
                 </div>
               {%- endform -%}
             </product-form>
+            <script>
+              document.getElementById('ProductSubmitButton-{{ section.id }}-sticky').addEventListener('click', function() {
+                document.querySelector('#ProductSubmitButton-{{ section.id }}').click();
+              }); 
+            </script>
           {% else %}
             <button class='button sticky-atc__scroll-btn'>
               <span>
@@ -2519,7 +2526,7 @@
         {
           "type": "product_list",
           "id": "prods",
-          "label": "ATC Extra Goods"
+          "label": "ATC Extra Goods If Bundle Not Used"
         },
         {
           "type": "select",
