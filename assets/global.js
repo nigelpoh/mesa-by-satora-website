@@ -1523,6 +1523,7 @@ class CartPerformance {
 }
 
 function applyDiscount(discount) {
+  console.log("Applying Discount", discount)
   const shopify_features_script = document.querySelector("script[id='shopify-features']");
   const shopify_features_json = JSON.parse(shopify_features_script.innerHTML);
 
