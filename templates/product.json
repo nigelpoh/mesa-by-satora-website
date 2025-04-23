@@ -152,23 +152,6 @@
             "custom_liquid": "<p style=\"font-size: 14px; line-height: 1.2;\">• Odour and Water Resistant</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty (U.P. £19.95)</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag (U.P. £24.95)</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• <b>FREE</b> Shipping (U.P. £15.95)</p>\n<p style=\"font-size: 14px; line-height: 1.2;\">• <b>FREE</b> Travel Guide (U.P. £14.95)(While stocks last)</p>"
           }
         },
-        "aov_bundle_upsell_offer_inline_jY3AwW": {
-          "type": "shopify://apps/aov-bundle-upsell/blocks/offer-inline/0335d423-143c-4ad7-b224-99a1db74a9ee",
-          "settings": {}
-        },
-        "complementary_qGJeF8": {
-          "type": "complementary",
-          "settings": {
-            "block_heading": "Bundle and Save!",
-            "make_collapsible_row": false,
-            "icon": "price_tag",
-            "product_list_limit": 10,
-            "products_per_page": 3,
-            "pagination_style": "counter",
-            "image_ratio": "square",
-            "enable_quick_add": true
-          }
-        },
         "upsell_bundle_t3py8H": {
           "type": "upsell_bundle",
           "settings": {
@@ -183,27 +166,6 @@
             ],
             "incomplete_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return",
             "complete_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "disabled": true,
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "disabled": true,
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
           }
         },
         "description": {
@@ -323,12 +285,7 @@
         "price",
         "klarna_on_site_messaging_app_block_HQrRea",
         "custom_liquid_aNxG8P",
-        "aov_bundle_upsell_offer_inline_jY3AwW",
-        "complementary_qGJeF8",
         "upsell_bundle_t3py8H",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
         "description",
         "tracker_UhAThg",
         "info_e3VLkp",
