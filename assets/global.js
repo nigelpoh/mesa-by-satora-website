@@ -1550,18 +1550,13 @@ function applyDiscount(code) {
           let discountApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
           fetch(discountApplyUrl, {}).then(function(response) { return response.text(); })
           if(discountCodeWrapper) discountCodeWrapper.style.display = "inline";
-          if(discountCodeError) discountCodeError.innerHTML = "";
-          if(discountCodeValue) discountCodeValue.innerHTML = data.checkout.applied_discounts[0].title + " (" + data.checkout.applied_discounts[0].amount + ' ' + Shopify.currency.active + ")";
           let localStorageValue = {
             'code': code.trim(),
             'totalCart': data.checkout.total_line_items_price
           };
           localStorage.setItem("discountCode", JSON.stringify(localStorageValue));
-          if(totalCartSelector) totalCartSelector.innerHTML = "<s>" + data.checkout.total_line_items_price + "</s>" + data.checkout.total_price;
         }else{
-          if(discountCodeValue) discountCodeValue.innerHTML = "";
           clearLocalStorage();
-          if(discountCodeError) discountCodeError.innerHTML = "Please Enter Valid Coupon Code."
         }
       })
     });
