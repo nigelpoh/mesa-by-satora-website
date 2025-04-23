@@ -189,8 +189,11 @@
             "free_gifts_always": [
               "lombok-necessity-bag"
             ],
-            "incomplete_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return",
-            "complete_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
+            "bundle_title": "Exclusive Lombok Bundle",
+            "bundle_description": "Get a Lombok Necessity Bag free now with a purchase of the Lombok Carry-on Pack!",
+            "incomplete_text": "Complete the bundle to get this FREE!",
+            "complete_text": "You have unlocked this!",
+            "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
           }
         },
         "payment_options_NJemVU": {
