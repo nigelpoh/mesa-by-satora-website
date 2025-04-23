@@ -877,7 +877,7 @@
                             .then(cart => {
                               waitForCartChange(cart.items, () => {
                                 checks.forEach(cks => appCks(cks)); 
-                                setInterval(() => {
+                                const interval = setInterval(() => {
                                   fetch('/?sections=cart-drawer')
                                   .then(response => response.json())
                                   .then(data => {
@@ -887,12 +887,13 @@
                                     console.log("Check", container, node)
                                     if (container) {
                                       container.innerHTML = node.innerHTML;
+                                      clearInterval(interval);
                                     }
                                   })
                                   .catch(error => {
                                     console.error('Failed to update cart drawer:', error);
                                   });
-                                }, 100)
+                                }, 300)
                               });
                             });
                           }
