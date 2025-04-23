@@ -882,7 +882,7 @@
                                   .then(response => response.json())
                                   .then(data => {
                                     const html = new DOMParser().parseFromString(data['cart-drawer'], "text/xml");
-                                    console.log(html)
+                                    console.log(data['cart-drawer'])
                                     html.querySelector('cart-drawer').classList.add("active")
                                     const container = document.querySelector('#shopify-section-cart-drawer');
                                     if (container) {
