@@ -200,6 +200,52 @@
                     }
                   }
                 </style>
+              {%- when 'payment_options' -%}
+                {%- assign displayed_types = '' -%}
+                {%- assign wanted_types = '' -%}
+
+                {%- if block.settings.show_visa %}{% assign wanted_types = wanted_types | append: 'visa,' %}{% endif -%}
+                {%- if block.settings.show_mastercard %}{% assign wanted_types = wanted_types | append: 'master,' %}{% endif -%}
+                {%- if block.settings.show_amex %}{% assign wanted_types = wanted_types | append: 'american_express,' %}{% endif -%}
+                {%- if block.settings.show_paypal %}{% assign wanted_types = wanted_types | append: 'paypal,' %}{% endif -%}
+                {%- if block.settings.show_shopify_pay %}{% assign wanted_types = wanted_types | append: 'shopify_pay,' %}{% endif -%}
+                {%- if block.settings.show_apple_pay %}{% assign wanted_types = wanted_types | append: 'apple_pay,' %}{% endif -%}
+                {%- if block.settings.show_google_pay %}{% assign wanted_types = wanted_types | append: 'google_pay,' %}{% endif -%}
+                {%- if block.settings.show_klarna %}{% assign wanted_types = wanted_types | append: 'klarna,' %}{% endif -%}
+                {%- assign wanted_types_array = wanted_types | split: ',' | uniq -%}
+
+                <div class="payment-icons-wrapper" {{ block.shopify_attributes }}>
+                  <span class="visually-hidden">Payment methods</span>
+                  <ul class="list-payment" role="list">
+                    {%- for type in shop.enabled_payment_types -%}
+                      {% if wanted_types_array contains type %}
+                        <li class="list-payment__item">
+                          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                        </li>
+                      {% endif %}
+                    {%- endfor -%}
+                    {% if block.settings.show_klarna %}
+                      <li class="list-payment__item">
+                        <img src="{{ 'payment-klarna.svg' | asset_url }}" alt="Klarna" class="icon icon--full-color">
+                      </li>
+                    {% endif %}
+                  </ul>
+                </div>
+                <style>
+                  .payment-icons-wrapper .list-payment {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    padding: 0;
+                    margin: 0.5rem 0;
+                    list-style: none;
+                  }
+                  .payment-icons-wrapper .list-payment__item .icon {
+                    height: 24px;
+                    width: auto;
+                    max-width: 38px;
+                  }
+                </style>
               {%- when 'tracker' -%}
                 <div class="tracker" style="display: flex; align-items: center; margin: 1rem 0; padding: {{ block.settings.padding }}px 0; background-color: {% if block.settings.background == true %}{{ block.settings.bg_colour }}{% else %}transparent{% endif %}; border-radius: 4px;">
                   <div class="tracker-icon pulse-anim" style="display:flex; align-items:center; justify-content:center;margin-right: 1rem;color:{{ block.settings.text_colour }}">
@@ -437,7 +483,7 @@
                             data-product-url="{{ product.url }}"
                           >
                             <div class="bundle-addon-block">
-                              <label style = "display: flex; justify-content: space-between;padding-bottom: 1rem;">
+                              <label style = "display: flex; justify-content: space-between;padding-bottom: 1rem">
                                 <div style = "display: flex;">
                                   <input 
                                     type="checkbox" 
@@ -1673,6 +1719,73 @@
           ],
           "default": "body",
           "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+        }
+      ]
+    },
+    {
+      "type": "payment_options",
+      "name": "Payment Options",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Displays standard payment icons based on your store settings first, followed by any custom icons added below."
+        },
+        {
+          "type": "header",
+          "content": "Standard Icons"
+        },
+        {
+          "type": "paragraph",
+          "content": "By default, icons for enabled payment methods appear. Use checkboxes below ONLY if you want to *force* specific standard icons to show, even if not enabled in payment settings (use with caution)."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_visa",
+          "label": "Show Visa Icon",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_mastercard",
+          "label": "Show Mastercard Icon",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_amex",
+          "label": "Show American Express Icon",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_paypal",
+          "label": "Show PayPal Icon",
+          "default": false
+        },
+        {
+           "type": "checkbox",
+           "id": "show_shopify_pay",
+           "label": "Show Shop Pay Icon",
+           "default": false
+        },
+        {
+           "type": "checkbox",
+           "id": "show_apple_pay",
+           "label": "Show Apple Pay Icon",
+           "default": false
+        },
+        {
+           "type": "checkbox",
+           "id": "show_google_pay",
+           "label": "Show Google Pay Icon",
+           "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_klarna",
+          "label": "Show Klarna Icon",
+          "default": false
         }
       ]
     },
