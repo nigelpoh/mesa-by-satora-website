@@ -881,11 +881,11 @@
                                   fetch('/?sections=cart-drawer')
                                   .then(response => response.json())
                                   .then(data => {
-                                    const html = data['cart-drawer'];
-                                    const container = document.querySelector('#shopify-section-cart-drawer');
-                                    if (container) {
-                                      container.innerHTML = html;
-                                      container.querySelector('cart-drawer').classList.add("active")
+                                    const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
+                                    const node = html.querySelector('cart-drawer-items');
+                                    const container = document.querySelector('cart-drawer-items');
+                                    if (container) {cart-drawer-items
+                                      container.innerHTML = node.innerHTML;
                                     }
                                   })
                                   .catch(error => {
