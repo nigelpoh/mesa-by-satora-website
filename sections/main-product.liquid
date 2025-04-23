@@ -437,7 +437,7 @@
                             data-product-url="{{ product.url }}"
                           >
                             <div class="bundle-addon-block">
-                              <label style = "display: flex; justify-content: space-between;">
+                              <label style = "display: flex; justify-content: space-between;padding-bottom: 1rem;">
                                 <div style = "display: flex;">
                                   <input 
                                     type="checkbox" 
@@ -501,7 +501,9 @@
                                 </div>
                                 <div style = "display: flex; flex-direction: column;">
                                   <span style = "font-size: 1.2rem;">{{ discounted_price | money }}</span>
-                                  <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                  {% if compare_at_price > discounted_price %}
+                                    <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                  {% endif %}
                                 </div>
                               </label>
                             </div>
