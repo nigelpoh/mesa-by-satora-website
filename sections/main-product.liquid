@@ -881,12 +881,11 @@
                                   fetch('/?sections=cart-drawer')
                                   .then(response => response.json())
                                   .then(data => {
-                                    const html = new DOMParser().parseFromString(data['cart-drawer'], "text/xml");
-                                    console.log(data['cart-drawer'])
-                                    html.querySelector('cart-drawer').classList.add("active")
+                                    const html = data['cart-drawer'];
                                     const container = document.querySelector('#shopify-section-cart-drawer');
                                     if (container) {
                                       container.innerHTML = html;
+                                      container.querySelector('cart-drawer').classList.add("active")
                                     }
                                   })
                                   .catch(error => {
