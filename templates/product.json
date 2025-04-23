@@ -186,7 +186,9 @@
             ],
             "add_on_discounts": "20%,0%",
             "add_on_discount_codes": "28NVK7MH23RQ20OFFPUMP,",
-            "free_gifts_optional": [],
+            "free_gifts_optional": [
+              "mini-portable-air-pump-with-1300mah-battery-usb-rechargeable-to-inflate-deflate-for-pool-floats-air-bed-vacuum-storage-bags"
+            ],
             "free_gifts_always": [
               "lombok-necessity-bag"
             ],
