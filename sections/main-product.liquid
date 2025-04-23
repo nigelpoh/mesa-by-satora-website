@@ -850,6 +850,7 @@
                   
                           let anyChecked = false;
                           let index = 0;
+                          let discount_index = 0;
                           let checks = [];
                           savingsCheckboxes.forEach((checkbox) => {
                             if (checkbox.checked) {
@@ -869,7 +870,12 @@
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
                               if(checker != null) {
-                                checks.push(checker)
+                                const discountQuantity = document.createElement('input');
+                                discountQuantity.type = 'hidden';
+                                discountQuantity.name = 'discount[' + discount_index + ']';
+                                discountQuantity.classList.add('bundle-cart-item');
+                                form.appendChild(discountQuantity);
+                                discount_index++;
                               }
                               index++;
                             }
