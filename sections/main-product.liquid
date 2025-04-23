@@ -870,7 +870,7 @@
                               }
                             }
                           });
-                          console.log("DC", discount_coupons)
+                          console.log("DC", discount_coupons != "")
                           if (discount_coupons != "") {
                             const baseAction = form.getAttribute('action');
                             form.action = `${baseAction}?discount=${discount_coupons}`;
