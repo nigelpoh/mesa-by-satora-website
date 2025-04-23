@@ -839,7 +839,9 @@
                       if (submitBtn) {
                         form.onsubmit = function() {
                           const cks = JSON.parse(localStorage.getItem('cks') || '[]');
-                          cks.forEach(applyDiscount);
+                          cks.forEach((ck) => {
+                            applyDiscount(ck);
+                          });
                           localStorage.removeItem('cks');
                         }
                         submitBtn.addEventListener('click', (e) => {
