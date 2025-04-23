@@ -220,7 +220,11 @@
                     {%- for type in shop.enabled_payment_types -%}
                       {% if wanted_types_array contains type %}
                         <li class="list-payment__item">
-                          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                          {% if type == 'mastercard' %}
+                            <img src="{{ 'payment-mastercard.svg' | asset_url }}" alt="Mastercard" class="icon icon--full-color">
+                          {% else %}
+                            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                          {% endif %}
                         </li>
                       {% endif %}
                     {%- endfor -%}
