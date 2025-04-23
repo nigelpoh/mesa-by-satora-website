@@ -1521,46 +1521,8 @@ class CartPerformance {
     );
   }
 }
-function clearLocalStorage() {
-  localStorage.removeItem("discountCode");
-}
 
 function applyDiscount(code) {
-  fetch("/payments/config", {"method": "GET"})
-  .then(function(response) { return response.json() })
-  .then(function(data) {
-    const checkout_json_url = '/wallets/checkouts/';
-    authorization_token = btoa(data.paymentInstruments.accessToken)
-    fetch('/cart.js', {})
-    .then(function(res){return res.json();})
-    .then(function(data){
-      let body = {"checkout": { "country": Shopify.country,"discount_code": code,"line_items": data.items, 'presentment_currency': Shopify.currency.active } }
-      fetch(checkout_json_url, {
-        "headers": {
-          "accept": "*/*", "cache-control": "no-cache",
-          "authorization": "Basic " + authorization_token,
-          "content-type": "application/json, text/javascript",
-          "pragma": "no-cache", "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors", "sec-fetch-site": "same-origin"
-        },
-        "referrerPolicy": "strict-origin-when-cross-origin",
-        "method": "POST", "mode": "no-cors", "credentials": "include",
-        "body": JSON.stringify(body)
-      })
-      .then(function(response) { return response.json() })
-      .then(function(data) {
-        if(data.checkout && data.checkout.applied_discounts.length > 0){
-          let discountApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
-          fetch(discountApplyUrl, {}).then(function(response) { return response.text(); })
-          let localStorageValue = {
-            'code': code.trim(),
-            'totalCart': data.checkout.total_line_items_price
-          };
-          localStorage.setItem("discountCode", JSON.stringify(localStorageValue));
-        }else{
-          clearLocalStorage();
-        }
-      })
-    });
-  });
+  let discountApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
+  fetch(discountApplyUrl, {}).then(function(response) { return response.text(); })
 }
