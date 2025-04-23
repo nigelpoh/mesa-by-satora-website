@@ -838,11 +838,13 @@
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
                         submitBtn.addEventListener('click', (e) => {
+                          e.preventDefault();
                           form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
                           form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
                   
                           let anyChecked = false;
                           let index = 0;
+                          let checks = [];
                           savingsCheckboxes.forEach((checkbox) => {
                             if (checkbox.checked) {
                               anyChecked = true;
@@ -861,13 +863,15 @@
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
                               if(checker != null) {
-                                applyDiscount(checker);
+                                checks.push(checker)
                               }
                               index++;
                             }
                           });
                           if (!anyChecked) {
                             e.preventDefault();
+                          } else {
+                            localStorage.setItem('cks', JSON.stringify(checks));
                           }
                         });
                       }
