@@ -5,6 +5,7 @@
       const content = details.querySelector("summary ~ *");
     
       summary.addEventListener("click", (e) => {
+        console.log("SUMMARY")
         e.preventDefault();
     
         if (details.hasAttribute("open")) {
