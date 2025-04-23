@@ -838,8 +838,6 @@
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
                         submitBtn.addEventListener('click', (e) => {
-              
-                          e.preventDefault();
                           form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
                           form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
                   
@@ -878,9 +876,9 @@
                             console.log(form.action)
                           }
               
-                          // if (anyChecked) {
-                          //   form.submit();
-                          // }
+                          if (anyChecked) {
+                            e.preventDefault();
+                          }
                         });
                       }
                     }
