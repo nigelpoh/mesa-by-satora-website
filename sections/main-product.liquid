@@ -860,7 +860,9 @@
                               inputQuantity.value = 1;
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
-                              applyDiscount(checker);
+                              if(checker != null) {
+                                applyDiscount(checker);
+                              }
                               index++;
                             }
                           });
