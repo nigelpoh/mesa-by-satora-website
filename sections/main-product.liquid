@@ -342,85 +342,378 @@
                   </details>
                 </div>
               {%- when 'upsell_bundle' -%}
-                <div class="bundle-block">
-                  <h3>Exclusive Lombok Bundle</h3>
-                  <p>Get a Lombok Necessity Bag free now with a purchase of the Lombok Carry-on Pack!</p>
-                
-                  <div class="bundle-items">
-                   <div class="bundle-addon-block">
-                      <label>
-                        <input type="checkbox" class="bundle-addon" data-price="{{ discounted_price }}" data-product-id="{{ product.selected_or_first_available_variant.id }}">
-                        <img src="{{ product.selected_or_first_available_variant.featured_image | img_url: '100x' }}" alt="{{ product.selected_or_first_available_variant.title }}">
-                        <span>{{ product.title }}</span>
-                      </label>
-                     {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
-                      <span>{{ discounted_price | money }}</span>
-                    </div>
-                    {% assign discounts = block.settings.add_on_discounts | split: ',' %}
-                    {% for product in block.settings.add_on_products %}
-                      {% assign discount = discounts[forloop.index0] | strip %}
-                      {% assign original_price = product.price | money_without_currency %}
-                      {% if discount contains '%' %}
-                        {% assign discount_value = discount | remove: '%' | times: 0.01 %}
-                        {% assign discounted_price = original_price | times: 1.0 | minus: original_price | times: discount_value %}
-                      {% else %}
-                        {% assign discounted_price = original_price | minus: discount | times: 1 %}
-                      {% endif %}
-                
-                      <div class="bundle-addon-block">
-                        <label>
-                          <input type="checkbox" class="bundle-addon" data-price="{{ discounted_price }}" data-product-id="{{ product.id }}">
-                          <img src="{{ product.featured_image | img_url: '100x' }}" alt="{{ product.title }}">
-                          <span>{{ product.title }}</span>
-                        </label>
-                        <select class="bundle-variant-selector" data-product-id="{{ product.id }}">
-                          {% for variant in product.variants %}
-                            <option value="{{ variant.id }}">{{ variant.title }}</option>
-                          {% endfor %}
-                        </select>
-                        <span>{{ discounted_price | money }}</span>
-                      </div>
-                    {% endfor %}
+                <div class="bundle-block" style = "border: 1px solid #ddd; border-radius: 1rem;">
+                  <div style = "display: flex; flex-direction: column; border-radius: 1rem 1rem 0 0; padding: 2rem;">
+                    <h3 style = "margin: 0;">Exclusive Lombok Bundle</h3>
+                    <p style = "margin: 0; line-height: normal; font-size: 1.3rem;margin-top: 0.2rem;">Get a Lombok Necessity Bag free now with a purchase of the Lombok Carry-on Pack!</p>
                   </div>
-                
-                  <div class="bundle-gifts">
-                    <h4>Free Gifts</h4>
-                    {% for product in block.settings.free_gifts_always %}
-                      <div class="gift normal">
-                        <img src="{{ product.featured_image | img_url: '100x' }}">
-                        <span>{{ product.title }}</span>
-                        <span>£0.00</span>
+                  {%- assign product_form_id = 'product-form-' | append: section.id | append: '-bundle' -%}
+                  <product-form data-section-id="{{ section.id }}-bundle" id = "bundle-form">
+                    {%- form 'product',
+                      product,
+                      id: product_form_id,
+                      class: 'form',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: #f7f7f7;">
+                        <bundle-option-info 
+                          data-section="{{ section.id }}"
+                          data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                          data-product-url="{{ product.url }}"
+                        >
+                          <div class="bundle-addon-block">
+                            <label style = "display: flex; justify-content: space-between;">
+                              <div style = "display: flex;">
+                                {% assign compare_price = product.selected_or_first_available_variant.compare_at_price %}
+                                {% if compare_price == null or compare_price < product.selected_or_first_available_variant.price %}
+                                  {% assign compare_price = product.selected_or_first_available_variant.price %}
+                                {% endif %}
+                                <input 
+                                  type="checkbox" 
+                                  class = "savings-checkbox"
+                                  data-price="{{ product.selected_or_first_available_variant.price | money_without_currency }}" 
+                                  data-compare-price="{{ compare_price | money_without_currency }}"
+                                  value="{{ product.selected_or_first_available_variant.id }}"
+                                  checked
+                                  disabled
+                                >
+                                <div class="bundle-addon-images">
+                                  {% for variant in product.variants %}
+                                    <img 
+                                      src="{{ variant.featured_image | image_url: width: 300 }}" 
+                                      alt="{{ variant.title }}" 
+                                      width="300" 
+                                      height="300"
+                                      data-media-id="{{ variant.featured_media.id }}"
+                                      data-product-id="{{ variant.id }}"
+                                      style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 8rem; height: 8rem;"
+                                    >
+                                  {% endfor %}
+                                </div>
+                                <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                  <span style = "font-size: 1.2rem;">{{ product.title }}</span>
+                                  <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
+                                    <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                      <span>x1</span>
+                                    </div>
+                                    <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                      {% if product.variants.size > 1 %}
+                                        {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                      {% else %}
+                                        {% if product.selected_or_first_available_variant.featured_image %}
+                                          <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                            <span>{{ product.selected_or_first_available_variant.title }}</span>
+                                          </div>
+                                        {% endif %}
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div style = "display: flex; flex-direction: column;">
+                                <span style = "font-size: 1.2rem;">{{ product.selected_or_first_available_variant.price | money }}</span>
+                                <s style = "font-size: 1.1rem;">{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
+                              </div>
+                            </label>
+                          </div>
+                        </bundle-option-info>
+
+                        {% assign discounts = block.settings.add_on_discounts | split: ',' %}
+                        {% for product in block.settings.add_on_products %}
+                          {% assign discount = discounts[forloop.index0] | strip %}
+                          {% assign original_price = product.price %}
+                          {% assign compare_at_price = original_price %}
+                          {% if product.compare_at_price and product.compare_at_price > original_price %}
+                            {% assign compare_at_price = product.compare_at_price %}
+                          {% endif %}
+                          {% assign discount_value = discount | remove: '%' | times: 0.01 %}
+                          {% assign discount_value = 1 | minus: discount_value %}
+                          {% assign discounted_price = original_price | times: discount_value %}
+                    
+                          <bundle-option-info 
+                            data-section="{{ section.id }}"
+                            data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                            data-product-url="{{ product.url }}"
+                          >
+                            <div class="bundle-addon-block">
+                              <label style = "display: flex; justify-content: space-between;">
+                                <div style = "display: flex;">
+                                  <input 
+                                    type="checkbox" 
+                                    class="bundle-addon savings-checkbox" 
+                                    data-price="{{ discounted_price | money_without_currency }}" 
+                                    data-compare-price="{{ compare_at_price | money_without_currency }}"
+                                    value="{{ product.selected_or_first_available_variant.id }}"
+                                  >
+                                  <div class="bundle-addon-images">
+                                    {% if product.variants.size > 1 %}
+                                      {% for variant in product.variants %}
+                                        <img 
+                                          src="{{ variant.featured_image | image_url: width: 300 }}" 
+                                          alt="{{ variant.title }}" 
+                                          width="300" 
+                                          height="300"
+                                          data-media-id="{{ variant.featured_media.id }}"
+                                          data-product-id="{{ variant.id }}"
+                                          style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 8rem; height: 8rem;"
+                                        >
+                                      {% endfor %}
+                                    {% else %}
+                                      {% if product.selected_or_first_available_variant.featured_image %}
+                                        <img 
+                                          src="{{ product.selected_or_first_available_variant.featured_image | image_url: width: 300 }}" 
+                                          alt="{{ product.selected_or_first_available_variant.title }}" 
+                                          width="300" 
+                                          height="300"
+                                          style = "width: 8rem; height: 8rem;"
+                                        >
+                                      {% else %}
+                                        <img 
+                                          src="{{ product.featured_image | image_url: width: 300 }}" 
+                                          alt="{{ product.title }}" 
+                                          width="300" 
+                                          height="300"
+                                          style = "width: 8rem; height: 8rem;"
+                                        >
+                                      {% endif %}
+                                    {% endif %}
+                                  </div>
+                                  <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                    <span style = "font-size: 1.2rem;padding-right: 1rem;">{{ product.title }}</span>
+                                    <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
+                                      <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                        <span>x1</span>
+                                      </div>
+                                      <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                        {% if product.variants.size > 1 %}
+                                          {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                        {% else %}
+                                          {% if product.selected_or_first_available_variant.featured_image %}
+                                            <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                              <span>{{ product.selected_or_first_available_variant.title }}</span>
+                                            </div>
+                                          {% endif %}
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div style = "display: flex; flex-direction: column;">
+                                  <span style = "font-size: 1.2rem;">{{ discounted_price | money }}</span>
+                                  <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                </div>
+                              </label>
+                            </div>
+                          </bundle-option-info>
+                        {% endfor %}
                       </div>
-                    {% endfor %}
-                    {% for product in block.settings.free_gifts_optional %}
-                      <div class="gift optional">
-                        <img src="{{ product.featured_image | img_url: '100x' }}">
-                        <span>{{ product.title }}</span>
-                        <span class="greyed-out">£0.00</span>
+                    
+                      <div class="bundle-gifts">
+                        {% for product in block.settings.free_gifts_always %}
+                          {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
+                          {% if compare_at_price == null or compare_at_price < product.selected_or_first_available_variant.price %}
+                            {% assign compare_at_price = product.selected_or_first_available_variant.price %}
+                          {% endif %}
+                          <bundle-option-info 
+                            data-section="{{ section.id }}"
+                            data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                            data-product-url="{{ product.url }}"
+                          >
+                            <div class="bundle-addon-block" style = "background-color: #dedede; padding: 1rem 2rem;">
+                              <label style = "display: flex; justify-content: space-between;">
+                                <div style = "display: flex;">
+                                  <div class="gift-box-icon" style="display:flex; align-items: center; margin-right: 10px;">
+                                    <input 
+                                      type="checkbox" 
+                                      class = "savings-checkbox"
+                                      data-price="{{ compare_at_price | money_without_currency }}"
+                                      data-compare-price="{{ compare_at_price | money_without_currency }}"
+                                      style="display: none;" 
+                                      id="gift-checkbox-{{ product.id }}"
+                                      value="{{ product.selected_or_first_available_variant.id }}"
+                                      checked
+                                      disabled
+                                    >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gift-icon">
+                                      <path d="M20 12v10H4V12"></path>
+                                      <path d="M2 7h20v5H2z"></path>
+                                      <path d="M12 22V7"></path>
+                                      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                                      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                                    </svg>
+                                  </div>
+                                  <div class="bundle-addon-images">
+                                    {% for variant in product.variants %}
+                                      <img 
+                                        src="{{ variant.featured_image | image_url: width: 200 }}" 
+                                        alt="{{ variant.title }}" 
+                                        width="200" 
+                                        height="200"
+                                        data-media-id="{{ variant.featured_media.id }}"
+                                        data-product-id="{{ variant.id }}"
+                                        style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 6rem; height: 6rem;"
+                                      >
+                                    {% endfor %}
+                                  </div>
+                                  <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                    <span style = "font-size: 1.2rem;">{{ product.title }}</span>
+                                    <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
+                                      <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                        <span>x1</span>
+                                      </div>
+                                      <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                        {% if product.variants.size > 1 %}
+                                          {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                        {% else %}
+                                          {% if product.selected_or_first_available_variant.featured_image %}
+                                            <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                              <span>{{ product.selected_or_first_available_variant.title }}</span>
+                                            </div>
+                                          {% endif %}
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div style = "display: flex; flex-direction: column;">
+                                  <span style = "font-size: 1.2rem;font-weight: bold;">FREE</span>
+                                  <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                </div>
+                              </label>
+                            </div>
+                          </bundle-option-info>
+                        {% endfor %}
+                        {% for product in block.settings.free_gifts_optional %}
+                          {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
+                          {% if compare_at_price == null or compare_at_price < product.selected_or_first_available_variant.price %}
+                            {% assign compare_at_price = product.selected_or_first_available_variant.price %}
+                          {% endif %}
+                          <bundle-option-info 
+                            data-section="{{ section.id }}"
+                            data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                            data-product-url="{{ product.url }}"
+                          >
+                            <div class="bundle-addon-block" style = "background-color: #dedede; padding: 1rem 2rem;">
+                              <label style = "display: flex; justify-content: space-between;">
+                                <div style = "display: flex;">
+                                  <div class="gift-box-icon" style="display:flex; align-items: center; margin-right: 10px;">
+                                    <input 
+                                      type="checkbox"
+                                      class = "savings-checkbox"
+                                      data-price="{{ compare_at_price | money_without_currency }}"
+                                      data-compare-price="{{ compare_at_price | money_without_currency }}"
+                                      style="display: none;" 
+                                      id="gift-checkbox-{{ product.id }}"
+                                      value="{{ product.selected_or_first_available_variant.id }}"
+                                      checked
+                                      disabled
+                                    >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gift-icon">
+                                      <path d="M20 12v10H4V12"></path>
+                                      <path d="M2 7h20v5H2z"></path>
+                                      <path d="M12 22V7"></path>
+                                      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                                      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                                    </svg>
+                                  </div>
+                                  <div class="bundle-addon-images">
+                                    {% for variant in product.variants %}
+                                      <img 
+                                        src="{{ variant.featured_image | image_url: width: 200 }}" 
+                                        alt="{{ variant.title }}" 
+                                        width="200" 
+                                        height="200"
+                                        data-media-id="{{ variant.featured_media.id }}"
+                                        data-product-id="{{ variant.id }}"
+                                        style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 6rem; height: 6rem;"
+                                      >
+                                    {% endfor %}
+                                  </div>
+                                  <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                    <span style = "font-size: 1.2rem;">{{ product.title }}</span>
+                                    <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
+                                      <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                        <span>x1</span>
+                                      </div>
+                                      <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                        {% if product.variants.size > 1 %}
+                                          {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                        {% else %}
+                                          {% if product.selected_or_first_available_variant.featured_image %}
+                                            <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                              <span>{{ product.selected_or_first_available_variant.title }}</span>
+                                            </div>
+                                          {% endif %}
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div style = "display: flex; flex-direction: column;">
+                                  <span style = "font-size: 1.2rem;font-weight: bold;">FREE</span>
+                                  <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                </div>
+                              </label>
+                            </div>
+                          </bundle-option-info>
+                        {% endfor %}
                       </div>
-                    {% endfor %}
-                  </div>
-                
-                  <div class="bundle-footer">
-                    <div id="bundle-status-text">
-                      {{ block.settings.incomplete_text }}
-                    </div>
-                    <div class="bundle-total">
-                      <strong>Total for <span id="bundle-total-items">1</span> item(s):</strong>
-                      <span id="bundle-total-price">{{ product.price | money }}</span>
-                    </div>
-                    <button type="submit" class="bundle-add-to-cart">Add to cart</button>
-                  </div>
+                    
+                      <div class="bundle-footer">
+                        <div style = "display: flex; align-items: center; background-color: #dedede; padding: 1rem; border-top: 1px solid #ccc;">
+                          {% render 'icon-accordion', icon: 'chat_bubble' %}
+                          <div id="bundle-status-text" style = "font-size: 1.2rem;margin-left: 1rem;">
+                            {{ block.settings.incomplete_text }}
+                          </div>
+                        </div>
+                        <div class="bundle-total" style = "display: flex; justify-content: space-between; padding: 1rem;  padding-bottom: 0;">
+                          <strong style = "font-size: 1.3rem;">Total for <span id="bundle-total-items">1</span> <span class = "bundle-total-items-text">item:</span></strong>
+                          <span id="bundle-total-price" style = "font-size: 1.3rem;">{{ product.price | money }}</span>
+                        </div>
+                        {% assign savings = product.compare_at_price | minus: product.price %}
+                        {% if savings < 0 %}
+                          {% assign savings = 0 %}
+                        {% endif %}
+                        <div id = "savings-block" style = "{% if savings > 0 %}display: flex;{% else %}display: none;{% endif %}justify-content: space-between; padding: 1rem; padding-top: 0;">
+                          <span style = "font-size: 1.1rem;">You Saved <span id="bundle-total-savings" style = "font-size: 1.1rem;">{{ savings | money }}</span></span>
+                          <s id="bundle-compare-price" style = "font-size: 1.1rem;">{% if product.compare_at_price %}{{ product.compare_at_price | money }}{% else %}{{ 0 | money }}{% endif %}</s>
+                        </div>
+                        <button
+                          id="ProductSubmitButton-{{ section.id }}-bundle"
+                          type="submit"
+                          name="add"
+                          class="product-form__submit button button--full-width button--primary"
+                          style = "background-color: #000; color: #fff; border: none; margin: 1rem; width: calc(100% - 2rem); border-radius: 1rem; font-family: var(--font-body);letter-spacing: 0.1rem;font-weight: 600;"
+                          {% if product.selected_or_first_available_variant.available == false
+                            or quantity_rule_soldout
+                            or product.selected_or_first_available_variant == null
+                          %}
+                            disabled
+                          {% endif %}
+                        >
+                          <span>ADD TO CART</span>
+                          {%- render 'loading-spinner' -%}
+                        </button>
+                      </div>
+                    {% endform %}
+                  </product-form>
                 </div>
                 
                 <script>
-                  document.addEventListener('DOMContentLoaded', function() {
+                  document.addEventListener('DOMContentLoaded', function () {
+                    const form = document.querySelector('#bundle-form form');
                     const checkboxes = document.querySelectorAll('.bundle-addon');
+                    const savingsCheckboxes = document.querySelectorAll('.savings-checkbox');
                     const variantSelectors = document.querySelectorAll('.bundle-variant-selector');
                     const optionalGifts = document.querySelectorAll('.gift.optional');
                     const totalItems = document.getElementById('bundle-total-items');
                     const totalPrice = document.getElementById('bundle-total-price');
                     const statusText = document.getElementById('bundle-status-text');
+                    const totalItemsText = document.querySelector('.bundle-total-items-text');
+                    const totalSavings = document.getElementById('bundle-total-savings');
+                    const compareAtPriceBlock = document.getElementById('bundle-compare-price');
+                    const savingsBlock = document.getElementById('savings-block');
                     const completeText = "{{ block.settings.complete_text }}";
                     const incompleteText = "{{ block.settings.incomplete_text }}";
                     const basePrice = {{ product.price | money_without_currency }};
@@ -428,6 +721,7 @@
                     function updateBundle() {
                       let count = 1;
                       let price = basePrice;
+                      let compareAtPrice = 0;
                       let allChecked = true;
                 
                       checkboxes.forEach(box => {
@@ -439,8 +733,23 @@
                         }
                       });
                 
+                      savingsCheckboxes.forEach(box => {
+                        if (box.checked && box.dataset.comparePrice) {
+                          compareAtPrice += parseFloat(box.dataset.comparePrice);
+                        }
+                      });
+                
+                      totalItemsText.textContent = count > 1 ? "items:" : "item:";
                       totalItems.textContent = count;
-                      totalPrice.textContent = '£' + price.toFixed(2);
+                      totalPrice.textContent = totalPrice.textContent.replace(/[\d,]+(\.\d{2})?/, price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                
+                      if (compareAtPrice > price) {
+                        totalSavings.textContent = totalSavings.textContent.replace(/[\d,]+(\.\d{2})?/, (compareAtPrice - price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                        compareAtPriceBlock.textContent = compareAtPriceBlock.textContent.replace(/[\d,]+(\.\d{2})?/, compareAtPrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                        savingsBlock.style.display = 'flex';
+                      } else {
+                        savingsBlock.style.display = 'none';
+                      }
                 
                       if (allChecked) {
                         optionalGifts.forEach(g => g.classList.remove('greyed-out'));
@@ -452,8 +761,45 @@
                     }
                 
                     checkboxes.forEach(cb => cb.addEventListener('change', updateBundle));
+                    savingsCheckboxes.forEach(cb => cb.addEventListener('change', updateBundle));
                     variantSelectors.forEach(sel => sel.addEventListener('change', updateBundle));
                     updateBundle();
+                
+                    if (form) {
+                      const submitBtn = form.querySelector('[type="submit"]');
+                      if (submitBtn) {
+                        submitBtn.addEventListener('click', (e) => {
+                          form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
+                          form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
+                  
+                          let anyChecked = false;
+                          let index = 0;
+                          savingsCheckboxes.forEach((checkbox) => {
+                            if (checkbox.checked) {
+                              anyChecked = true;
+                              const variantId = checkbox.getAttribute('value');
+                              const inputID = document.createElement('input');
+                              inputID.type = 'hidden';
+                              inputID.name = 'items[' + index + '][id]';
+                              inputID.value = variantId;
+                              inputID.classList.add('bundle-cart-item');
+                              form.appendChild(inputID);
+                              const inputQuantity = document.createElement('input');
+                              inputQuantity.type = 'hidden';
+                              inputQuantity.name = 'items[' + index + '][quantity]';
+                              inputQuantity.value = 1;
+                              inputQuantity.classList.add('bundle-cart-item');
+                              form.appendChild(inputQuantity);
+                              index++;
+                            }
+                          });
+                  
+                          if (!anyChecked) {
+                            e.preventDefault();
+                          }
+                        });
+                      }
+                    }
                   });
                 </script>
                 
@@ -1084,12 +1430,13 @@
                       class="product-form__input product-form__input--dropdown"
                     >
                       <div class="visually-hidden product-form__input__type" data-type="dropdown">&nbsp</div>
-                      <div class="select no-background color-{{ settings.pickers_color_scheme }} accent-color-{{ settings.pickers_overlay_color }} accent-2-color-{{ settings.pickers_text_color }}">
+                      <div class="select no-background color-{{ settings.pickers_color_scheme }} accent-color-{{ settings.pickers_overlay_color }} accent-2-color-{{ settings.pickers_text_color }}" style = "padding: 0.5rem 1rem;">
                         <select
                           id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                          class="select__select"
+                          class="select__select_sticky"
                           name="options[{{ option.name | escape }}]"
                           form="{{ product_form_id }}"
+                          style = "border: 0;"
                         >
                           {%- liquid
                             assign variants_available_arr = product.variants | map: 'available'
@@ -1136,6 +1483,7 @@
                               {% if option.selected_value == value %}
                                 selected="selected"
                               {% endif %}
+                              data-variant-id="{{ currentVariant.id }}"
                             >
                               {% if option_disabled -%}
                                 {{- 'products.product.value_unavailable' | t: option_value: value -}}
@@ -1145,10 +1493,31 @@
                             </option>
                           {%- endfor -%}
                         </select>
-                        {% render 'icon-caret' %}
                       </div>
                     </div>
                   {%- endfor -%}
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      document.querySelectorAll("select.select__select_sticky").forEach(select => {
+                        select.selectedIndex = 0;
+                        resizeSelect(select);
+                        
+                        select.addEventListener('change', function() {
+                          resizeSelect(this);
+                          
+                          const variantId = this.options[this.selectedIndex].getAttribute('data-variant-id');
+                          
+                          const productForm = document.querySelector('#product-form-{{ section.id }}-sticky');
+                          if (productForm) {
+                            const variantInput = productForm.querySelector('input[name="items[0][id]"]');
+                            if (variantInput && variantId) {
+                              variantInput.value = variantId;
+                            }
+                          }
+                        });
+                      });
+                    });
+                  </script>
                 {% endif %}
                 <script type="application/json">
                   {{ product.variants | json }}
@@ -1857,7 +2226,7 @@
           "type": "textarea",
           "id": "add_on_discounts",
           "label": "Discounts for Add-On Products",
-          "info": "Comma-separated, in order of products: use % or fixed, e.g. '20%,5,0'"
+          "info": "Comma-separated, in order of products: you can only use %. No fixed discounts."
         },
         {
           "type": "product_list",

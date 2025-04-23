@@ -61,7 +61,7 @@ if (!customElements.get('product-info')) {
       }
 
       handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
-        if (!this.contains(event.target)) return;
+        if (!this.contains(event.target) || !this.classList.contains('select__select')) return;
 
         this.resetProductFormState();
 
@@ -90,7 +90,7 @@ if (!customElements.get('product-info')) {
           this.productModal?.remove();
 
           const selector = updateFullPage ? "product-info[id^='MainProduct']" : 'product-info';
-          const variant = this.getSelectedVariant(html.querySelector(selector));
+          const [variant, _] = this.getSelectedVariant(html.querySelector(selector));
           this.updateURL(productUrl, variant?.id);
 
           if (updateFullPage) {
@@ -138,8 +138,12 @@ if (!customElements.get('product-info')) {
       }
 
       getSelectedVariant(productInfoNode) {
-        const selectedVariant = productInfoNode.querySelector('variant-selects [data-selected-variant]')?.innerHTML;
-        return !!selectedVariant ? JSON.parse(selectedVariant) : null;
+        var selectedVariant = productInfoNode.querySelector('variant-selects [data-selected-variant]')?.innerHTML;
+        if (selectedVariant == null) {
+          selectedVariant = productInfoNode.querySelector('variant-bundle-selects [data-selected-variant]')?.innerHTML;
+          return [!!selectedVariant ? JSON.parse(selectedVariant) : null, false];
+        }
+        return [!!selectedVariant ? JSON.parse(selectedVariant) : null, true];
       }
 
       buildRequestUrlWithParams(url, optionValues, shouldFetchFullPage = false) {
@@ -163,19 +167,21 @@ if (!customElements.get('product-info')) {
 
       handleUpdateProductInfo(productUrl) {
         return (html) => {
-          const variant = this.getSelectedVariant(html);
+          const [variant, isBundle] = this.getSelectedVariant(html);
 
           this.pickupAvailability?.update(variant);
           this.updateOptionValues(html);
           this.updateURL(productUrl, variant?.id);
           this.updateVariantInputs(variant?.id);
-
+          
           if (!variant) {
             this.setUnavailable();
             return;
           }
 
-          this.updateMedia(html, variant?.featured_media?.id);
+          if (isBundle) {
+            this.updateMedia(html, variant?.featured_media?.id);
+          }
 
           const updateSourceFromDestination = (id, shouldHide = (source) => false) => {
             const source = html.getElementById(`${id}-${this.sectionId}`);

@@ -599,6 +599,17 @@ h3.icons-with-text__icon__title.h3 {
   }
 }
 
+select:-moz-focusring {
+  color: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .sticky-atc {
   position: fixed;
   bottom: 8rem;
@@ -731,9 +742,6 @@ secondary-variant-select {
   }
   .sticky-atc__left {
     padding-right: 1rem;
-  }
-  .sticky-atc .select {
-    width: 20rem;
   }
   .sticky-atc__image img {
     height: 5.2rem;

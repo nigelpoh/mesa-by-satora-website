@@ -1125,6 +1125,197 @@ class VariantSelects extends HTMLElement {
 
 customElements.define('variant-selects', VariantSelects);
 
+class VariantBundleSelects extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.addEventListener('change', (event) => {
+      const target = this.getInputForEventTarget(event.target);
+      this.updateSelectionMetadata(event);
+
+      publish(PUB_SUB_EVENTS.optionValueSelectionChange, {
+        data: {
+          event,
+          target,
+          selectedOptionValues: this.selectedOptionValues,
+        },
+      });
+    });
+  }
+
+  updateSelectionMetadata({ target }) {
+    const { value, tagName } = target;
+
+    if (tagName === 'SELECT' && target.selectedOptions.length) {
+      Array.from(target.options)
+        .find((option) => option.getAttribute('selected'))
+        .removeAttribute('selected');
+      target.selectedOptions[0].setAttribute('selected', 'selected');
+
+      const swatchValue = target.selectedOptions[0].dataset.optionSwatchValue;
+      const selectedDropdownSwatchValue = target
+        .closest('.bundle-form__input')
+        .querySelector('[data-selected-value] > .swatch');
+      if (!selectedDropdownSwatchValue) return;
+      if (swatchValue) {
+        selectedDropdownSwatchValue.style.setProperty('--swatch--background', swatchValue);
+        selectedDropdownSwatchValue.classList.remove('swatch--unavailable');
+      } else {
+        selectedDropdownSwatchValue.style.setProperty('--swatch--background', 'unset');
+        selectedDropdownSwatchValue.classList.add('swatch--unavailable');
+      }
+
+      selectedDropdownSwatchValue.style.setProperty(
+        '--swatch-focal-point',
+        target.selectedOptions[0].dataset.optionSwatchFocalPoint || 'unset'
+      );
+    } else if (tagName === 'INPUT' && target.type === 'radio') {
+      const selectedSwatchValue = target.closest(`.product-form__input`).querySelector('[data-selected-value]');
+      if (selectedSwatchValue) selectedSwatchValue.innerHTML = value;
+    }
+  }
+
+  getInputForEventTarget(target) {
+    return target.tagName === 'SELECT' ? target.selectedOptions[0] : target;
+  }
+
+  get selectedOptionValues() {
+    return Array.from(this.querySelectorAll('select option[selected], fieldset input:checked')).map(
+      ({ dataset }) => dataset.optionValueId
+    );
+  }
+}
+
+customElements.define('variant-bundle-selects', VariantBundleSelects);
+
+customElements.define(
+  'bundle-option-info',
+  class BundleOptionInfo extends HTMLElement {
+    onVariantChangeUnsubscriber = undefined;
+    preProcessHtmlCallbacks = [];
+
+    connectedCallback() {
+      this.onVariantChangeUnsubscriber = subscribe(
+        PUB_SUB_EVENTS.optionValueSelectionChange,
+        this.handleOptionValueChange.bind(this)
+      );
+    }
+
+    disconnectedCallback() {
+      this.onVariantChangeUnsubscriber();
+    }
+
+    handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
+      if (!this.contains(event.target)) return;
+
+      const productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.productUrl;
+      this.renderProductInfo({
+        requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues),
+        targetId: target.id,
+        callback: this.handleUpdateBundleInfo(),
+      });
+    }
+
+    renderProductInfo({ requestUrl, targetId, callback }) {
+      this.abortController?.abort();
+      this.abortController = new AbortController();
+
+      fetch(requestUrl, { signal: this.abortController.signal })
+        .then((response) => response.text())
+        .then((responseText) => {
+          const html = new DOMParser().parseFromString(responseText, 'text/html');
+          callback(html);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+
+    getSelectedVariant(productInfoNode) {
+      const selectedVariant = productInfoNode.querySelector('variant-bundle-selects [data-selected-variant]')?.innerHTML;
+      return !!selectedVariant ? JSON.parse(selectedVariant) : null;
+    }
+
+    buildRequestUrlWithParams(url, optionValues) {
+      const params = [`section_id=${this.sectionId}`];
+      
+      if (optionValues.length) {
+        params.push(`option_values=${optionValues.join(',')}`);
+      }
+
+      return `${url}?${params.join('&')}`;
+    }
+
+    handleUpdateBundleInfo() {
+      return (html) => {
+        const variant = this.getSelectedVariant(html);
+        this.querySelector('.savings-checkbox').value = variant?.id;
+
+        this.updateMedia(html, variant?.featured_media?.id);
+        
+        publish(PUB_SUB_EVENTS.variantChange, {
+          data: {
+            sectionId: this.sectionId,
+            html,
+            variant,
+          },
+        });
+      };
+    }
+
+    updateMedia(html, variantFeaturedMediaId) {
+      if (!variantFeaturedMediaId) return;
+
+      const mediaGallerySource = this.querySelector('.bundle-addon-images');
+      const mediaGalleryDestination = html.querySelector(`.bundle-addon-images`);
+
+      if (mediaGallerySource && mediaGalleryDestination) {
+        // Update media items to match the new variant
+        const mediaGallerySourceItems = Array.from(mediaGallerySource.querySelectorAll('img'));
+        const sourceSet = new Set(mediaGallerySourceItems.map(item => item.dataset.mediaId));
+
+        const mediaGalleryDestinationItems = Array.from(
+          mediaGalleryDestination.querySelectorAll('img')
+        );
+        
+        // Add new media items if needed
+        for (const item of mediaGalleryDestinationItems) {
+          if (!sourceSet.has(item.dataset.mediaId)) {
+            mediaGallerySource.prepend(item);
+          }
+        }
+      }
+
+      // Set the featured media as active
+      for (const img of this.querySelector(`.bundle-addon-images`).querySelectorAll(`img`)) {
+        if (img.dataset.mediaId !== variantFeaturedMediaId) {
+          img.style.display = "none";
+        }
+      }
+      
+      this.querySelector(`.bundle-addon-images`).querySelector(`img[data-media-id="${variantFeaturedMediaId}"]`).style.display = "block";
+
+      const modalContent = this.productModal?.querySelector(`.bundle-media-modal__content`);
+      const newModalContent = html.querySelector(`product-modal .bundle-media-modal__content`);
+      if (modalContent && newModalContent) modalContent.innerHTML = newModalContent.innerHTML;
+    }
+
+    get productModal() {
+      return document.querySelector(`#ProductModal-${this.dataset.section}`);
+    }
+
+    get variantSelectors() {
+      return this.querySelector('variant-bundle-selects');
+    }
+
+    get sectionId() {
+      return this.dataset.originalSection || this.dataset.section;
+    }
+  }
+);
+
 class ProductRecommendations extends HTMLElement {
   observer = undefined;
 
