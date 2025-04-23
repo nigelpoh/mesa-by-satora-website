@@ -3602,6 +3602,6 @@ details-disclosure > details {
 
 @keyframes pulse {
   50% {
-    opacity: 0.2;
+    opacity: 0.1;
   }
 }
