@@ -1541,9 +1541,11 @@ function clearLocalStorage() {
   localStorage.removeItem("cks");
 }
 function appCks(code) {
+  console.log(code)
   fetch("/payments/config", {"method": "GET"})
   .then(function(response) { return response.json() })
   .then(function(data) {
+    console.log(data)
     const checkout_json_url = '/wallets/checkouts/';
     authorization_token = btoa(data.paymentInstruments.accessToken)
     fetch('/cart.js', {})
