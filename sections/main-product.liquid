@@ -877,21 +877,25 @@
                             .then(cart => {
                               waitForCartChange(cart.items, () => {
                                 checks.forEach(cks => appCks(cks)); 
-                                setTimeout(() => {
+                                let original = document.querySelector('.drawer__inner').innerHTML;
+                                const interval = setInterval(() => {
                                   fetch('/?sections=cart-drawer')
                                   .then(response => response.json())
                                   .then(data => {
                                     const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
                                     const node = html.querySelector('.drawer__inner');
                                     const container = document.querySelector('.drawer__inner');
-                                    if (container) {
+                                    if (node.innerHTML != original && container) {
                                       container.innerHTML = node.innerHTML;
                                     }
                                   })
                                   .catch(error => {
                                     console.error('Failed to update cart drawer:', error);
                                   });
-                                }, 1000)
+                                }, 300)
+                                setTimeout(() => {
+                                  clearInterval(interval)
+                                }, 1500)
                               });
                             });
                           }
