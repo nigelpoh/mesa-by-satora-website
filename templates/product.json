@@ -152,6 +152,31 @@
             "custom_liquid": "<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Odour and Water Resistant</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty (U.P. £19.95)</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag (U.P. £24.95)</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Shipping (U.P. £15.95)</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Travel Guide (U.P. £14.95, While stocks last)</p>"
           }
         },
+        "tracker_UhAThg": {
+          "type": "tracker",
+          "settings": {
+            "text": "People Are Viewing This Now",
+            "background": false,
+            "bg_colour": "",
+            "text_colour": "#000000",
+            "lower_bound": 10,
+            "upper_bound": 20,
+            "freq": 2,
+            "padding": 0,
+            "icon": "eye"
+          }
+        },
+        "info_e3VLkp": {
+          "type": "info",
+          "settings": {
+            "text": "Free Shipping within 5 Days",
+            "background": false,
+            "bg_colour": "",
+            "text_colour": "#000000",
+            "padding": 0,
+            "icon": "check_mark"
+          }
+        },
         "upsell_bundle_t3py8H": {
           "type": "upsell_bundle",
           "settings": {
@@ -185,31 +210,6 @@
           "type": "description",
           "disabled": true,
           "settings": {}
-        },
-        "tracker_UhAThg": {
-          "type": "tracker",
-          "settings": {
-            "text": "People Are Viewing This Now",
-            "background": false,
-            "bg_colour": "",
-            "text_colour": "#000000",
-            "lower_bound": 10,
-            "upper_bound": 20,
-            "freq": 2,
-            "padding": 0,
-            "icon": "eye"
-          }
-        },
-        "info_e3VLkp": {
-          "type": "info",
-          "settings": {
-            "text": "Free Shipping within 5 Days",
-            "background": false,
-            "bg_colour": "",
-            "text_colour": "#000000",
-            "padding": 0,
-            "icon": "check_mark"
-          }
         },
         "collapsible_tab_JntjPi": {
           "type": "collapsible_tab",
@@ -298,11 +298,11 @@
         "price",
         "klarna_on_site_messaging_app_block_HQrRea",
         "custom_liquid_aNxG8P",
+        "tracker_UhAThg",
+        "info_e3VLkp",
         "upsell_bundle_t3py8H",
         "payment_options_NJemVU",
         "description",
-        "tracker_UhAThg",
-        "info_e3VLkp",
         "collapsible_tab_JntjPi",
         "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
