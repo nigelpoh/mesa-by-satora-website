@@ -1551,6 +1551,7 @@ function appCks(code) {
     fetch('/cart.js', {})
     .then(function(res){return res.json();})
     .then(function(data){
+      console.log("DATA2", data)
       let body = {"checkout": { "country": Shopify.country,"discount_code": code,"line_items": data.items, 'presentment_currency': Shopify.currency.active } }
       fetch(checkout_json_url, {
         "headers": {
@@ -1566,7 +1567,7 @@ function appCks(code) {
       })
       .then(function(response) { return response.json() })
       .then(function(data) {
-        console.log(data.checkout);
+        console.log("DATA3", data.checkout);
         if(data.checkout && data.checkout.applied_discounts.length > 0){
           let dksApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
           fetch(dksApplyUrl, {}).then(function(response) { return response.text(); })
