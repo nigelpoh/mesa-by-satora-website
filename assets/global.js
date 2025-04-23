@@ -1549,7 +1549,6 @@ function applyDiscount(code) {
         if(data.checkout && data.checkout.applied_discounts.length > 0){
           let discountApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
           fetch(discountApplyUrl, {}).then(function(response) { return response.text(); })
-          if(discountCodeWrapper) discountCodeWrapper.style.display = "inline";
           let localStorageValue = {
             'code': code.trim(),
             'totalCart': data.checkout.total_line_items_price
