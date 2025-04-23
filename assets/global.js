@@ -1541,7 +1541,7 @@ function applyDiscount(code) {
           "sec-fetch-mode": "cors", "sec-fetch-site": "same-origin"
         },
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "method": "POST", "mode": "cors", "credentials": "include",
+        "method": "POST", "mode": "no-cors", "credentials": "include",
         "body": JSON.stringify(body)
       })
       .then(function(response) { return response.json() })
