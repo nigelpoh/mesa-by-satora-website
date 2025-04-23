@@ -3,9 +3,9 @@
     document.querySelectorAll(".details-collapse").forEach((details) => {
       const summary = details.querySelector("summary");
       const content = details.querySelector("summary ~ *");
-    
+      
+      console.log("SUMMARY", summary)
       summary.addEventListener("click", (e) => {
-        console.log("SUMMARY")
         e.preventDefault();
     
         if (details.hasAttribute("open")) {
