@@ -875,9 +875,8 @@
                             fetch('/cart.js')
                             .then(res => res.json())
                             .then(cart => {
-                              const discountCodes = [];
                               waitForCartChange(cart.items, () => {
-                                discountCodes.forEach(code => appCks(checker));
+                                checks.forEach(code => appCks(checker));
                               });
                             });
                           }
