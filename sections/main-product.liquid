@@ -881,8 +881,7 @@
                                   fetch('/?sections=cart-drawer')
                                   .then(response => response.json())
                                   .then(data => {
-                                    const html = data['cart-drawer'];
-                                    console.log(html)
+                                    const html = new DOMParser().parseFromString(data['cart-drawer'], "text/xml");
                                     html.querySelector('cart-drawer').classList.add("active")
                                     const container = document.querySelector('#shopify-section-cart-drawer');
                                     if (container) {
