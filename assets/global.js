@@ -1541,10 +1541,6 @@ function clearLocalStorage() {
   localStorage.removeItem("discountCode");
 }
 function applyDiscount(code) {
-  if(applyBtn) {
-    applyBtn.innerHTML = "APPLYING <div class='loader'></div>";
-    applyBtn.style.pointerEvents = "none";
-  }
   fetch("/payments/config", {"method": "GET"})
   .then(function(response) { return response.json() })
   .then(function(data) {
