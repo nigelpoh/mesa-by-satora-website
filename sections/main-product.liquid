@@ -4,7 +4,6 @@
       const summary = details.querySelector("summary");
       const content = details.querySelector("summary ~ *");
       
-      console.log("SUMMARY", summary)
       summary.addEventListener("click", (e) => {
         e.preventDefault();
     
@@ -810,7 +809,6 @@
                 
                       savingsCheckboxes.forEach(box => {
                         if (box.checked && box.dataset.comparePrice) {
-                          console.log(box)
                           compareAtPrice += parseFloat(box.dataset.comparePrice);
                         }
                       });

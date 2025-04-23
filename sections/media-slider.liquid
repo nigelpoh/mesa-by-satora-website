@@ -111,9 +111,8 @@
 <script>
 function initSlickSlider(sectionId) {
   var sliderElement = $('#image-slider-' + sectionId + ' .image-video-slider');
-  console.log("Slider", sliderElement)
   sliderElement.on('init', function(event, slick){
-    $(this).css('visibility', 'visible'); /* Show the slider after initialization */
+    $(this).css('visibility', 'visible'); 
   });
 
   sliderElement.slick({
@@ -144,7 +143,6 @@ function destroySlickSlider(sectionId) {
 }
 
 $(document).on('shopify:section:load', function(event) {
-  console.log("shopify:section:load is working")
   var sectionId = event.detail.sectionId;
   initSlickSlider(sectionId);
 });
@@ -155,7 +153,6 @@ $(document).on('shopify:section:unload', function(event) {
 });
 
 $(document).ready(function () {
-  console.log("Load is working")
   var sectionId = '{{ section.id }}';
   initSlickSlider(sectionId);
 });

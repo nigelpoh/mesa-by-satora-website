@@ -140,7 +140,6 @@ if (!customElements.get('product-form')) {
         var id = this.form.querySelector('[name=id]')
         if (!id) {
           id = this.form.querySelector('[name="items[0][id]"]')
-          console.log("ID:", id)
         }
         return id;
       }

@@ -516,7 +516,6 @@
       const observer6 = new MutationObserver((mutations, obs) => {
         const title = document.querySelector('.Avada-Fbt__ProductContent-title');
         if (title) {
-          console.log(title)
           title.textContent = toTitleCase(title.textContent);
           obs.disconnect();
         }

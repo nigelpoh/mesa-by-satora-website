@@ -42,8 +42,6 @@ class CartDrawer extends HTMLElement {
 
   // Ensure upsell buttons are initialized on cart drawer open and update
   initializeUpsellButtons() {
-    console.log("initialize upsell buttons...");
-
     var upsellAddButtons = this.querySelectorAll(".upsell-add-button");
 
     upsellAddButtons.forEach((button) => {
@@ -72,8 +70,6 @@ class CartDrawer extends HTMLElement {
   }
 
   handleCartDrawerClick(event) {
-    console.log("handleCartDrawerClick");
-
     const quantityButton = event.target.closest(".quantity__button");
     const removeButton = event.target.closest(".cart-remove-button");
 
