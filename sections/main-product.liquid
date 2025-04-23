@@ -870,11 +870,12 @@
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
                               if(checker != null) {
-                                const discountQuantity = document.createElement('input');
-                                discountQuantity.type = 'hidden';
-                                discountQuantity.name = 'discount[' + discount_index + ']';
-                                discountQuantity.classList.add('bundle-cart-item');
-                                form.appendChild(discountQuantity);
+                                const inputDiscount = document.createElement('input');
+                                inputDiscount.type = 'hidden';
+                                inputDiscount.name = 'discount[' + discount_index + ']';
+                                inputDiscount.value = checker;
+                                inputDiscount.classList.add('bundle-cart-item');
+                                form.appendChild(inputDiscount);
                                 discount_index++;
                               }
                               index++;
