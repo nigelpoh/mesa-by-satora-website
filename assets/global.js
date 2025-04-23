@@ -1526,7 +1526,7 @@ function applyDiscount(discount) {
   console.log("Applying Discount", discount)
   const shopify_features_script = document.querySelector("script[id='shopify-features']");
   const shopify_features_json = JSON.parse(shopify_features_script.innerHTML);
-
+  console.log("QUERY", `${Shopify.routes.root}cart.js`)
   fetch(`${Shopify.routes.root}cart.js`)
     .then(response => response.json())
     .then(cart => {
@@ -1535,7 +1535,7 @@ function applyDiscount(discount) {
         Accept: '*/*',
         'Content-Type': 'application/json',
       };
-
+      console.log(cart)
       const body = {
         checkout: {
           line_items: cart.items,
