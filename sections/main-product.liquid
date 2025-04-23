@@ -882,9 +882,8 @@
                                   .then(response => response.json())
                                   .then(data => {
                                     const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
-                                    const node = html.querySelector('cart-drawer-items');
-                                    const container = document.querySelector('cart-drawer-items');
-                                    console.log("Check", container, node)
+                                    const node = html.querySelector('.drawer__inner');
+                                    const container = document.querySelector('.drawer__inner');
                                     if (container) {
                                       container.innerHTML = node.innerHTML;
                                       clearInterval(interval);
