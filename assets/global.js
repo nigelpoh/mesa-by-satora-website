@@ -1522,6 +1522,21 @@ class CartPerformance {
   }
 }
 
+function waitForCartChange(previousItems, callback) {
+  const interval = setInterval(() => {
+    fetch('/cart.js')
+      .then(res => res.json())
+      .then(cart => {
+        const newItems = cart.items.map(i => i.variant_id).join(',');
+        const oldItems = previousItems.map(i => i.variant_id).join(',');
+        if (newItems !== oldItems) {
+          clearInterval(interval);
+          callback();
+        }
+      });
+  }, 300);
+}
+
 function applyDiscount(discount) {
   console.log("Applying Discount", discount)
   const shopify_features_script = document.querySelector("script[id='shopify-features']");
