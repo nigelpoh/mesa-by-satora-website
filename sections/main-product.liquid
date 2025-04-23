@@ -863,10 +863,12 @@
                               form.appendChild(inputQuantity);
                               index++;
                               if (checker != null) {
-                                if (discount_coupons != "") {
-                                  discount_coupons += ","
-                                }
-                                discount_coupons += checker
+                                const inputDiscount = document.createElement('input');
+                                inputDiscount.type = "hidden";
+                                inputDiscount.name = "discount";
+                                inputDiscount.value = checker;
+                                inputDiscount.classList.add('bundle-cart-item');
+                                form.appendChild(inputDiscount);
                               }
                             }
                           });
