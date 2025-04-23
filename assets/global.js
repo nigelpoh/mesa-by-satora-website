@@ -1537,41 +1537,50 @@ function waitForCartChange(previousItems, callback) {
   }, 300);
 }
 
-function applyDiscount(discount) {
-  console.log("Applying Discount", discount)
-  const shopify_features_script = document.querySelector("script[id='shopify-features']");
-  const shopify_features_json = JSON.parse(shopify_features_script.innerHTML);
-  console.log("QUERY", `${Shopify.routes.root}cart.js`)
-  fetch(`${Shopify.routes.root}cart.js`)
-    .then(response => response.json())
-    .then(cart => {
-      const headers = {
-        Authorization: 'Basic ' + btoa(shopify_features_json.accessToken),
-        Accept: '*/*',
-        'Content-Type': 'application/json',
-      };
-      console.log(cart)
-      const body = {
-        checkout: {
-          line_items: cart.items,
-          discount_code: discount,
-          country: Shopify.country,
-          presentment_currency: cart.currency,
+function clearLocalStorage() {
+  localStorage.removeItem("discountCode");
+}
+function applyDiscount(code) {
+  if(applyBtn) {
+    applyBtn.innerHTML = "APPLYING <div class='loader'></div>";
+    applyBtn.style.pointerEvents = "none";
+  }
+  fetch("/payments/config", {"method": "GET"})
+  .then(function(response) { return response.json() })
+  .then(function(data) {
+    const checkout_json_url = '/wallets/checkouts/';
+    authorization_token = btoa(data.paymentInstruments.accessToken)
+    fetch('/cart.js', {})
+    .then(function(res){return res.json();})
+    .then(function(data){
+      let body = {"checkout": { "country": Shopify.country,"discount_code": code,"line_items": data.items, 'presentment_currency': Shopify.currency.active } }
+      fetch(checkout_json_url, {
+        "headers": {
+          "accept": "*/*", "cache-control": "no-cache",
+          "authorization": "Basic " + authorization_token,
+          "content-type": "application/json, text/javascript",
+          "pragma": "no-cache", "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors", "sec-fetch-site": "same-origin"
         },
-      };
-
-      return fetch('/wallets/checkouts/', {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify(body),
-        referrerPolicy: 'no-referrer',
-      });
-    })
-    .then(wallet => wallet.json())
-    .then(response => {
-      console.log('🚀 ~ response:', response);
-    })
-    .catch(error => {
-      console.error('Discount application failed:', error);
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "method": "POST", "mode": "cors", "credentials": "include",
+        "body": JSON.stringify(body)
+      })
+      .then(function(response) { return response.json() })
+      .then(function(data) {
+        console.log(data.checkout);
+        if(data.checkout && data.checkout.applied_discounts.length > 0){
+          let discountApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
+          fetch(discountApplyUrl, {}).then(function(response) { return response.text(); })
+          let localStorageValue = {
+            'code': code.trim(),
+            'totalCart': data.checkout.total_line_items_price
+          };
+          localStorage.setItem("discountCode", JSON.stringify(localStorageValue));
+        }else{
+          clearLocalStorage();
+        }
+      })
     });
+  });
 }
