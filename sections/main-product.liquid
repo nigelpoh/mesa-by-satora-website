@@ -392,7 +392,7 @@
                   </details>
                 </div>
               {%- when 'upsell_bundle' -%}
-                <div class="bundle-block" style = "border: 1px solid #ddd; border-radius: 1rem; margin-bottom: 0;">
+                <div class="bundle-block" style = "border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 1rem; margin-bottom: 0;">
                   <div style = "display: flex; flex-direction: column; border-radius: 1rem 1rem 0 0; padding: 2rem;">
                     <h3 style = "margin: 0;">{{ block.settings.bundle_title }}</h3>
                     <p style = "margin: 0; line-height: normal; font-size: 1.3rem;margin-top: 0.2rem;">{{ block.settings.bundle_description }}</p>
@@ -406,7 +406,7 @@
                       novalidate: 'novalidate',
                       data-type: 'add-to-cart-form'
                     -%}
-                      <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: #f7f7f7;">
+                      <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};">
                         <bundle-option-info 
                           data-section="{{ section.id }}"
                           data-product-id="{{ product.selected_or_first_available_variant.id }}" 
@@ -444,7 +444,7 @@
                                 <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
                                   <span style = "font-size: 1.2rem;">{{ product.title }}</span>
                                   <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
-                                    <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                    <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
                                       <span>x1</span>
                                     </div>
                                     <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
@@ -532,7 +532,7 @@
                                   <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
                                     <span style = "font-size: 1.2rem;padding-right: 1rem;">{{ product.title }}</span>
                                     <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
-                                      <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                      <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
                                         <span>x1</span>
                                       </div>
                                       <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
@@ -562,23 +562,9 @@
                       </div>
                       
                       <div class="bundle-gifts">
-                        {% capture gift_word_optional %}
-                          {% if block.settings.free_gifts_optional.size > 1 %}
-                            These
-                          {% else %}
-                            This
-                          {% endif %}
-                        {% endcapture %}
-                        {% capture gift_word %}
-                          {% if block.settings.free_gifts_always.size > 1 %}
-                            These
-                          {% else %}
-                            This
-                          {% endif %}
-                        {% endcapture %}
                         {% if block.settings.free_gifts_always.count > 0 %}
-                          <div style = "display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: #000; color: #fff;">
-                            {{ block.settings.complete_text | replace: 'This', gift_word | strip | replace: 'These', gift_word | strip }}
+                          <div style = "display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};">
+                            {{ block.settings.complete_text }}
                           </div>
                           {% for product in block.settings.free_gifts_always %}
                             {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
@@ -590,7 +576,7 @@
                               data-product-id="{{ product.selected_or_first_available_variant.id }}" 
                               data-product-url="{{ product.url }}"
                             >
-                              <div class="bundle-addon-block" style = "background-color: #dedede; padding: 1rem 2rem;">
+                              <div class="bundle-addon-block" style = "background-color: {{ block.settings.gift_background_colour }}; padding: 1rem 2rem; color: {{ block.settings.gift_text_colour }};">
                                 <label style = "display: flex; justify-content: space-between;">
                                   <div style = "display: flex;">
                                     <div class="gift-box-icon" style="display:flex; align-items: center; margin-right: 10px;">
@@ -656,8 +642,8 @@
                           {% endfor %}
                         {% endif %}
                         {% if block.settings.free_gifts_optional.count > 0 %}
-                          <div style = "display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: #000; color: #fff;" id = "bundle-incomplete-text">
-                            {{ block.settings.incomplete_text | replace: 'This', gift_word_optional | strip | replace: 'These', gift_word_optional | strip }}
+                          <div style = "display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};" id = "bundle-incomplete-text">
+                            {{ block.settings.incomplete_text }}
                           </div>
                           {% for product in block.settings.free_gifts_optional %}
                             {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
@@ -669,7 +655,7 @@
                               data-product-id="{{ product.selected_or_first_available_variant.id }}" 
                               data-product-url="{{ product.url }}"
                             >
-                              <div class="bundle-addon-block" style = "background-color: #dedede; padding: 1rem 2rem;">
+                              <div class="bundle-addon-block" style = "background-color: {{ block.settings.gift_background_colour }}; padding: 1rem 2rem; color: {{ block.settings.gift_text_colour }};">
                                 <label style = "display: flex; justify-content: space-between;" class = "gift-optional-label">
                                   <div style = "display: flex;">
                                     <div class="gift-box-icon" style="display:flex; align-items: center; margin-right: 10px;">
@@ -736,7 +722,7 @@
                       </div>
                     
                       <div class="bundle-footer" style = "border-radius: 0 0 1rem 1rem;margin-top: 0;">
-                        <div style = "display: flex; align-items: center; background-color: #000; color: #fff; stroke: #fff; padding: 1rem; border-top: 1px solid #ccc;">
+                        <div style = "display: flex; align-items: center; background-color: {{ block.settings.info_background_colour }}; color: {{ block.settings.info_text_colour }}; stroke: {{ block.settings.info_text_colour }}; padding: 1rem;">
                           {% render 'icon-accordion', icon: 'chat_bubble' %}
                           <div id="bundle-text" style = "font-size: 1.2rem;margin-left: 1rem;">
                             {{ block.settings.bundle_text }}
@@ -2388,6 +2374,68 @@
           "id": "free_gifts_always",
           "label": "Always-Included Free Gifts",
           "limit": 5
+        },
+        {
+          "type": "header",
+          "content": "Bundle Colours"
+        },
+        {
+          "type": "color",
+          "id": "selection_background_colour",
+          "label": "Selection Background Colour",
+          "default": "#f7f7f7"
+        },
+        {
+          "type": "color",
+          "id": "selection_text_colour",
+          "label": "Selection Text Colour",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "add_on_background_colour",
+          "label": "Add-On Background Colour",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "add_on_text_colour",
+          "label": "Add-On Text Colour",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "info_background_colour",
+          "label": "Info Background Colour",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "info_text_colour",
+          "label": "Info Text Colour",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "gift_background_colour",
+          "label": "Gift Background Colour",
+          "default": "#dedede"
+        },
+        {
+          "type": "color",
+          "id": "gift_text_colour",
+          "label": "Gift Text Colour",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "stroke_colour",
+          "label": "Stroke Colour",
+          "default": "#ddd"
+        },
+        {
+          "type": "header",
+          "content": "Bundle Texts"
         },
         {
           "type": "text",
