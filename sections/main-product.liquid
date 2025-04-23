@@ -843,6 +843,7 @@
                   
                           let anyChecked = false;
                           let index = 0;
+                          let discount_coupons = "";
                           savingsCheckboxes.forEach((checkbox) => {
                             if (checkbox.checked) {
                               anyChecked = true;
@@ -861,10 +862,12 @@
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
                               index++;
-                              console.log("Emptiness", checker)
+                              if (checker != null) {
+                                discount_coupons += checker
+                              }
                             }
                           });
-                  
+                          console.log("Coupons", discount_coupons)
                           if (!anyChecked) {
                             e.preventDefault();
                           }
