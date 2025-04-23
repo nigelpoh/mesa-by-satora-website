@@ -870,9 +870,11 @@
                               }
                             }
                           });
-                          const baseAction = form.getAttribute('action');
-                          console.log(baseAction)
-                          
+                          if (discount_coupons != "") {
+                            const baseAction = form.getAttribute('action');
+                            form.action = `${baseAction}?discount=${discount_coupons}`;
+                          }
+              
                           if (!anyChecked) {
                             e.preventDefault();
                           }
