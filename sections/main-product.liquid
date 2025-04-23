@@ -843,7 +843,6 @@
                   
                           let anyChecked = false;
                           let index = 0;
-                          let discount_coupons = "";
                           savingsCheckboxes.forEach((checkbox) => {
                             if (checkbox.checked) {
                               anyChecked = true;
@@ -861,7 +860,6 @@
                               inputQuantity.value = 1;
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
-                              index++;
                               if (checker != null) {
                                 const inputDiscount = document.createElement('input');
                                 inputDiscount.type = "hidden";
@@ -870,13 +868,9 @@
                                 inputDiscount.classList.add('bundle-cart-item');
                                 form.appendChild(inputDiscount);
                               }
+                              index++;
                             }
                           });
-                          if (discount_coupons != "") {
-                            const baseAction = form.getAttribute('action');
-                            form.action = `${baseAction}?discount=${discount_coupons}`;
-                            console.log(form.action)
-                          }
               
                           if (anyChecked) {
                             e.preventDefault();
