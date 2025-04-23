@@ -1691,11 +1691,6 @@
                 </div>
               {%- endform -%}
             </product-form>
-            <script>
-              document.getElementById('ProductSubmitButton-{{ section.id }}-sticky').addEventListener('click', function() {
-                document.querySelector('#ProductSubmitButton-{{ section.id }}').click();
-              }); 
-            </script>
           {% else %}
             <button class='button sticky-atc__scroll-btn'>
               <span>
