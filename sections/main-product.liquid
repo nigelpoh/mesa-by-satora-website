@@ -884,6 +884,7 @@
                                     const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
                                     const node = html.querySelector('.drawer__inner');
                                     const container = document.querySelector('.drawer__inner');
+                                    console.log(node, container)
                                     if (container) {
                                       container.innerHTML = node.innerHTML;
                                       clearInterval(interval);
