@@ -168,6 +168,19 @@
             "complete_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
           }
         },
+        "payment_options_NJemVU": {
+          "type": "payment_options",
+          "settings": {
+            "show_visa": true,
+            "show_mastercard": true,
+            "show_amex": true,
+            "show_paypal": true,
+            "show_shopify_pay": true,
+            "show_apple_pay": true,
+            "show_google_pay": true,
+            "show_klarna": true
+          }
+        },
         "description": {
           "type": "description",
           "disabled": true,
@@ -286,6 +299,7 @@
         "klarna_on_site_messaging_app_block_HQrRea",
         "custom_liquid_aNxG8P",
         "upsell_bundle_t3py8H",
+        "payment_options_NJemVU",
         "description",
         "tracker_UhAThg",
         "info_e3VLkp",
