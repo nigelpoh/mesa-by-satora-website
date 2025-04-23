@@ -873,6 +873,7 @@
                           if (discount_coupons != "") {
                             const baseAction = form.getAttribute('action');
                             form.action = `${baseAction}?discount=${discount_coupons}`;
+                            console.log(form.action)
                           }
               
                           if (!anyChecked) {
