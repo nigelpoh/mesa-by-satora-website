@@ -860,12 +860,6 @@
                               inputQuantity.value = 1;
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
-                              const inputDiscount = document.createElement('input');
-                              inputDiscount.type = 'hidden';
-                              inputDiscount.name = 'items[' + index + '][discount]';
-                              inputDiscount.value = checker;
-                              inputDiscount.classList.add('bundle-cart-item');
-                              form.appendChild(inputDiscount);
                               index++;
                             }
                           });
