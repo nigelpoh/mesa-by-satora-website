@@ -415,7 +415,7 @@
                          IS EURO
                       {% elsif dot_sep.size == 2 and comma_sep.size != 2 %}
                         IS NOT EURO
-                      {% elsif comma_sep.first.size < dot_sep.first.size %}
+                      {% elsif comma_sep.first.size > dot_sep.first.size %}
                         IS EURO
                       {% else %}
                         IS NOT EURO
