@@ -411,6 +411,7 @@
                       {% if captured_price contains '"' %}
                         {% assign currency_format = "comma" %}
                       {% endif %}
+                      {{ currency_format }}
                       <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};">
                         <bundle-option-info 
                           data-section="{{ section.id }}"
