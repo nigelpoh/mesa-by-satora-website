@@ -421,8 +421,8 @@
                                 <input 
                                   type="checkbox" 
                                   class = "savings-checkbox"
-                                  data-price="{{ product.selected_or_first_available_variant.price | money_without_currency }}" 
-                                  data-compare-price="{{ compare_price | money_without_currency }}"
+                                  data-price="{{ product.selected_or_first_available_variant.price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}" 
+                                  data-compare-price="{{ compare_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
                                   value="{{ product.selected_or_first_available_variant.id }}"
                                   checked
                                   disabled
@@ -493,8 +493,8 @@
                                   <input 
                                     type="checkbox" 
                                     class="bundle-addon savings-checkbox" 
-                                    data-price="{{ discounted_price | money_without_currency }}" 
-                                    data-compare-price="{{ compare_at_price | money_without_currency }}"
+                                    data-price="{{ discounted_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}" 
+                                    data-compare-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
                                     value="{{ product.selected_or_first_available_variant.id }}"
                                     checker="{{ discount_code }}"
                                     checked
@@ -586,8 +586,8 @@
                                       <input 
                                         type="checkbox" 
                                         class = "savings-checkbox"
-                                        data-price="{{ compare_at_price | money_without_currency }}"
-                                        data-compare-price="{{ compare_at_price | money_without_currency }}"
+                                        data-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
+                                        data-compare-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
                                         style="display: none;" 
                                         id="gift-checkbox-{{ product.id }}"
                                         value="{{ product.selected_or_first_available_variant.id }}"
@@ -665,8 +665,8 @@
                                       <input 
                                         type="checkbox"
                                         class = "savings-checkbox gift-optional"
-                                        data-price="{{ compare_at_price | money_without_currency }}"
-                                        data-compare-price="{{ compare_at_price | money_without_currency }}"
+                                        data-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
+                                        data-compare-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
                                         style="display: none;" 
                                         id="gift-checkbox-{{ product.id }}"
                                         value="{{ product.selected_or_first_available_variant.id }}"
@@ -778,7 +778,7 @@
                     const totalSavings = document.getElementById('bundle-total-savings');
                     const compareAtPriceBlock = document.getElementById('bundle-compare-price');
                     const savingsBlock = document.getElementById('savings-block');
-                    const basePrice = {{ product.price | money_without_currency }};
+                    const basePrice = {{ product.price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }};
                 
                     function updateBundle() {
                       let count = 1;
