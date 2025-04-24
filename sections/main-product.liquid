@@ -406,6 +406,7 @@
                       data-type: 'add-to-cart-form'
                     -%}
                       {% assign currency_string = product.price | money_without_currency | append: "" %}
+                      {% assign currency_string = "100,100.25"%}
                       {% assign is_euro = false %}
                       {% assign comma_sep = currency_string | split: "," %}
                       {% assign dot_sep = currency_string | split: "." %}
