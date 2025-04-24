@@ -410,11 +410,14 @@
                       {% assign is_euro = false %}
                       {% assign comma_sep = currency_string | split: "," %}
                       {% assign dot_sep = currency_string | split: "." %}
-                      {{ currency_string }}{{ comma_sep | json }} {{ dot_sep | json }}
-                      {{ comma_sep.first.size }} {{ dot_sep.first.size }}
+                      
                       {% if comma_sep.size == 2 and dot_sep.size != 2 %}
                          IS EURO
                       {% elsif dot_sep.size == 2 and comma_sep.size != 2 %}
+                        IS NOT EURO
+                      {% elsif comma_sep.first.size > dot_sep.first.size %}
+                        IS EURO
+                      {% else %}
                         IS NOT EURO
                       {% endif %}
                       
