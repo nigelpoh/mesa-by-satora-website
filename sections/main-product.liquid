@@ -405,6 +405,12 @@
                       novalidate: 'novalidate',
                       data-type: 'add-to-cart-form'
                     -%}
+                      {% assign sample_price = product.price | money_without_currency %}
+                      {% assign currency_format = "dot" %}
+                      {% capture captured_price %}{{ sample_price | json }}{% endcapture %}
+                      {% if captured_price contains '"' %}
+                        {% assign currency_format = "comma" %}
+                      {% endif %}
                       <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};">
                         <bundle-option-info 
                           data-section="{{ section.id }}"
@@ -421,8 +427,8 @@
                                 <input 
                                   type="checkbox" 
                                   class = "savings-checkbox"
-                                  data-price="{{ product.selected_or_first_available_variant.price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}" 
-                                  data-compare-price="{{ compare_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
+                                  data-price="{% if currency_format == "dot" %}{{ product.selected_or_first_available_variant.price | money_without_currency }} {% else %} {{ product.selected_or_first_available_variant.price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}" 
+                                  data-compare-price="{% if currency_format == "dot" %}{{ compare_price | money_without_currency }} {% else %} {{ compare_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                   value="{{ product.selected_or_first_available_variant.id }}"
                                   checked
                                   disabled
@@ -493,8 +499,8 @@
                                   <input 
                                     type="checkbox" 
                                     class="bundle-addon savings-checkbox" 
-                                    data-price="{{ discounted_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}" 
-                                    data-compare-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
+                                    data-price="{% if currency_format == "dot" %}{{ discounted_price }} {% else %} {{ discounted_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}" 
+                                    data-compare-price="{% if currency_format == "dot" %}{{ compare_at_price | money_without_currency }} {% else %} {{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                     value="{{ product.selected_or_first_available_variant.id }}"
                                     checker="{{ discount_code }}"
                                     checked
@@ -586,8 +592,8 @@
                                       <input 
                                         type="checkbox" 
                                         class = "savings-checkbox"
-                                        data-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
-                                        data-compare-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
+                                        data-price="{% if currency_format == "dot" %}{{ compare_at_price | money_without_currency }} {% else %} {{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
+                                        data-compare-price="{% if currency_format == "dot" %}{{ compare_at_price | money_without_currency }} {% else %} {{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                         style="display: none;" 
                                         id="gift-checkbox-{{ product.id }}"
                                         value="{{ product.selected_or_first_available_variant.id }}"
@@ -665,8 +671,8 @@
                                       <input 
                                         type="checkbox"
                                         class = "savings-checkbox gift-optional"
-                                        data-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
-                                        data-compare-price="{{ compare_at_price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }}"
+                                        data-price="{% if currency_format == "dot" %}{{ compare_at_price | money_without_currency }} {% else %} {{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
+                                        data-compare-price="{% if currency_format == "dot" %}{{ compare_at_price | money_without_currency }} {% else %} {{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                         style="display: none;" 
                                         id="gift-checkbox-{{ product.id }}"
                                         value="{{ product.selected_or_first_available_variant.id }}"
@@ -778,7 +784,7 @@
                     const totalSavings = document.getElementById('bundle-total-savings');
                     const compareAtPriceBlock = document.getElementById('bundle-compare-price');
                     const savingsBlock = document.getElementById('savings-block');
-                    const basePrice = {{ product.price | money_without_currency | replace:',','x'  | replace:'.','' | replace:'x','.' }};
+                    const basePrice = {% if currency_format == "dot" %}{{ product.price | money_without_currency }} {% else %} {{ product.price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %};
                 
                     function updateBundle() {
                       let count = 1;
