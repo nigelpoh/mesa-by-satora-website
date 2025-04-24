@@ -508,7 +508,7 @@
                                   <input 
                                     type="checkbox" 
                                     class="bundle-addon savings-checkbox" 
-                                    data-price="{% if is_euro == false %}{{ discounted_price }}{% else %}{{ discounted_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}" 
+                                    data-price="{% if is_euro == false %}{{ discounted_price | money_without_currency }}{% else %}{{ discounted_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}" 
                                     data-compare-price="{% if is_euro == false %}{{ compare_at_price | money_without_currency }}{% else %}{{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                     value="{{ product.selected_or_first_available_variant.id }}"
                                     checker="{{ discount_code }}"
