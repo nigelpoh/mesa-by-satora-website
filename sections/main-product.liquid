@@ -407,7 +407,7 @@
                     -%}
                       {% assign sample_price = product.price | money_without_currency %}
                       {% assign currency_format = "dot" %}
-                      {% capture captured_price %}{{ sample_price | json }}{% endcapture %}
+                      {% capture captured_price %}{{ sample_price }}{% endcapture %}
                       {% if captured_price contains '"' %}
                         {% assign currency_format = "comma" %}
                       {% endif %}
