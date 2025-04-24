@@ -406,19 +406,18 @@
                       data-type: 'add-to-cart-form'
                     -%}
                       {% assign currency_string = product.price | money_without_currency | append: "" %}
-                      {% assign currency_string = "10.100,25"%}
                       {% assign is_euro = false %}
                       {% assign comma_sep = currency_string | split: "," %}
                       {% assign dot_sep = currency_string | split: "." %}
                       
                       {% if comma_sep.size == 2 and dot_sep.size != 2 %}
-                         IS EURO
+                        {% assign is_euro = true %}
                       {% elsif dot_sep.size == 2 and comma_sep.size != 2 %}
-                        IS NOT EURO
+                        {% assign is_euro = false %}
                       {% elsif comma_sep.first.size > dot_sep.first.size %}
-                        IS EURO
+                        {% assign is_euro = true %}
                       {% else %}
-                        IS NOT EURO
+                        {% assign is_euro = false %}
                       {% endif %}
                       
                       <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};">
