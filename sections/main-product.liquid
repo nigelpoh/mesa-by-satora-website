@@ -409,7 +409,7 @@
                       {% assign is_euro = false %}
                       {% assign comma_sep = currency_string | split: "," %}
                       {% assign dot_sep = currency_string | split: "." %}
-                      {{ comma_sep }} {{ dot_sep }}
+                      {{ currency_string }}{{ comma_sep | json }} {{ dot_sep | json }}
                       <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};">
                         <bundle-option-info 
                           data-section="{{ section.id }}"
