@@ -411,6 +411,12 @@
                       {% assign comma_sep = currency_string | split: "," %}
                       {% assign dot_sep = currency_string | split: "." %}
                       {{ currency_string }}{{ comma_sep | json }} {{ dot_sep | json }}
+                      {% if comma_sep.size == 2 and dot_sep.size != 2 %}
+                         IS EURO
+                      {% elsif dot_sep.size == 2 and comma_sep.size != 2 %}
+                        IS NOT EURO
+                      {% endif %}
+                      
                       <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};">
                         <bundle-option-info 
                           data-section="{{ section.id }}"
