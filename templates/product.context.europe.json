@@ -10,7 +10,7 @@
 {
   "parent": "product.json",
   "context": {
-    "market": "europe"
+    "market": "united-states"
   },
   "sections": {}
 }
