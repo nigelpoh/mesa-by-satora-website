@@ -154,6 +154,7 @@
         },
         "tracker_UhAThg": {
           "type": "tracker",
+          "disabled": true,
           "settings": {
             "text": "People Are Viewing This Now",
             "background": false,
