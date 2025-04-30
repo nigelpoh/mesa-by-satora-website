@@ -390,6 +390,25 @@
         "padding_bottom": 36
       }
     },
+    "video_with_text_njLF6z": {
+      "type": "video-with-text",
+      "name": "video with text",
+      "settings": {
+        "revrt": false,
+        "m_revrt": false,
+        "heading": "Double Your Space Without the Extra Baggage",
+        "content": "Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.",
+        "url": "",
+        "btn_label": "",
+        "select": "MP4",
+        "vid": "https://cdn.shopify.com/videos/c/o/v/ba1e1ab4b8b14d9daa4d8af648e11c74.mp4",
+        "poster": "shopify://shop_images/first_frame.png",
+        "check": true,
+        "i_vid": "",
+        "bg_clr": false,
+        "body_text": "#cdcdcd"
+      }
+    },
     "media_slider_dP9PHQ": {
       "type": "media-slider",
       "blocks": {
@@ -451,6 +470,7 @@
         "video_slide_FphEam",
         "video_slide_PpW7QQ"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Double Your Space Without the Extra Baggage",
         "description": "Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.",
@@ -769,6 +789,7 @@
         },
         "column_cBQFh7": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/TSA_Locked_Bag.webp",
             "title": "Peace of Mind, Built In",
@@ -954,6 +975,7 @@
     "rich_text_TtXaTT",
     "main",
     "comparison_table_R43bqY",
+    "video_with_text_njLF6z",
     "media_slider_dP9PHQ",
     "image_with_text_K6zmki",
     "image_with_text_UacQeL",
