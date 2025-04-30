@@ -16,9 +16,8 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Spring Sale 50% OFF Storewide Sale",
+            "text": "SPRING SALE UP TO 50% OFF + FREE WORLDWIDE SHIPPING",
             "link": ""
           }
         },
@@ -32,6 +31,7 @@
         },
         "urgency_announcement_9Wbkhc": {
           "type": "urgency_announcement",
+          "disabled": true,
           "settings": {
             "text": "Spring Sale Up To 50% OFF Storewide Sale",
             "link": "",
