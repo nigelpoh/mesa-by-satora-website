@@ -272,48 +272,6 @@
         "padding_bottom": 12
       }
     },
-    "image_with_text_UacQeL": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_k4ttXA": {
-          "type": "heading",
-          "settings": {
-            "heading": "Specifications",
-            "heading_size": "h1"
-          }
-        },
-        "table_qJb4Yi": {
-          "type": "table",
-          "settings": {
-            "specifications": [
-              "lombok-carry-on-pack-volume",
-              "lombok-carry-on-pack-dimensions",
-              "lombok-carry-on-pack-materials"
-            ]
-          }
-        }
-      },
-      "block_order": [
-        "heading_k4ttXA",
-        "table_qJb4Yi"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Compress_Bag_Sketched_Measured.webp",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "full_width_img": false,
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-4",
-        "color_scheme": "scheme-4",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "comparison_table_R43bqY": {
       "type": "comparison-table",
       "blocks": {
@@ -495,6 +453,7 @@
       ],
       "settings": {
         "heading": "Maximize Space, Stay Organized",
+        "description": "Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.",
         "infinite": true,
         "autoplay": true,
         "dots": false,
@@ -504,6 +463,48 @@
         "slides_to_show_mobile": 1,
         "slides_to_scroll": 1,
         "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_UacQeL": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_k4ttXA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Specifications",
+            "heading_size": "h1"
+          }
+        },
+        "table_qJb4Yi": {
+          "type": "table",
+          "settings": {
+            "specifications": [
+              "lombok-carry-on-pack-volume",
+              "lombok-carry-on-pack-dimensions",
+              "lombok-carry-on-pack-materials"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "heading_k4ttXA",
+        "table_qJb4Yi"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Compress_Bag_Sketched_Measured.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "full_width_img": false,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
