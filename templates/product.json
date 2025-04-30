@@ -57,7 +57,7 @@
           "settings": {
             "position": "center",
             "padding": 5,
-            "urgency": "EASTER SALE 50% OFF",
+            "urgency": "50% OFF LIMITED TIME ONLY",
             "text_color": "#ffffff",
             "background_color": "#000000",
             "urgency_dot": true,
@@ -81,7 +81,7 @@
         "custom_liquid_aNxG8P": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Odour and Water Resistant</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty (U.P. £19.95)</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag (U.P. £24.95)</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Shipping (U.P. £15.95)</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Travel Guide (U.P. £14.95, While stocks last)</p>"
+            "custom_liquid": "<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Odour and Water Resistant</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty (U.P. £19.95)</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Shipping</p>"
           }
         },
         "tracker_UhAThg": {
