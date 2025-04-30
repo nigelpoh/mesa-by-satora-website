@@ -272,124 +272,6 @@
         "padding_bottom": 12
       }
     },
-    "comparison_table_R43bqY": {
-      "type": "comparison-table",
-      "blocks": {
-        "row_x7ninB": {
-          "type": "row",
-          "settings": {
-            "benefit": "Built-in Vacuum System",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_AxWAdp": {
-          "type": "row",
-          "settings": {
-            "benefit": "Premium-Grade Construction",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_rJiGYN": {
-          "type": "row",
-          "settings": {
-            "benefit": "16-Inch Laptop Sleeve",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_ApUxCe": {
-          "type": "row",
-          "settings": {
-            "benefit": "Expandable for Extra Space",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_r9VYCr": {
-          "type": "row",
-          "settings": {
-            "benefit": "Theft-Proof Design",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_FeN3NX": {
-          "type": "row",
-          "settings": {
-            "benefit": "Luggage Sleeve",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_AgFYWi": {
-          "type": "row",
-          "settings": {
-            "benefit": "Hidden Pockets",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_amDtR3": {
-          "type": "row",
-          "settings": {
-            "benefit": "Water and Odour-Resistant",
-            "us": true,
-            "others": false
-          }
-        },
-        "row_zWjgP7": {
-          "type": "row",
-          "settings": {
-            "benefit": "Benefit",
-            "us": true,
-            "others": false
-          }
-        }
-      },
-      "block_order": [
-        "row_x7ninB",
-        "row_AxWAdp",
-        "row_rJiGYN",
-        "row_ApUxCe",
-        "row_r9VYCr",
-        "row_FeN3NX",
-        "row_AgFYWi",
-        "row_amDtR3",
-        "row_zWjgP7"
-      ],
-      "settings": {
-        "title": "What Makes Lombok Carry-On Pack Special",
-        "heading_size": "h1",
-        "text": "<p>Discover what sets the Lombok Carry-On Pack apart from ordinary travel bags.</p>",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "atc_button_label": "",
-        "title_cell_bg": "#000000",
-        "title_cell_color": "#ffffff",
-        "layout": "table_second",
-        "style": "classic",
-        "logo": "shopify://shop_images/Black_Logo.webp",
-        "logo_width": 90,
-        "mobile_logo_width": 80,
-        "us_label": "[shop_name]",
-        "us_label_size": 18,
-        "others_label": "Others",
-        "others_label_size": 18,
-        "checkmark_color": "#53af01",
-        "x_color": "#121212",
-        "opposite_icon_colors": "original",
-        "highlighted_separator_opacity": 0,
-        "highlighted_overlay_opacity": 0,
-        "regular_separator_opacity": 10,
-        "regular_overlay_opacity": 0,
-        "minimalistic_border_opacity": 16,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "video_with_text_njLF6z": {
       "type": "video-with-text",
       "name": "video with text",
@@ -522,6 +404,124 @@
         "mobile_content_alignment": "center",
         "section_color_scheme": "",
         "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "comparison_table_R43bqY": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_x7ninB": {
+          "type": "row",
+          "settings": {
+            "benefit": "Built-in Vacuum System",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_AxWAdp": {
+          "type": "row",
+          "settings": {
+            "benefit": "Premium-Grade Construction",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_rJiGYN": {
+          "type": "row",
+          "settings": {
+            "benefit": "16-Inch Laptop Sleeve",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_ApUxCe": {
+          "type": "row",
+          "settings": {
+            "benefit": "Expandable for Extra Space",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_r9VYCr": {
+          "type": "row",
+          "settings": {
+            "benefit": "Theft-Proof Design",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_FeN3NX": {
+          "type": "row",
+          "settings": {
+            "benefit": "Luggage Sleeve",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_AgFYWi": {
+          "type": "row",
+          "settings": {
+            "benefit": "Hidden Pockets",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_amDtR3": {
+          "type": "row",
+          "settings": {
+            "benefit": "Water and Odour-Resistant",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_zWjgP7": {
+          "type": "row",
+          "settings": {
+            "benefit": "Benefit",
+            "us": true,
+            "others": false
+          }
+        }
+      },
+      "block_order": [
+        "row_x7ninB",
+        "row_AxWAdp",
+        "row_rJiGYN",
+        "row_ApUxCe",
+        "row_r9VYCr",
+        "row_FeN3NX",
+        "row_AgFYWi",
+        "row_amDtR3",
+        "row_zWjgP7"
+      ],
+      "settings": {
+        "title": "What Makes Lombok Carry-On Pack Special",
+        "heading_size": "h1",
+        "text": "<p>Discover what sets the Lombok Carry-On Pack apart from ordinary travel bags.</p>",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "atc_button_label": "",
+        "title_cell_bg": "#000000",
+        "title_cell_color": "#ffffff",
+        "layout": "table_second",
+        "style": "classic",
+        "logo": "shopify://shop_images/Black_Logo.webp",
+        "logo_width": 90,
+        "mobile_logo_width": 80,
+        "us_label": "[shop_name]",
+        "us_label_size": 18,
+        "others_label": "Others",
+        "others_label_size": 18,
+        "checkmark_color": "#53af01",
+        "x_color": "#121212",
+        "opposite_icon_colors": "original",
+        "highlighted_separator_opacity": 0,
+        "highlighted_overlay_opacity": 0,
+        "regular_separator_opacity": 10,
+        "regular_overlay_opacity": 0,
+        "minimalistic_border_opacity": 16,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -718,6 +718,7 @@
         "heading_nEBWCV",
         "text_faHC3J"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/IMG_3045.webp",
         "height": "adapt",
@@ -757,6 +758,7 @@
         "heading_NGC34M",
         "text_TWGmMx"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/IMG_5140_1.webp",
         "height": "adapt",
@@ -974,10 +976,10 @@
   "order": [
     "rich_text_TtXaTT",
     "main",
-    "comparison_table_R43bqY",
     "video_with_text_njLF6z",
     "media_slider_dP9PHQ",
     "image_with_text_K6zmki",
+    "comparison_table_R43bqY",
     "image_with_text_UacQeL",
     "image_with_text_yY6q9k",
     "testimonials_gR3kGU",
