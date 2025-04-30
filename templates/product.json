@@ -99,17 +99,6 @@
             "icon": "eye"
           }
         },
-        "info_e3VLkp": {
-          "type": "info",
-          "settings": {
-            "text": "Free Shipping within 5-7 Days",
-            "background": false,
-            "bg_colour": "",
-            "text_colour": "#000000",
-            "padding": 0,
-            "icon": "plane"
-          }
-        },
         "upsell_bundle_t3py8H": {
           "type": "upsell_bundle",
           "settings": {
@@ -150,6 +139,17 @@
             "show_apple_pay": true,
             "show_google_pay": true,
             "show_klarna": true
+          }
+        },
+        "info_e3VLkp": {
+          "type": "info",
+          "settings": {
+            "text": "Free Shipping within 5-7 Days",
+            "background": false,
+            "bg_colour": "",
+            "text_colour": "#000000",
+            "padding": 0,
+            "icon": "plane"
           }
         },
         "description": {
@@ -245,9 +245,9 @@
         "klarna_on_site_messaging_app_block_HQrRea",
         "custom_liquid_aNxG8P",
         "tracker_UhAThg",
-        "info_e3VLkp",
         "upsell_bundle_t3py8H",
         "payment_options_NJemVU",
+        "info_e3VLkp",
         "description",
         "collapsible_tab_JntjPi",
         "collapsible_tab_ByHUAc",
