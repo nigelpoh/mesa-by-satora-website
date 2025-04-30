@@ -157,6 +157,15 @@
           "disabled": true,
           "settings": {}
         },
+        "collapsible_tab_gAjgme": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is it Carry On Approved?",
+            "icon": "none",
+            "content": "<p>Yes! The Lombok Carry-On Pack is designed to fit under airline seats, even on the strictest carriers. Its compact build meets personal item size limits while still giving you maximum packing space.</p>",
+            "page": ""
+          }
+        },
         "collapsible_tab_JntjPi": {
           "type": "collapsible_tab",
           "settings": {
@@ -249,6 +258,7 @@
         "payment_options_NJemVU",
         "info_e3VLkp",
         "description",
+        "collapsible_tab_gAjgme",
         "collapsible_tab_JntjPi",
         "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
