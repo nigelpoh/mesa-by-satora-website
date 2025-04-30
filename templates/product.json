@@ -471,12 +471,14 @@
         },
         "video_slide_FphEam": {
           "type": "video_slide",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/b25f2aa07076406da7ddc85e0f4369b2.HD-1080p-7.2Mbps-31345619.mp4"
           }
         },
         "video_slide_PpW7QQ": {
           "type": "video_slide",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/fb9948dd8e304badbe458992d0451628.HD-720p-3.0Mbps-31345623.mp4"
           }
