@@ -15,6 +15,7 @@
 <section id="image-slider-{{ section.id }}" class="section-{{ section.id }}-padding">
   <div class="page-width">
     <h2 class="title inline-richtext" style = "font-size:3.5rem;text-align:center;">{{ section.settings.heading }}</h2>
+    <p style = "margin: 0; line-height: normal; font-size: 1.3rem;margin-top: 0.2rem;">{{ section.settings.description }}</p>
 
     <div class="image-video-slider{% if section.settings.center_align %} center-align{% endif %}"
          data-infinite="{{ section.settings.infinite }}"
@@ -172,6 +173,11 @@ $(document).ready(function () {
       "id": "heading",
       "label": "Heading",
       "default": "Image & video slider"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
     },
     {
       "type": "checkbox",
