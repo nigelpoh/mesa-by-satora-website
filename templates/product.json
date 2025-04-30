@@ -23,6 +23,7 @@
       "block_order": [
         "heading_yCkWrq"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -56,7 +57,7 @@
           "settings": {
             "position": "center",
             "padding": 5,
-            "urgency": "HOT PRODUCT | LOW STOCK",
+            "urgency": "EASTER SALE 50% OFF",
             "text_color": "#ffffff",
             "background_color": "#000000",
             "urgency_dot": true,
