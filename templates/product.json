@@ -133,7 +133,7 @@
             "gift_text_colour": "#000000",
             "stroke_colour": "#dddddd",
             "bundle_title": "Exclusive Lombok Bundle",
-            "bundle_description": "Get a Lombok Necessity Bag free now with a purchase of the Lombok Carry-on Pack!",
+            "bundle_description": "Get a Necessity Bag to organize your cables and keep your belongings <b>FREE</b> and a Portable Vacuum Pump at an <b>additional 20% Off</b>!",
             "incomplete_text": "Complete the bundle to get this FREE!",
             "complete_text": "You have unlocked this!",
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
@@ -494,7 +494,7 @@
         "video_slide_PpW7QQ"
       ],
       "settings": {
-        "heading": "Lombok Carry-on Pack in Action",
+        "heading": "Maximize Space, Stay Organized",
         "infinite": true,
         "autoplay": true,
         "dots": false,
@@ -910,9 +910,9 @@
   "order": [
     "rich_text_TtXaTT",
     "main",
-    "image_with_text_UacQeL",
     "comparison_table_R43bqY",
     "media_slider_dP9PHQ",
+    "image_with_text_UacQeL",
     "image_with_text_yY6q9k",
     "testimonials_gR3kGU",
     "tooltips_r7NWDd",
