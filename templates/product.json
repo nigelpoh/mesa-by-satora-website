@@ -452,7 +452,7 @@
         "video_slide_PpW7QQ"
       ],
       "settings": {
-        "heading": "Maximize Space, Stay Organized",
+        "heading": "Double Your Space Without the Extra Baggage",
         "description": "Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.",
         "infinite": true,
         "autoplay": true,
@@ -463,6 +463,46 @@
         "slides_to_show_mobile": 1,
         "slides_to_scroll": 1,
         "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_K6zmki": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Crh9mJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Anti-Theft Features That Have Your Back",
+            "heading_size": "h1"
+          }
+        },
+        "text_CigPJX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Worried about pickpockets? Our built-in TSA-approved lock system keeps your valuables secure no matter where your journey takes you.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Crh9mJ",
+        "text_CigPJX"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/TSA_Locked_Bag.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "full_width_img": false,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
@@ -530,6 +570,7 @@
         "heading_wLDNgw",
         "text_U9qCLy"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Light_and_compact_c3cc2381-fac6-4bc0-8c2d-0db92d44e6aa.webp",
         "height": "adapt",
@@ -741,6 +782,7 @@
         "column_KEmptc",
         "column_cBQFh7"
       ],
+      "disabled": true,
       "custom_css": [
         ".multicolumn-card__info > * {color: rgb(var(--color-background));}"
       ],
@@ -913,6 +955,7 @@
     "main",
     "comparison_table_R43bqY",
     "media_slider_dP9PHQ",
+    "image_with_text_K6zmki",
     "image_with_text_UacQeL",
     "image_with_text_yY6q9k",
     "testimonials_gR3kGU",
