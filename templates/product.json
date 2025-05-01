@@ -547,7 +547,7 @@
         "title_cell_bg": "#000000",
         "title_cell_color": "#ffffff",
         "layout": "table_second",
-        "style": "classic",
+        "style": "centered",
         "logo": "shopify://shop_images/Black_Logo.webp",
         "logo_width": 90,
         "mobile_logo_width": 80,
