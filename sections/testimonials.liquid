@@ -167,7 +167,7 @@
                           <img src="{{ block.settings.image | img_url:'large' }}" style="" class="testimonial-image">
                         {% endif %}
                         {%- if section.settings.show_stars -%}
-                          <p class="testimonial-card__stars" style='--stars-color:{{ section.settings.stars_color }}'>★★★★★</p>
+                          <p class="testimonial-card__stars" style='--stars-color:{{ section.settings.stars_color }}margin-top:2rem'>★★★★★</p>
                         {%- endif -%}
                         {%- if section.settings.show_quotes -%}
                           <div class="testimonial-card__quotes flex-center{% if block.settings.image == blank %} testimonial-card__quotes--image-blank{% endif %} color-{{ section.settings.quotes_color_scheme }}">
