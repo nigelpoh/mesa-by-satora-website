@@ -3,10 +3,10 @@
     document.querySelectorAll(".details-collapse").forEach((details) => {
       const summary = details.querySelector("summary");
       const content = details.querySelector("summary ~ *");
-      
+
       summary.addEventListener("click", (e) => {
         e.preventDefault();
-    
+
         if (details.hasAttribute("open")) {
           const startHeight = content.scrollHeight + "px";
           content.style.height = startHeight;
@@ -15,14 +15,14 @@
             content.style.height = "0";
             content.style.opacity = "0";
           });
-    
+
           details.classList.add("closing");
           content.addEventListener(
             "transitionend",
             () => {
               details.removeAttribute("open");
               details.classList.remove("closing");
-              content.style.height = ""; 
+              content.style.height = "";
             },
             { once: true }
           );
@@ -36,7 +36,7 @@
             content.style.height = endHeight;
             content.style.opacity = "1";
           });
-    
+
           content.addEventListener(
             "transitionend",
             () => {
@@ -55,18 +55,18 @@
     cursor: pointer;
     user-select: none;
   }
-  
+
   .details-collapse[open] summary ~ * {
     overflow: hidden;
     opacity: 1;
   }
-  
+
   .details-collapse.closing summary ~ * {
     overflow: hidden;
     opacity: 0;
   }
   .accordion__content {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 {% endstyle %}
 
@@ -178,14 +178,25 @@
                   </a>
                 </div>
               {%- when 'urgency' -%}
-                <div class="urgency-text" {{ block.shopify_attributes }} style="display:flex;flex-direction:row;{% if block.settings.position == "left" %}justify-content:flex-start;{% elsif block.settings.position == "right" %}justify-content:flex-end;{% else %}justify-content:center;{% endif %}align-items:center;padding:{{ block.settings.padding }}px; text-align:{{ block.settings.position }}; color:{{ block.settings.text_color }}; background-color: {{ block.settings.background_color }}; --margin-top: {{ block.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ block.settings.margin_bottom | divided_by: 10.0 }}rem;">
+                <div
+                  class="urgency-text"
+                  {{ block.shopify_attributes }}
+                  style="display:flex;flex-direction:row;{% if block.settings.position == "left" %}justify-content:flex-start;{% elsif block.settings.position == "right" %}justify-content:flex-end;{% else %}justify-content:center;{% endif %}align-items:center;padding:{{ block.settings.padding }}px; text-align:{{ block.settings.position }}; color:{{ block.settings.text_color }}; background-color: {{ block.settings.background_color }}; --margin-top: {{ block.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ block.settings.margin_bottom | divided_by: 10.0 }}rem;"
+                >
                   {% if block.settings.urgency_dot == true %}
-                    <span style = "{% if block.settings.position == "left" %}margin-left:0.5rem;{% endif %}display: flex; position: relative; width: 1.2rem;height: 1.2rem;margin-right: 0.8rem;">
-                      <div class = "pulsing-dot" style = "display: inline-flex; position: absolute; background-color: {{ block.settings.urgency_dot_colour }};width: 100%;height: 100%;border-radius:1000rem;"></div>
-                      <span style = "display: inline-flex;position: relative;background-color: {{ block.settings.urgency_dot_colour }};width: 100%;height: 100%;border-radius:1000rem;"></span>
+                    <span style="{% if block.settings.position == "left" %}margin-left:0.5rem;{% endif %}display: flex; position: relative; width: 1.2rem;height: 1.2rem;margin-right: 0.8rem;">
+                      <div
+                        class="pulsing-dot"
+                        style="display: inline-flex; position: absolute; background-color: {{ block.settings.urgency_dot_colour }};width: 100%;height: 100%;border-radius:1000rem;"
+                      ></div>
+                      <span
+                        style="display: inline-flex;position: relative;background-color: {{ block.settings.urgency_dot_colour }};width: 100%;height: 100%;border-radius:1000rem;"
+                      ></span>
                     </span>
                   {% endif %}
-                  <strong style = "{% if block.settings.position == "left" and block.settings.urgency_dot == false %}margin-left:0.5rem;{% elsif block.settings.position == "right" %}margin-right:0.5rem;{% endif %}">{{ block.settings.urgency }}</strong>
+                  <strong style="{% if block.settings.position == "left" and block.settings.urgency_dot == false %}margin-left:0.5rem;{% elsif block.settings.position == "right" %}margin-right:0.5rem;{% endif %}">
+                    {{- block.settings.urgency -}}
+                  </strong>
                 </div>
                 <style>
                   .pulsing-dot {
@@ -204,13 +215,27 @@
                 {%- assign wanted_types = '' -%}
 
                 {%- if block.settings.show_visa %}{% assign wanted_types = wanted_types | append: 'visa,' %}{% endif -%}
-                {%- if block.settings.show_mastercard %}{% assign wanted_types = wanted_types | append: 'master,' %}{% endif -%}
-                {%- if block.settings.show_amex %}{% assign wanted_types = wanted_types | append: 'american_express,' %}{% endif -%}
-                {%- if block.settings.show_paypal %}{% assign wanted_types = wanted_types | append: 'paypal,' %}{% endif -%}
-                {%- if block.settings.show_shopify_pay %}{% assign wanted_types = wanted_types | append: 'shopify_pay,' %}{% endif -%}
-                {%- if block.settings.show_apple_pay %}{% assign wanted_types = wanted_types | append: 'apple_pay,' %}{% endif -%}
-                {%- if block.settings.show_google_pay %}{% assign wanted_types = wanted_types | append: 'google_pay,' %}{% endif -%}
-                {%- if block.settings.show_klarna %}{% assign wanted_types = wanted_types | append: 'klarna,' %}{% endif -%}
+                {%- if block.settings.show_mastercard -%}
+                  {%- assign wanted_types = wanted_types | append: 'master,' -%}
+                {%- endif -%}
+                {%- if block.settings.show_amex -%}
+                  {%- assign wanted_types = wanted_types | append: 'american_express,' -%}
+                {%- endif -%}
+                {%- if block.settings.show_paypal -%}
+                  {%- assign wanted_types = wanted_types | append: 'paypal,' -%}
+                {%- endif -%}
+                {%- if block.settings.show_shopify_pay -%}
+                  {%- assign wanted_types = wanted_types | append: 'shopify_pay,' -%}
+                {%- endif -%}
+                {%- if block.settings.show_apple_pay -%}
+                  {%- assign wanted_types = wanted_types | append: 'apple_pay,' -%}
+                {%- endif -%}
+                {%- if block.settings.show_google_pay -%}
+                  {%- assign wanted_types = wanted_types | append: 'google_pay,' -%}
+                {%- endif -%}
+                {%- if block.settings.show_klarna -%}
+                  {%- assign wanted_types = wanted_types | append: 'klarna,' -%}
+                {%- endif -%}
                 {%- assign wanted_types_array = wanted_types | split: ',' | uniq -%}
 
                 <div class="payment-icons-wrapper" {{ block.shopify_attributes }}>
@@ -220,7 +245,11 @@
                       {% if wanted_types_array contains type %}
                         <li class="list-payment__item">
                           {% if type == 'master' %}
-                            <img src="{{ 'payment-mastercard.svg' | asset_url }}" alt="Mastercard" class="icon icon--full-color">
+                            <img
+                              src="{{ 'payment-mastercard.svg' | asset_url }}"
+                              alt="Mastercard"
+                              class="icon icon--full-color"
+                            >
                           {% else %}
                             {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                           {% endif %}
@@ -250,21 +279,39 @@
                   }
                 </style>
               {%- when 'tracker' -%}
-                <div class="tracker" style="display: flex; align-items: center; margin: 1rem 0; padding: {{ block.settings.padding }}px 0; background-color: {% if block.settings.background == true %}{{ block.settings.bg_colour }}{% else %}transparent{% endif %}; border-radius: 4px;">
-                  <div class="tracker-icon pulse-anim" style="display:flex; align-items:center; justify-content:center;margin-right: 1rem;color:{{ block.settings.text_colour }}">
+                <div
+                  class="tracker"
+                  style="display: flex; align-items: center; margin: 1rem 0; padding: {{ block.settings.padding }}px 0; background-color: {% if block.settings.background == true %}{{ block.settings.bg_colour }}{% else %}transparent{% endif %}; border-radius: 4px;"
+                >
+                  <div
+                    class="tracker-icon pulse-anim"
+                    style="display:flex; align-items:center; justify-content:center;margin-right: 1rem;color:{{ block.settings.text_colour }}"
+                  >
                     {% render 'icon-accordion', icon: block.settings.icon %}
                   </div>
-                  <div class="tracker-text h5" style = "color:{{ block.settings.text_colour }}">
-                    <span id="tracker-count-{{ block.id }}" class = "tracker-count" width="{{ block.settings.lower_bound }}" height="{{ block.settings.upper_bound }}" access = "{{ block.settings.freq }}"></span>
+                  <div class="tracker-text h5" style="color:{{ block.settings.text_colour }}">
+                    <span
+                      id="tracker-count-{{ block.id }}"
+                      class="tracker-count"
+                      width="{{ block.settings.lower_bound }}"
+                      height="{{ block.settings.upper_bound }}"
+                      access="{{ block.settings.freq }}"
+                    ></span>
                     {{ block.settings.text }}
                   </div>
                 </div>
               {%- when 'info' -%}
-                <div class="info" style="display: flex; align-items: center; margin: 1rem 0; padding: {{ block.settings.padding }}px 0; background-color: {% if block.settings.background == true %}{{ block.settings.bg_colour }}{% else %}transparent{% endif %}; border-radius: 4px;">
-                  <div class="info-icon pulse-anim" style="display:flex; align-items:center; justify-content:center;margin-right: 1rem;color:{{ block.settings.text_colour }}">
+                <div
+                  class="info"
+                  style="display: flex; align-items: center; margin: 1rem 0; padding: {{ block.settings.padding }}px 0; background-color: {% if block.settings.background == true %}{{ block.settings.bg_colour }}{% else %}transparent{% endif %}; border-radius: 4px;"
+                >
+                  <div
+                    class="info-icon pulse-anim"
+                    style="display:flex; align-items:center; justify-content:center;margin-right: 1rem;color:{{ block.settings.text_colour }}"
+                  >
                     {% render 'icon-accordion', icon: block.settings.icon %}
                   </div>
-                  <div class="info-text h5" style = "color:{{ block.settings.text_colour }}">
+                  <div class="info-text h5" style="color:{{ block.settings.text_colour }}">
                     {{ block.settings.text }}
                   </div>
                 </div>
@@ -374,7 +421,7 @@
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}" class = "details-collapse">
+                  <details id="Details-{{ block.id }}-{{ section.id }}" class="details-collapse">
                     <summary>
                       <div class="summary__title">
                         {% render 'icon-accordion', icon: block.settings.icon %}
@@ -391,13 +438,18 @@
                   </details>
                 </div>
               {%- when 'upsell_bundle' -%}
-                <div class="bundle-block" style = "border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 1rem; margin-bottom: 0;">
-                  <div style = "display: flex; flex-direction: column; border-radius: 1rem 1rem 0 0; padding: 2rem;">
-                    <h3 style = "margin: 0;">{{ block.settings.bundle_title }}</h3>
-                    <p style = "margin: 0; line-height: normal; font-size: 1.3rem;margin-top: 0.2rem;">{{ block.settings.bundle_description }}</p>
+                <div
+                  class="bundle-block"
+                  style="border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 1rem; margin-bottom: 0;"
+                >
+                  <div style="display: flex; flex-direction: column; border-radius: 1rem 1rem 0 0; padding: 2rem;">
+                    <h3 style="margin: 0;">{{ block.settings.bundle_title }}</h3>
+                    <p style="margin: 0; line-height: normal; font-size: 1.3rem;margin-top: 0.2rem;">
+                      {{ block.settings.bundle_description }}
+                    </p>
                   </div>
                   {%- assign product_form_id = 'product-form-' | append: section.id | append: '-bundle' -%}
-                  <product-form data-section-id="{{ section.id }}-bundle" id = "bundle-form">
+                  <product-form data-section-id="{{ section.id }}-bundle" id="bundle-form">
                     {%- form 'product',
                       product,
                       id: product_form_id,
@@ -405,11 +457,11 @@
                       novalidate: 'novalidate',
                       data-type: 'add-to-cart-form'
                     -%}
-                      {% assign currency_string = product.price | money_without_currency | append: "" %}
+                      {% assign currency_string = product.price | money_without_currency | append: '' %}
                       {% assign is_euro = false %}
-                      {% assign comma_sep = currency_string | split: "," %}
-                      {% assign dot_sep = currency_string | split: "." %}
-                      
+                      {% assign comma_sep = currency_string | split: ',' %}
+                      {% assign dot_sep = currency_string | split: '.' %}
+
                       {% if comma_sep.size == 2 and dot_sep.size != 2 %}
                         {% assign is_euro = true %}
                       {% elsif dot_sep.size == 2 and comma_sep.size != 2 %}
@@ -419,24 +471,29 @@
                       {% else %}
                         {% assign is_euro = false %}
                       {% endif %}
-                      
-                      <div class="bundle-items" style = "padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};">
-                        <bundle-option-info 
+
+                      <div
+                        class="bundle-items"
+                        style="padding: 2rem; padding-bottom: 0; background-color: {{ block.settings.selection_background_colour }};color: {{ block.settings.selection_text_colour }};"
+                      >
+                        <bundle-option-info
                           data-section="{{ section.id }}"
-                          data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                          data-product-id="{{ product.selected_or_first_available_variant.id }}"
                           data-product-url="{{ product.url }}"
                         >
                           <div class="bundle-addon-block">
-                            <label style = "display: flex; justify-content: space-between;">
-                              <div style = "display: flex;">
+                            <label style="display: flex; justify-content: space-between;">
+                              <div style="display: flex;">
                                 {% assign compare_price = product.selected_or_first_available_variant.compare_at_price %}
-                                {% if compare_price == null or compare_price < product.selected_or_first_available_variant.price %}
+                                {% if compare_price == null
+                                  or compare_price < product.selected_or_first_available_variant.price
+                                %}
                                   {% assign compare_price = product.selected_or_first_available_variant.price %}
                                 {% endif %}
-                                <input 
-                                  type="checkbox" 
-                                  class = "savings-checkbox"
-                                  data-price="{% if is_euro == false %}{{ product.selected_or_first_available_variant.price | money_without_currency }}{% else %}{{ product.selected_or_first_available_variant.price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}" 
+                                <input
+                                  type="checkbox"
+                                  class="savings-checkbox"
+                                  data-price="{% if is_euro == false %}{{ product.selected_or_first_available_variant.price | money_without_currency }}{% else %}{{ product.selected_or_first_available_variant.price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                   data-compare-price="{% if is_euro == false %}{{ compare_price | money_without_currency }}{% else %}{{ compare_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                   value="{{ product.selected_or_first_available_variant.id }}"
                                   checked
@@ -444,29 +501,34 @@
                                 >
                                 <div class="bundle-addon-images">
                                   {% for variant in product.variants %}
-                                    <img 
-                                      src="{{ variant.featured_image | image_url: width: 300 }}" 
-                                      alt="{{ variant.title }}" 
-                                      width="300" 
+                                    <img
+                                      src="{{ variant.featured_image | image_url: width: 300 }}"
+                                      alt="{{ variant.title }}"
+                                      width="300"
                                       height="300"
                                       data-media-id="{{ variant.featured_media.id }}"
                                       data-product-id="{{ variant.id }}"
-                                      style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 8rem; height: 8rem;"
+                                      style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 8rem; height: 8rem;"
                                     >
                                   {% endfor %}
                                 </div>
-                                <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
-                                  <span style = "font-size: 1.2rem;">{{ product.title }}</span>
-                                  <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
-                                    <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                  <span style="font-size: 1.2rem;">{{ product.title }}</span>
+                                  <div style="display: flex; flex-direction: row; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
                                       <span>x1</span>
                                     </div>
-                                    <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                    <div data-product-id="{{ product.id }}" style="display: block; max-width: 15rem;">
                                       {% if product.variants.size > 1 %}
-                                        {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                        {% render 'bundle-variant-picker',
+                                          product: product,
+                                          block: block,
+                                          product_form_id: product_form_id,
+                                          index: 0
+                                        %}
                                       {% else %}
                                         {% if product.selected_or_first_available_variant.featured_image %}
-                                          <div style = "display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                          <div style="display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
                                             <span>{{ product.selected_or_first_available_variant.title }}</span>
                                           </div>
                                         {% endif %}
@@ -475,9 +537,13 @@
                                   </div>
                                 </div>
                               </div>
-                              <div style = "display: flex; flex-direction: column;">
-                                <span style = "font-size: 1.2rem;">{{ product.selected_or_first_available_variant.price | money }}</span>
-                                <s style = "font-size: 1.1rem;">{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
+                              <div style="display: flex; flex-direction: column;">
+                                <span style="font-size: 1.2rem;">
+                                  {{- product.selected_or_first_available_variant.price | money -}}
+                                </span>
+                                <s style="font-size: 1.1rem;">
+                                  {{- product.selected_or_first_available_variant.compare_at_price | money -}}
+                                </s>
                               </div>
                             </label>
                           </div>
@@ -496,68 +562,74 @@
                           {% assign discount_value = discount | remove: '%' | times: 0.01 %}
                           {% assign discount_value = 1 | minus: discount_value %}
                           {% assign discounted_price = original_price | times: discount_value %}
-                    
-                          <bundle-option-info 
+
+                          <bundle-option-info
                             data-section="{{ section.id }}"
-                            data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                            data-product-id="{{ product.selected_or_first_available_variant.id }}"
                             data-product-url="{{ product.url }}"
                           >
                             <div class="bundle-addon-block">
-                              <label style = "display: flex; justify-content: space-between;padding-bottom: 1rem">
-                                <div style = "display: flex;">
-                                  <input 
-                                    type="checkbox" 
-                                    class="bundle-addon savings-checkbox" 
-                                    data-price="{% if is_euro == false %}{{ discounted_price | money_without_currency }}{% else %}{{ discounted_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}" 
+                              <label style="display: flex; justify-content: space-between;padding-bottom: 1rem">
+                                <div style="display: flex;">
+                                  <input
+                                    type="checkbox"
+                                    class="bundle-addon savings-checkbox"
+                                    data-price="{% if is_euro == false %}{{ discounted_price | money_without_currency }}{% else %}{{ discounted_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                     data-compare-price="{% if is_euro == false %}{{ compare_at_price | money_without_currency }}{% else %}{{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                     value="{{ product.selected_or_first_available_variant.id }}"
                                     checker="{{ discount_code }}"
+                                    checked
                                   >
                                   <div class="bundle-addon-images">
                                     {% if product.variants.size > 1 %}
                                       {% for variant in product.variants %}
-                                        <img 
-                                          src="{{ variant.featured_image | image_url: width: 300 }}" 
-                                          alt="{{ variant.title }}" 
-                                          width="300" 
+                                        <img
+                                          src="{{ variant.featured_image | image_url: width: 300 }}"
+                                          alt="{{ variant.title }}"
+                                          width="300"
                                           height="300"
                                           data-media-id="{{ variant.featured_media.id }}"
                                           data-product-id="{{ variant.id }}"
-                                          style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 8rem; height: 8rem;"
+                                          style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 8rem; height: 8rem;"
                                         >
                                       {% endfor %}
                                     {% else %}
                                       {% if product.selected_or_first_available_variant.featured_image %}
-                                        <img 
-                                          src="{{ product.selected_or_first_available_variant.featured_image | image_url: width: 300 }}" 
-                                          alt="{{ product.selected_or_first_available_variant.title }}" 
-                                          width="300" 
+                                        <img
+                                          src="{{ product.selected_or_first_available_variant.featured_image | image_url: width: 300 }}"
+                                          alt="{{ product.selected_or_first_available_variant.title }}"
+                                          width="300"
                                           height="300"
-                                          style = "width: 8rem; height: 8rem;"
+                                          style="width: 8rem; height: 8rem;"
                                         >
                                       {% else %}
-                                        <img 
-                                          src="{{ product.featured_image | image_url: width: 300 }}" 
-                                          alt="{{ product.title }}" 
-                                          width="300" 
+                                        <img
+                                          src="{{ product.featured_image | image_url: width: 300 }}"
+                                          alt="{{ product.title }}"
+                                          width="300"
                                           height="300"
-                                          style = "width: 8rem; height: 8rem;"
+                                          style="width: 8rem; height: 8rem;"
                                         >
                                       {% endif %}
                                     {% endif %}
                                   </div>
-                                  <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
-                                    <span style = "font-size: 1.2rem;padding-right: 1rem;">{{ product.title }}</span>
-                                    <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
-                                      <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                  <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                    <span style="font-size: 1.2rem;padding-right: 1rem;">{{ product.title }}</span>
+                                    <div style="display: flex; flex-direction: row; gap: 0.5rem;">
+                                      <div style="display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
                                         <span>x1</span>
                                       </div>
-                                      <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                      <div data-product-id="{{ product.id }}" style="display: block; max-width: 15rem;">
                                         {% if product.variants.size > 1 %}
-                                          {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                          {% render 'bundle-variant-picker',
+                                            product: product,
+                                            block: block,
+                                            product_form_id: product_form_id,
+                                            index: 0
+                                          %}
                                         {% else %}
                                           {% if product.selected_or_first_available_variant.featured_image %}
-                                            <div style = "display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                            <div style="display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
                                               <span>{{ product.selected_or_first_available_variant.title }}</span>
                                             </div>
                                           {% endif %}
@@ -566,10 +638,10 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div style = "display: flex; flex-direction: column;">
-                                  <span style = "font-size: 1.2rem;">{{ discounted_price | money }}</span>
+                                <div style="display: flex; flex-direction: column;">
+                                  <span style="font-size: 1.2rem;">{{ discounted_price | money }}</span>
                                   {% if compare_at_price > discounted_price %}
-                                    <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                    <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
                                   {% endif %}
                                 </div>
                               </label>
@@ -577,38 +649,57 @@
                           </bundle-option-info>
                         {% endfor %}
                       </div>
-                      
+
                       <div class="bundle-gifts">
                         {% if block.settings.free_gifts_always.count > 0 %}
-                          <div style = "display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};">
+                          <div style="display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};">
                             {{ block.settings.complete_text }}
                           </div>
                           {% for product in block.settings.free_gifts_always %}
                             {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
-                            {% if compare_at_price == null or compare_at_price < product.selected_or_first_available_variant.price %}
+                            {% if compare_at_price == null
+                              or compare_at_price < product.selected_or_first_available_variant.price
+                            %}
                               {% assign compare_at_price = product.selected_or_first_available_variant.price %}
                             {% endif %}
-                            <bundle-option-info 
+                            <bundle-option-info
                               data-section="{{ section.id }}"
-                              data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                              data-product-id="{{ product.selected_or_first_available_variant.id }}"
                               data-product-url="{{ product.url }}"
                             >
-                              <div class="bundle-addon-block" style = "background-color: {{ block.settings.gift_background_colour }}; padding: 1rem 2rem; color: {{ block.settings.gift_text_colour }};">
-                                <label style = "display: flex; justify-content: space-between;">
-                                  <div style = "display: flex;">
-                                    <div class="gift-box-icon" style="display:flex; align-items: center; margin-right: 10px;">
-                                      <input 
-                                        type="checkbox" 
-                                        class = "savings-checkbox"
+                              <div
+                                class="bundle-addon-block"
+                                style="background-color: {{ block.settings.gift_background_colour }}; padding: 1rem 2rem; color: {{ block.settings.gift_text_colour }};"
+                              >
+                                <label style="display: flex; justify-content: space-between;">
+                                  <div style="display: flex;">
+                                    <div
+                                      class="gift-box-icon"
+                                      style="display:flex; align-items: center; margin-right: 10px;"
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        class="savings-checkbox"
                                         data-price="{% if is_euro == false %}{{ compare_at_price | money_without_currency }}{% else %}{{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                         data-compare-price="{% if is_euro == false %}{{ compare_at_price | money_without_currency }}{% else %}{{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
-                                        style="display: none;" 
+                                        style="display: none;"
                                         id="gift-checkbox-{{ product.id }}"
                                         value="{{ product.selected_or_first_available_variant.id }}"
                                         checked
                                         disabled
                                       >
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gift-icon">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#555555"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="gift-icon"
+                                      >
                                         <path d="M20 12v10H4V12"></path>
                                         <path d="M2 7h20v5H2z"></path>
                                         <path d="M12 22V7"></path>
@@ -618,29 +709,37 @@
                                     </div>
                                     <div class="bundle-addon-images">
                                       {% for variant in product.variants %}
-                                        <img 
-                                          src="{{ variant.featured_image | image_url: width: 200 }}" 
-                                          alt="{{ variant.title }}" 
-                                          width="200" 
+                                        <img
+                                          src="{{ variant.featured_image | image_url: width: 200 }}"
+                                          alt="{{ variant.title }}"
+                                          width="200"
                                           height="200"
                                           data-media-id="{{ variant.featured_media.id }}"
                                           data-product-id="{{ variant.id }}"
-                                          style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 6rem; height: 6rem;"
+                                          style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 6rem; height: 6rem;"
                                         >
                                       {% endfor %}
                                     </div>
-                                    <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
-                                      <span style = "font-size: 1.2rem;">{{ product.title }}</span>
-                                      <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
-                                        <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                      <span style="font-size: 1.2rem;">{{ product.title }}</span>
+                                      <div style="display: flex; flex-direction: row; gap: 0.5rem;">
+                                        <div style="display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
                                           <span>x1</span>
                                         </div>
-                                        <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                        <div
+                                          data-product-id="{{ product.id }}"
+                                          style="display: block; max-width: 15rem;"
+                                        >
                                           {% if product.variants.size > 1 %}
-                                            {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                            {% render 'bundle-variant-picker',
+                                              product: product,
+                                              block: block,
+                                              product_form_id: product_form_id,
+                                              index: 0
+                                            %}
                                           {% else %}
                                             {% if product.selected_or_first_available_variant.featured_image %}
-                                              <div style = "display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                              <div style="display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
                                                 <span>{{ product.selected_or_first_available_variant.title }}</span>
                                               </div>
                                             {% endif %}
@@ -649,9 +748,9 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div style = "display: flex; flex-direction: column;">
-                                    <span style = "font-size: 1.2rem;font-weight: bold;">FREE</span>
-                                    <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                  <div style="display: flex; flex-direction: column;">
+                                    <span style="font-size: 1.2rem;font-weight: bold;">FREE</span>
+                                    <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
                                   </div>
                                 </label>
                               </div>
@@ -659,34 +758,59 @@
                           {% endfor %}
                         {% endif %}
                         {% if block.settings.free_gifts_optional.count > 0 %}
-                          <div style = "display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};" id = "bundle-incomplete-text">
+                          <div
+                            style="display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};"
+                            id="bundle-incomplete-text"
+                          >
                             {{ block.settings.incomplete_text }}
                           </div>
                           {% for product in block.settings.free_gifts_optional %}
                             {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
-                            {% if compare_at_price == null or compare_at_price < product.selected_or_first_available_variant.price %}
+                            {% if compare_at_price == null
+                              or compare_at_price < product.selected_or_first_available_variant.price
+                            %}
                               {% assign compare_at_price = product.selected_or_first_available_variant.price %}
                             {% endif %}
-                            <bundle-option-info 
+                            <bundle-option-info
                               data-section="{{ section.id }}"
-                              data-product-id="{{ product.selected_or_first_available_variant.id }}" 
+                              data-product-id="{{ product.selected_or_first_available_variant.id }}"
                               data-product-url="{{ product.url }}"
                             >
-                              <div class="bundle-addon-block" style = "background-color: {{ block.settings.gift_background_colour }}; padding: 1rem 2rem; color: {{ block.settings.gift_text_colour }};">
-                                <label style = "display: flex; justify-content: space-between;" class = "gift-optional-label">
-                                  <div style = "display: flex;">
-                                    <div class="gift-box-icon" style="display:flex; align-items: center; margin-right: 10px;">
-                                      <input 
+                              <div
+                                class="bundle-addon-block"
+                                style="background-color: {{ block.settings.gift_background_colour }}; padding: 1rem 2rem; color: {{ block.settings.gift_text_colour }};"
+                              >
+                                <label
+                                  style="display: flex; justify-content: space-between;"
+                                  class="gift-optional-label"
+                                >
+                                  <div style="display: flex;">
+                                    <div
+                                      class="gift-box-icon"
+                                      style="display:flex; align-items: center; margin-right: 10px;"
+                                    >
+                                      <input
                                         type="checkbox"
-                                        class = "savings-checkbox gift-optional"
+                                        class="savings-checkbox gift-optional"
                                         data-price="{% if is_euro == false %}{{ compare_at_price | money_without_currency }}{% else %}{{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
                                         data-compare-price="{% if is_euro == false %}{{ compare_at_price | money_without_currency }}{% else %}{{ compare_at_price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %}"
-                                        style="display: none;" 
+                                        style="display: none;"
                                         id="gift-checkbox-{{ product.id }}"
                                         value="{{ product.selected_or_first_available_variant.id }}"
                                         disabled
                                       >
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gift-icon">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#555555"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="gift-icon"
+                                      >
                                         <path d="M20 12v10H4V12"></path>
                                         <path d="M2 7h20v5H2z"></path>
                                         <path d="M12 22V7"></path>
@@ -696,29 +820,37 @@
                                     </div>
                                     <div class="bundle-addon-images">
                                       {% for variant in product.variants %}
-                                        <img 
-                                          src="{{ variant.featured_image | image_url: width: 200 }}" 
-                                          alt="{{ variant.title }}" 
-                                          width="200" 
+                                        <img
+                                          src="{{ variant.featured_image | image_url: width: 200 }}"
+                                          alt="{{ variant.title }}"
+                                          width="200"
                                           height="200"
                                           data-media-id="{{ variant.featured_media.id }}"
                                           data-product-id="{{ variant.id }}"
-                                          style = "{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 6rem; height: 6rem;"
+                                          style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}width: 6rem; height: 6rem;"
                                         >
                                       {% endfor %}
                                     </div>
-                                    <div style = "display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
-                                      <span style = "font-size: 1.2rem;">{{ product.title }}</span>
-                                      <div style = "display: flex; flex-direction: row; gap: 0.5rem;">
-                                        <div style = "display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
+                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                      <span style="font-size: 1.2rem;">{{ product.title }}</span>
+                                      <div style="display: flex; flex-direction: row; gap: 0.5rem;">
+                                        <div style="display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; border-radius: 0.5rem; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
                                           <span>x1</span>
                                         </div>
-                                        <div data-product-id="{{ product.id }}" style = "display: block; max-width: 15rem;">
+                                        <div
+                                          data-product-id="{{ product.id }}"
+                                          style="display: block; max-width: 15rem;"
+                                        >
                                           {% if product.variants.size > 1 %}
-                                            {% render 'bundle-variant-picker', product: product, block: block, product_form_id: product_form_id, index: 0 %}
+                                            {% render 'bundle-variant-picker',
+                                              product: product,
+                                              block: block,
+                                              product_form_id: product_form_id,
+                                              index: 0
+                                            %}
                                           {% else %}
                                             {% if product.selected_or_first_available_variant.featured_image %}
-                                              <div style = "display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                              <div style="display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
                                                 <span>{{ product.selected_or_first_available_variant.title }}</span>
                                               </div>
                                             {% endif %}
@@ -727,9 +859,9 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div style = "display: flex; flex-direction: column;">
-                                    <span style = "font-size: 1.2rem;font-weight: bold;">FREE</span>
-                                    <s style = "font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                  <div style="display: flex; flex-direction: column;">
+                                    <span style="font-size: 1.2rem;font-weight: bold;">FREE</span>
+                                    <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
                                   </div>
                                 </label>
                               </div>
@@ -737,32 +869,54 @@
                           {% endfor %}
                         {% endif %}
                       </div>
-                    
-                      <div class="bundle-footer" style = "border-radius: 0 0 1rem 1rem;margin-top: 0;">
-                        <div style = "display: flex; align-items: center; background-color: {{ block.settings.info_background_colour }}; color: {{ block.settings.info_text_colour }}; stroke: {{ block.settings.info_text_colour }}; padding: 1rem;">
+
+                      <div class="bundle-footer" style="border-radius: 0 0 1rem 1rem;margin-top: 0;">
+                        <div style="display: flex; align-items: center; background-color: {{ block.settings.info_background_colour }}; color: {{ block.settings.info_text_colour }}; stroke: {{ block.settings.info_text_colour }}; padding: 1rem;">
                           {% render 'icon-accordion', icon: 'chat_bubble' %}
-                          <div id="bundle-text" style = "font-size: 1.2rem;margin-left: 1rem;">
+                          <div id="bundle-text" style="font-size: 1.2rem;margin-left: 1rem;">
                             {{ block.settings.bundle_text }}
                           </div>
                         </div>
-                        <div class="bundle-total" style = "display: flex; justify-content: space-between; padding: 1rem;  padding-bottom: 0;">
-                          <strong style = "font-size: 1.3rem;">Total for <span id="bundle-total-items">1</span> <span class = "bundle-total-items-text">item:</span></strong>
-                          <span id="bundle-total-price" style = "font-size: 1.3rem;">{{ product.price | money }}</span>
+                        <div
+                          class="bundle-total"
+                          style="display: flex; justify-content: space-between; padding: 1rem;  padding-bottom: 0;"
+                        >
+                          <strong style="font-size: 1.3rem;"
+                            >Total for <span id="bundle-total-items">1</span>
+                            <span class="bundle-total-items-text">item:</span></strong
+                          >
+                          <span id="bundle-total-price" style="font-size: 1.3rem;color: #305CDE;">
+                            {{- product.price | money -}}
+                          </span>
                         </div>
                         {% assign savings = product.compare_at_price | minus: product.price %}
                         {% if savings < 0 %}
                           {% assign savings = 0 %}
                         {% endif %}
-                        <div id = "savings-block" style = "{% if savings > 0 %}display: flex;{% else %}display: none;{% endif %}justify-content: space-between; padding: 1rem; padding-top: 0;">
-                          <span style = "font-size: 1.1rem;">You Saved <span id="bundle-total-savings" style = "font-size: 1.1rem;">{{ savings | money }}</span></span>
-                          <s id="bundle-compare-price" style = "font-size: 1.1rem;">{% if product.compare_at_price %}{{ product.compare_at_price | money }}{% else %}{{ 0 | money }}{% endif %}</s>
+                        <div
+                          id="savings-block"
+                          style="{% if savings > 0 %}display: flex;{% else %}display: none;{% endif %}justify-content: space-between; padding: 1rem; padding-top: 0;"
+                        >
+                          <span style="font-size: 1.1rem;"
+                            >You Saved
+                            <span id="bundle-total-savings" style="font-size: 1.1rem;">
+                              {{- savings | money -}}
+                            </span></span
+                          >
+                          <s id="bundle-compare-price" style="font-size: 1.1rem;">
+                            {%- if product.compare_at_price -%}
+                              {{- product.compare_at_price | money -}}
+                            {%- else -%}
+                              {{- 0 | money -}}
+                            {%- endif -%}
+                          </s>
                         </div>
                         <button
                           id="ProductSubmitButton-{{ section.id }}"
                           type="submit"
                           name="add"
                           class="product-form__submit button button--full-width button--primary"
-                          style = "background-color: #000; color: #fff; border: none; margin: 1rem; width: calc(100% - 2rem); border-radius: 1rem; font-family: var(--font-body);letter-spacing: 0.1rem;font-weight: 600;"
+                          style="background-color: #305CDE; color: #fff; border: none; margin: 1rem; width: calc(100% - 2rem); border-radius: 1rem; font-family: var(--font-body);letter-spacing: 0.1rem;font-weight: 600;"
                           {% if product.selected_or_first_available_variant.available == false
                             or quantity_rule_soldout
                             or product.selected_or_first_available_variant == null
@@ -770,14 +924,14 @@
                             disabled
                           {% endif %}
                         >
-                          <span>ADD TO CART</span>
+                          <span>ADD BUNDLE</span>
                           {%- render 'loading-spinner' -%}
                         </button>
                       </div>
                     {% endform %}
                   </product-form>
                 </div>
-                
+
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
                     const form = document.querySelector('#bundle-form form');
@@ -793,13 +947,13 @@
                     const compareAtPriceBlock = document.getElementById('bundle-compare-price');
                     const savingsBlock = document.getElementById('savings-block');
                     const basePrice = {% if is_euro == false %}{{ product.price | money_without_currency }}{% else %}{{ product.price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %};
-                
+
                     function updateBundle() {
                       let count = 1;
                       let price = basePrice;
                       let compareAtPrice = 0;
                       let allChecked = true;
-                
+
                       checkboxes.forEach(box => {
                         if (box.checked) {
                           count++;
@@ -830,11 +984,11 @@
                           compareAtPrice += parseFloat(box.dataset.comparePrice);
                         }
                       });
-                
+
                       totalItemsText.textContent = count > 1 ? "items:" : "item:";
                       totalItems.textContent = count;
                       totalPrice.textContent = totalPrice.textContent.replace(/[\d,]+(\.\d{2})?/, price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-                
+
                       if (compareAtPrice > price) {
                         totalSavings.textContent = totalSavings.textContent.replace(/[\d,]+(\.\d{2})?/, (compareAtPrice - price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
                         compareAtPriceBlock.textContent = compareAtPriceBlock.textContent.replace(/[\d,]+(\.\d{2})?/, compareAtPrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
@@ -843,19 +997,19 @@
                         savingsBlock.style.display = 'none';
                       }
                     }
-                
+
                     checkboxes.forEach(cb => cb.addEventListener('change', updateBundle));
                     savingsCheckboxes.forEach(cb => cb.addEventListener('change', updateBundle));
                     variantSelectors.forEach(sel => sel.addEventListener('change', updateBundle));
                     updateBundle();
-                
+
                     if (form) {
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
                         submitBtn.addEventListener('click', (e) => {
                           form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
                           form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
-                  
+
                           let anyChecked = false;
                           let index = 0;
                           let discount_index = 0;
@@ -890,7 +1044,7 @@
                             .then(res => res.json())
                             .then(cart => {
                               waitForCartChange(cart.items, () => {
-                                checks.forEach(cks => appCks(cks)); 
+                                checks.forEach(cks => appCks(cks));
                                 const interval = setInterval(() => {
                                   fetch('/?sections=cart-drawer')
                                   .then(response => response.json())
@@ -917,7 +1071,7 @@
                     }
                   });
                 </script>
-                
+
                 <style>
                   .greyed-out {
                     filter: grayscale(100%);
@@ -1062,7 +1216,10 @@
                                 </dt>
                                 <dd>
                                   <span class="price-per-item--current">
-                                    {{- 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price -}}
+                                    {{-
+                                      'products.product.volume_pricing.price_at_each_html'
+                                      | t: price: variant_price
+                                    -}}
                                   </span>
                                 </dd>
                               </dl>
@@ -1431,7 +1588,7 @@
   </div>
 </product-info>
 {% for block in section.blocks %}
-  {%- if block.type == "sticky_atc" -%}
+  {%- if block.type == 'sticky_atc' -%}
     {% if block.settings.enable_custom_btn_color %}
       {% style %}
         #sticky-atc-{{ section.id }} .button {
@@ -1439,9 +1596,9 @@
         }
       {% endstyle %}
     {% endif %}
-    <sticky-atc 
+    <sticky-atc
       id="sticky-atc-{{ section.id }}"
-      class="sticky-atc color-{{ block.settings.color_scheme }}{% unless block.settings.mobile_show_sale_badge %} sticky-atc--mobile-no-badge{% endunless %}{% unless block.settings.desktop_show_sale_badge %} sticky-atc--desktop-no-badge{% endunless %}{% if block.settings.mobile_transparent_bg %} sticky-atc--mobile-transparent{% endif %}{% if block.settings.desktop_transparent_bg %} sticky-atc--desktop-transparent{% endif %}{% if block.settings.mobile_show_title or block.settings.mobile_show_price %} sticky-atc--small-mobile-select{% endif %}" 
+      class="sticky-atc color-{{ block.settings.color_scheme }}{% unless block.settings.mobile_show_sale_badge %} sticky-atc--mobile-no-badge{% endunless %}{% unless block.settings.desktop_show_sale_badge %} sticky-atc--desktop-no-badge{% endunless %}{% if block.settings.mobile_transparent_bg %} sticky-atc--mobile-transparent{% endif %}{% if block.settings.desktop_transparent_bg %} sticky-atc--desktop-transparent{% endif %}{% if block.settings.mobile_show_title or block.settings.mobile_show_price %} sticky-atc--small-mobile-select{% endif %}"
       data-section="{{ section.id }}"
       style="background-color:{{ block.settings.custom_bar_color }};color:{{ block.settings.text_color }};"
       {%- if block.settings.display_when == 'after_scroll' -%}
@@ -1453,9 +1610,9 @@
       {%- endif -%}
       {{ block.shopify_attributes }}
     >
-      <div class='sticky-atc-container page-width{% if block.settings.desktop_full_button_width %} sticky-atc--desktop-btn-full{% endif %}{% if block.settings.mobile_full_button_width %} sticky-atc--mobile-btn-full{% endif %}'>
+      <div class="sticky-atc-container page-width{% if block.settings.desktop_full_button_width %} sticky-atc--desktop-btn-full{% endif %}{% if block.settings.mobile_full_button_width %} sticky-atc--mobile-btn-full{% endif %}">
         {%- if block.settings.mobile_show_image or block.settings.desktop_show_image -%}
-          <div class='sticky-atc__image{% unless block.settings.mobile_show_image %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_image %} desktop-hidden{% endunless %}'>
+          <div class="sticky-atc__image{% unless block.settings.mobile_show_image %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_image %} desktop-hidden{% endunless %}">
             <img
               id="sticky-atc-image-{{ section.id }}"
               src="{{ product.featured_image | image_url: width: 500 }}"
@@ -1466,29 +1623,32 @@
             >
           </div>
         {%- endif -%}
-        <div class='sticky-atc__left'>
-          <div class='sticky-atc__left__content'>
+        <div class="sticky-atc__left">
+          <div class="sticky-atc__left__content">
             {% if block.settings.mobile_show_title or block.settings.desktop_show_title %}
-              <h4 class='sticky-atc__title{% unless block.settings.mobile_show_title %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_title %} desktop-hidden{% endunless %}'>
+              <h4 class="sticky-atc__title{% unless block.settings.mobile_show_title %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_title %} desktop-hidden{% endunless %}">
                 {{ product.title }}
               </h4>
             {% endif %}
             {% if block.settings.mobile_rating_stars or block.settings.desktop_rating_stars %}
-              <div class='rating-stars-and-text font-size--desktop-auto flex-center{% unless block.settings.mobile_rating_stars %} mobile-hidden{% endunless %}{% unless block.settings.desktop_rating_stars %} desktop-hidden{% endunless %}' style='--bg-star-color:{{ block.settings.star_color }};--font-size:1.3rem;--alignment:flex-start;'>
-                <div class='rating-stars__container rating-stars__container--underlay'>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill='currentColor'>
+              <div
+                class="rating-stars-and-text font-size--desktop-auto flex-center{% unless block.settings.mobile_rating_stars %} mobile-hidden{% endunless %}{% unless block.settings.desktop_rating_stars %} desktop-hidden{% endunless %}"
+                style="--bg-star-color:{{ block.settings.star_color }};--font-size:1.3rem;--alignment:flex-start;"
+              >
+                <div class="rating-stars__container rating-stars__container--underlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
                     <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
                   </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill='currentColor'>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
                     <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
                   </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill='currentColor'>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
                     <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
                   </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill='currentColor'>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
                     <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
                   </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill='currentColor'>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
                     <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/>
                   </svg>
                 </div>
@@ -1496,7 +1656,10 @@
               </div>
             {% endif %}
             {%- if block.settings.mobile_show_price or block.settings.desktop_show_price -%}
-              <div class='sticky-atc__price{% unless block.settings.mobile_show_price %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_price %} desktop-hidden{% endunless %}' id="sticky-atc-separate-price-{{ section.id }}">
+              <div
+                class="sticky-atc__price{% unless block.settings.mobile_show_price %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_price %} desktop-hidden{% endunless %}"
+                id="sticky-atc-separate-price-{{ section.id }}"
+              >
                 {%- render 'price',
                   product: product,
                   use_variant: true,
@@ -1507,153 +1670,155 @@
               </div>
             {%- endif -%}
           </div>
-          {% comment %} {%- if block.settings.mobile_variant_picker or block.settings.desktop_variant_picker -%}
-            {% unless product.has_only_default_variant %}
-              <secondary-variant-select{% if block.settings.picker_type == 'separate' %}-separate{% endif %}
-                id="StickyAtcVariantPicker-{{ section.id }}"
-                class="sticky-atc__picker--{{ block.settings.picker_type }} no-js-hidden{% unless block.settings.mobile_variant_picker %} mobile-hidden{% endunless %}{% unless block.settings.desktop_variant_picker %} desktop-hidden{% endunless %}"
-                data-section="{{ section.id }}"
-                data-url="{{ product.url }}"
-                data-update-url="true"
-                style='--options-count: {{ product.options.size }}'
-              >
-                {% if block.settings.picker_type == 'combined' %}
-                  <div class="product-form__input">
-                    <div class="select no-background color-{{ settings.pickers_color_scheme }} accent-color-{{ settings.pickers_overlay_color }} accent-2-color-{{ settings.pickers_text_color }}">
-                      <select class="sticky-atc__variant-select select__select variant-dropdown">
-                        {% for variant in product.variants %}
-                          <option
-                            value='{{ variant.options | join: ',' }}'
-                            data-options='{{ variant.options | join: ',' }}'
-                            {% if product.selected_or_first_available_variant.id == variant.id %}
-                              selected
-                            {% endif %}
-                            {% unless variant.available %}
-                              disabled
-                            {% endunless %}
-                          >
-                            {{ variant.title }}
-                          </option>
-                        {% endfor %}
-                      </select>
-                      {% render 'icon-caret' %}
-                    </div>
-                  </div>
-                {% else %}
-                  {%- for option in product.options_with_values -%}
-                    <div
-                      class="product-form__input product-form__input--dropdown"
-                    >
-                      <div class="visually-hidden product-form__input__type" data-type="dropdown">&nbsp</div>
-                      <div class="select no-background color-{{ settings.pickers_color_scheme }} accent-color-{{ settings.pickers_overlay_color }} accent-2-color-{{ settings.pickers_text_color }}" style = "padding: 0.5rem 1rem;">
-                        <select
-                          id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                          class="select__select_sticky"
-                          name="options[{{ option.name | escape }}]"
-                          form="{{ product_form_id }}"
-                          style = "border: 0;"
-                        >
-                          {%- liquid
-                            assign variants_available_arr = product.variants | map: 'available'
-                            assign variants_option1_arr = product.variants | map: 'option1'
-                            assign variants_option2_arr = product.variants | map: 'option2'
-                            assign variants_option3_arr = product.variants | map: 'option3'
-                          -%}
-                          {%- for value in option.values -%}
-                            {%- liquid
-                              assign option_disabled = true
-                              assign currentVariant = nil
-                          
-                              for variant in product.variants
-                                case option.position
-                                  when 1
-                                    if variant.option1 == value
-                                      assign currentVariant = variant
-                                      if variant.available
-                                        assign option_disabled = false
-                                      endif
-                                      break
-                                    endif
-                                  when 2
-                                    if variant.option1 == product.selected_or_first_available_variant.option1 and variant.option2 == value
-                                      assign currentVariant = variant
-                                      if variant.available
-                                        assign option_disabled = false
-                                      endif
-                                      break
-                                    endif
-                                  when 3
-                                    if variant.option1 == product.selected_or_first_available_variant.option1 and variant.option2 == product.selected_or_first_available_variant.option2 and variant.option3 == value
-                                      assign currentVariant = variant
-                                      if variant.available
-                                        assign option_disabled = false
-                                      endif
-                                      break
-                                    endif
-                                endcase
-                              endfor
-                            -%}
+          {% comment %}
+            {%- if block.settings.mobile_variant_picker or block.settings.desktop_variant_picker -%}
+              {% unless product.has_only_default_variant %}
+                <secondary-variant-select{% if block.settings.picker_type == 'separate' %}-separate{% endif %}
+                  id="StickyAtcVariantPicker-{{ section.id }}"
+                  class="sticky-atc__picker--{{ block.settings.picker_type }} no-js-hidden{% unless block.settings.mobile_variant_picker %} mobile-hidden{% endunless %}{% unless block.settings.desktop_variant_picker %} desktop-hidden{% endunless %}"
+                  data-section="{{ section.id }}"
+                  data-url="{{ product.url }}"
+                  data-update-url="true"
+                  style='--options-count: {{ product.options.size }}'
+                >
+                  {% if block.settings.picker_type == 'combined' %}
+                    <div class="product-form__input">
+                      <div class="select no-background color-{{ settings.pickers_color_scheme }} accent-color-{{ settings.pickers_overlay_color }} accent-2-color-{{ settings.pickers_text_color }}">
+                        <select class="sticky-atc__variant-select select__select variant-dropdown">
+                          {% for variant in product.variants %}
                             <option
-                              value="{{ value | escape }}"
-                              {% if option.selected_value == value %}
-                                selected="selected"
+                              value='{{ variant.options | join: ',' }}'
+                              data-options='{{ variant.options | join: ',' }}'
+                              {% if product.selected_or_first_available_variant.id == variant.id %}
+                                selected
                               {% endif %}
-                              data-variant-id="{{ currentVariant.id }}"
+                              {% unless variant.available %}
+                                disabled
+                              {% endunless %}
                             >
-                              {% if option_disabled -%}
-                                {{- 'products.product.value_unavailable' | t: option_value: value -}}
-                              {%- else -%}
-                                {{- value -}}
-                              {%- endif %}
+                              {{ variant.title }}
                             </option>
-                          {%- endfor -%}
+                          {% endfor %}
                         </select>
+                        {% render 'icon-caret' %}
                       </div>
                     </div>
-                  {%- endfor -%}
-                  <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                      document.querySelectorAll("select.select__select_sticky").forEach(select => {
-                        select.selectedIndex = 0;
-                        resizeSelect(select);
-                        
-                        select.addEventListener('change', function() {
-                          resizeSelect(this);
-                          
-                          const variantId = this.options[this.selectedIndex].getAttribute('data-variant-id');
-                          
-                          const productForm = document.querySelector('#product-form-{{ section.id }}-sticky');
-                          if (productForm) {
-                            const variantInput = productForm.querySelector('input[name="items[0][id]"]');
-                            if (variantInput && variantId) {
-                              variantInput.value = variantId;
+                  {% else %}
+                    {%- for option in product.options_with_values -%}
+                      <div
+                        class="product-form__input product-form__input--dropdown"
+                      >
+                        <div class="visually-hidden product-form__input__type" data-type="dropdown">&nbsp</div>
+                        <div class="select no-background color-{{ settings.pickers_color_scheme }} accent-color-{{ settings.pickers_overlay_color }} accent-2-color-{{ settings.pickers_text_color }}" style = "padding: 0.5rem 1rem;">
+                          <select
+                            id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                            class="select__select_sticky"
+                            name="options[{{ option.name | escape }}]"
+                            form="{{ product_form_id }}"
+                            style = "border: 0;"
+                          >
+                            {%- liquid
+                              assign variants_available_arr = product.variants | map: 'available'
+                              assign variants_option1_arr = product.variants | map: 'option1'
+                              assign variants_option2_arr = product.variants | map: 'option2'
+                              assign variants_option3_arr = product.variants | map: 'option3'
+                            -%}
+                            {%- for value in option.values -%}
+                              {%- liquid
+                                assign option_disabled = true
+                                assign currentVariant = nil
+
+                                for variant in product.variants
+                                  case option.position
+                                    when 1
+                                      if variant.option1 == value
+                                        assign currentVariant = variant
+                                        if variant.available
+                                          assign option_disabled = false
+                                        endif
+                                        break
+                                      endif
+                                    when 2
+                                      if variant.option1 == product.selected_or_first_available_variant.option1 and variant.option2 == value
+                                        assign currentVariant = variant
+                                        if variant.available
+                                          assign option_disabled = false
+                                        endif
+                                        break
+                                      endif
+                                    when 3
+                                      if variant.option1 == product.selected_or_first_available_variant.option1 and variant.option2 == product.selected_or_first_available_variant.option2 and variant.option3 == value
+                                        assign currentVariant = variant
+                                        if variant.available
+                                          assign option_disabled = false
+                                        endif
+                                        break
+                                      endif
+                                  endcase
+                                endfor
+                              -%}
+                              <option
+                                value="{{ value | escape }}"
+                                {% if option.selected_value == value %}
+                                  selected="selected"
+                                {% endif %}
+                                data-variant-id="{{ currentVariant.id }}"
+                              >
+                                {% if option_disabled -%}
+                                  {{- 'products.product.value_unavailable' | t: option_value: value -}}
+                                {%- else -%}
+                                  {{- value -}}
+                                {%- endif %}
+                              </option>
+                            {%- endfor -%}
+                          </select>
+                        </div>
+                      </div>
+                    {%- endfor -%}
+                    <script>
+                      document.addEventListener('DOMContentLoaded', function() {
+                        document.querySelectorAll("select.select__select_sticky").forEach(select => {
+                          select.selectedIndex = 0;
+                          resizeSelect(select);
+
+                          select.addEventListener('change', function() {
+                            resizeSelect(this);
+
+                            const variantId = this.options[this.selectedIndex].getAttribute('data-variant-id');
+
+                            const productForm = document.querySelector('#product-form-{{ section.id }}-sticky');
+                            if (productForm) {
+                              const variantInput = productForm.querySelector('input[name="items[0][id]"]');
+                              if (variantInput && variantId) {
+                                variantInput.value = variantId;
+                              }
                             }
-                          }
+                          });
                         });
                       });
-                    });
+                    </script>
+                  {% endif %}
+                  <script type="application/json">
+                    {{ product.variants | json }}
                   </script>
-                {% endif %}
-                <script type="application/json">
-                  {{ product.variants | json }}
-                </script>
-              </secondary-variant-select{% if block.settings.picker_type == 'separate' %}-separate{% endif %}>
-            {% endunless %}
-          {%- endif -%} {% endcomment %}
+                </secondary-variant-select{% if block.settings.picker_type == 'separate' %}-separate{% endif %}>
+              {% endunless %}
+            {%- endif -%}
+          {% endcomment %}
         </div>
-        <div class='sticky-atc__button'>
+        <div class="sticky-atc__button">
           {%- if block.settings.function == 'add_to_cart' -%}
             {%- liquid
               assign check_against_inventory = true
-              if product.selected_or_first_available_variant.inventory_management != 'shopify' or  product.selected_or_first_available_variant.inventory_policy == 'continue'
-              assign check_against_inventory = false
+              if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+                assign check_against_inventory = false
               endif
               if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
-              assign quantity_rule_soldout = true
+                assign quantity_rule_soldout = true
               endif
             -%}
-            {%- assign product_form_id = 'product-form-' | append: section.id | append: "-sticky" -%}
-            <product-form data-section-id="{{ section.id }}-sticky" id = "product-form-{{ section.id }}-sticky">
+            {%- assign product_form_id = 'product-form-' | append: section.id | append: '-sticky' -%}
+            <product-form data-section-id="{{ section.id }}-sticky" id="product-form-{{ section.id }}-sticky">
               {%- form 'product',
                 product,
                 id: product_form_id,
@@ -1661,39 +1826,41 @@
                 novalidate: 'novalidate',
                 data-type: 'add-to-cart-form'
               -%}
-                {% comment %} <input
-                  type="hidden"
-                  name="items[0][id]"
-                  value="{{ product.selected_or_first_available_variant.id }}"
-                  {% if product.selected_or_first_available_variant.available == false
-                    or quantity_rule_soldout
-                    or product.selected_or_first_available_variant == null
-                  %}
-                    disabled
-                  {% endif %}
-                  class="product-variant-id"
-                >
-                <input
-                  type = "hidden"
-                  name = "items[0][quantity]"
-                  value = "1"
-                >
-                {% if block.settings.prods %}
-                  {% for prod in block.settings.prods %}
-                    <input
+                {% comment %}
+                  <input
+                    type="hidden"
+                    name="items[0][id]"
+                    value="{{ product.selected_or_first_available_variant.id }}"
+                    {% if product.selected_or_first_available_variant.available == false
+                      or quantity_rule_soldout
+                      or product.selected_or_first_available_variant == null
+                    %}
+                      disabled
+                    {% endif %}
+                    class="product-variant-id"
+                  >
+                  <input
                     type = "hidden"
-                    name = "items[{{ forloop.index }}][id]"
-                    value = "{{ prod.selected_or_first_available_variant.id }}"
-                    class = "product-variant-id sticky-extra-goods"
-                    >
-                    <input
+                    name = "items[0][quantity]"
+                    value = "1"
+                  >
+                  {% if block.settings.prods %}
+                    {% for prod in block.settings.prods %}
+                      <input
                       type = "hidden"
-                      name = "items[{{ forloop.index }}][quantity]"
-                      value = "1"
-                      class = "sticky-extra-goods"
-                    >
-                  {% endfor %}
-                {% endif %} {% endcomment %}
+                      name = "items[{{ forloop.index }}][id]"
+                      value = "{{ prod.selected_or_first_available_variant.id }}"
+                      class = "product-variant-id sticky-extra-goods"
+                      >
+                      <input
+                        type = "hidden"
+                        name = "items[{{ forloop.index }}][quantity]"
+                        value = "1"
+                        class = "sticky-extra-goods"
+                      >
+                    {% endfor %}
+                  {% endif %}
+                {% endcomment %}
                 <div class="product-form__buttons">
                   {%- liquid
                     assign check_against_inventory = true
@@ -1715,12 +1882,14 @@
                     %}
                       disabled
                     {% endif %}
-                    style = "margin-bottom:0"
+                    style="margin-bottom:0"
                   >
                     <span>
                       {%- if product.selected_or_first_available_variant == null -%}
                         {{ 'products.product.unavailable' | t }}
-                      {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                      {%- elsif product.selected_or_first_available_variant.available == false
+                        or quantity_rule_soldout
+                      -%}
                         {{ 'products.product.sold_out' | t }}
                       {%- else -%}
                         {{ 'products.product.add_to_cart' | t }}
@@ -1734,26 +1903,31 @@
             <script>
               document.getElementById('ProductSubmitButton-{{ section.id }}-sticky').addEventListener('click', function() {
                 document.querySelector('#ProductSubmitButton-{{ section.id }}').click();
-              }); 
+              });
             </script>
           {% else %}
-            <button class='button sticky-atc__scroll-btn'>
+            <button class="button sticky-atc__scroll-btn">
               <span>
                 {% if block.settings.mobile_show_price_in_button or block.settings.desktop_show_price_in_button %}
-                  <span id="sticky-atc-price-{{ section.id }}" class="{% unless block.settings.mobile_show_price_in_button %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_price_in_button %} desktop-hidden{% endunless %}">
+                  <span
+                    id="sticky-atc-price-{{ section.id }}"
+                    class="{% unless block.settings.mobile_show_price_in_button %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_price_in_button %} desktop-hidden{% endunless %}"
+                  >
                     {{ product.selected_or_first_available_variant.price | money }} •
                   </span>
                 {% endif %}
-                <span class="sticky-atc__label__text"><b>{{ block.settings.button_label }}</b></span>
+                <span class="sticky-atc__label__text"
+                  ><b>{{ block.settings.button_label }}</b></span
+                >
               </span>
             </button>
           {% endif %}
         </div>
       </div>
-    </sticky-atc>    
+    </sticky-atc>
   {%- endif -%}
 {% endfor %}
-          
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
@@ -2541,19 +2715,19 @@
             {
               "value": "add_to_cart",
               "label": "Add to Cart"
-            }, 
+            },
             {
               "value": "scroll_#ProductInfo-id",
               "label": "Scroll to Product information"
-            }, 
+            },
             {
               "value": "scroll_#variant-selects-id",
               "label": "Scroll to Variant picker"
-            }, 
+            },
             {
               "value": "scroll_#quantity-breaks-id",
               "label": "Scroll to Quantity breaks"
-            }, 
+            },
             {
               "value": "scroll_.pricing-table",
               "label": "Scroll to Pricing table"
@@ -2574,7 +2748,7 @@
             {
               "value": "always",
               "label": "Always"
-            }, 
+            },
             {
               "value": "after_scroll",
               "label": "After scrolling past regular ATC button"
@@ -2627,7 +2801,7 @@
             {
               "value": "combined",
               "label": "Combined"
-            }, 
+            },
             {
               "value": "separate",
               "label": "Separate"
@@ -3658,7 +3832,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_2.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_2",
@@ -3858,7 +4032,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_3.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_3",
@@ -4160,7 +4334,7 @@
       ],
       "default": "hide",
       "label": "t:sections.main-product.settings.mobile_thumbnails.label"
-    },    
+    },
     {
       "type": "select",
       "id": "media_position",
