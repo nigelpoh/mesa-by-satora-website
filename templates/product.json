@@ -81,7 +81,7 @@
         "custom_liquid_aNxG8P": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<span style=\"line-height: 1.2;\">• Odour and Water Resistant</span>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag</p>"
+            "custom_liquid": "<ul style = \"padding-inline-start:0;margin-inline-start: 1.5rem;\">\n<li style=\"font-size: 1.5rem;\">Odour and Water Resistant</li>\n<li style=\"font-size: 1.5rem;\">Theft Proof</li>\n<li style=\"font-size: 1.5rem;\">Built-In Vacuum Compression</li>\n<li style=\"font-size: 1.5rem;\"> Premium Materials</li>\n<li style=\"font-size: 1.5rem;\"> <b>FREE</b> Standard 1 Year Warranty</;li>\n<li style=\"font-size: 1.5rem;\"><b>FREE</b> 60 Days Return Guarantee</li>\n<li style=\"font-size: 1.5rem;\"><b>FREE</b> Lombok Necessity Bag</li>\n</ul>"
           }
         },
         "variant_picker_nkHHkr": {
