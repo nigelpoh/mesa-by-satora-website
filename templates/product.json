@@ -84,6 +84,20 @@
             "custom_liquid": "<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Odour and Water Resistant</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag</p>"
           }
         },
+        "variant_picker_nkHHkr": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_aHr84y": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
         "tracker_UhAThg": {
           "type": "tracker",
           "disabled": true,
@@ -253,6 +267,8 @@
         "price",
         "klarna_on_site_messaging_app_block_HQrRea",
         "custom_liquid_aNxG8P",
+        "variant_picker_nkHHkr",
+        "buy_buttons_aHr84y",
         "tracker_UhAThg",
         "upsell_bundle_t3py8H",
         "payment_options_NJemVU",
