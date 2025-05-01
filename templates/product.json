@@ -94,7 +94,7 @@
         "custom_liquid_aNxG8P": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<ul style = \"padding-inline-start:0;margin-inline-start: 1.5rem;\">\n<li style=\"font-size: 1.5rem;\">Odour and Water Resistant</li>\n<li style=\"font-size: 1.5rem;\">Theft Proof</li>\n<li style=\"font-size: 1.5rem;\">Built-In Vacuum Compression</li>\n<li style=\"font-size: 1.5rem;\"> Premium Materials</li>\n<li style=\"font-size: 1.5rem;\"> Expandable for Maximum Space</li>\n</ul>"
+            "custom_liquid": "<ul style = \"padding-inline-start:0;margin-inline-start: 1.5rem;\">\n<li style=\"font-size: 1.5rem;\">Odour and Water Resistant</li>\n<li style=\"font-size: 1.5rem;\">Theft Proof</li>\n<li style=\"font-size: 1.5rem;\">Built-In Vacuum System</li>\n<li style=\"font-size: 1.5rem;\"> Premium Materials</li>\n<li style=\"font-size: 1.5rem;\"> Expandable for Maximum Space</li>\n\n</ul>"
           }
         },
         "variant_picker_nkHHkr": {
