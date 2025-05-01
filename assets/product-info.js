@@ -61,7 +61,7 @@ if (!customElements.get('product-info')) {
       }
 
       handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
-        if (!this.contains(event.target) || !this.classList.contains('select__select')) return;
+        if (!this.contains(event.target)) return;
 
         this.resetProductFormState();
 
@@ -148,7 +148,6 @@ if (!customElements.get('product-info')) {
 
       buildRequestUrlWithParams(url, optionValues, shouldFetchFullPage = false) {
         const params = [];
-
         !shouldFetchFullPage && params.push(`section_id=${this.sectionId}`);
 
         if (optionValues.length) {
