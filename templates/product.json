@@ -135,7 +135,7 @@
             "gift_text_colour": "#000000",
             "stroke_colour": "#dddddd",
             "bundle_title": "Exclusive Lombok Bundle",
-            "bundle_description": "Get a Necessity Bag to organize your cables and keep your belongings FREE and a Portable Vacuum Pump at an additional 20% Off!",
+            "bundle_description": "Get a Necessity Bag to organize your cables and keep your belongings <b>FREE</b> and a Portable Vacuum Pump at an <b>additional 20% Off</b>! Limited Time Only!",
             "incomplete_text": "Complete the bundle to get this FREE!",
             "complete_text": "You have unlocked this!",
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
@@ -230,7 +230,7 @@
               "lombok-necessity-bag"
             ],
             "display_when": "after_scroll",
-            "button_label": "Add to Cart",
+            "button_label": "BUY NOW",
             "enable_custom_btn_color": false,
             "custom_btn_color": "#dd1d1d",
             "custom_bar_color": "#ffffff",
