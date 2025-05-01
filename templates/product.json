@@ -310,7 +310,7 @@
       "name": "video with text",
       "settings": {
         "revrt": false,
-        "m_revrt": false,
+        "m_revrt": true,
         "heading": "Double Your Space Without the Extra Baggage",
         "content": "Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.",
         "url": "",
