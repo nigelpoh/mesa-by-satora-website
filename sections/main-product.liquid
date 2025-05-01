@@ -911,11 +911,16 @@
                             {%- endif -%}
                           </s>
                         </div>
+                        <style>
+                          .sticky_atc_button:before, .sticky_atc_button:after {
+                            box-shadow: none;
+                          }
+                        </style>
                         <button
                           id="ProductSubmitButton-{{ section.id }}"
                           type="submit"
                           name="add"
-                          class="product-form__submit button button--full-width button--primary"
+                          class="product-form__submit button button--full-width button--primary sticky_atc_button"
                           style="background-color: #305CDE; color: #fff; border: none; margin: 1rem; width: calc(100% - 2rem); border-radius: 1rem; font-family: var(--font-body);letter-spacing: 0.1rem;font-weight: 600;"
                           {% if product.selected_or_first_available_variant.available == false
                             or quantity_rule_soldout
