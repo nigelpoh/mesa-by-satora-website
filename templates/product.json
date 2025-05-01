@@ -71,7 +71,7 @@
         "custom_liquid_PNa3ap": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<span style = \"font-size:1.8rem; font-weight:600\">DELIVERY INFORMATION</span><br/>\n<span style = \"font-size:1.5rem; font-weight:500\">Free Worldwide Shipping. Shipped Within 1 to 2 Days.</span>"
+            "custom_liquid": "<span style = \"font-size:1.8rem; font-weight:600\">DELIVERY INFORMATION</span><br/>\n<span style = \"font-size:1.5rem; font-weight:400\">Free Worldwide Shipping. Shipped Within 1 to 2 Days.</span>"
           }
         },
         "klarna_on_site_messaging_app_block_HQrRea": {
