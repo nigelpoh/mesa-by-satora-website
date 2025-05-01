@@ -196,7 +196,7 @@
         "collapsible_tab_JntjPi": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Product Description",
+            "heading": "Description",
             "icon": "none",
             "content": "<p>Travel smarter and more efficiently with the Lombok Carry-On Pack – the ultimate space-saving travel companion. Designed with a vacuum compression system, this backpack maximizes packing efficiency by reducing bulk, allowing you to carry more without exceeding airline size limits. Its compact yet spacious design helps you avoid extra baggage fees while keeping your essentials neatly organized. Made from durable, waterproof materials, it's built to withstand any journey, whether you're on a business trip or an adventure abroad. Pack less, travel more—without compromise.</p>",
             "page": ""
@@ -205,7 +205,7 @@
         "collapsible_tab_ByHUAc": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Product Specifications",
+            "heading": "Specifications",
             "icon": "none",
             "content": "<p><strong>Dimensions:</strong><br/>Before expansion: 49 x 32 x 15 cm<br/>After expansion: 49 x 32 x 20 cm</p><p><strong>Airlines Carry-on limit:</strong><br/>Inches: 22 x 14 x 9<br/>Centimeters: 56 x 45 x 25</p><p><strong>Main material</strong>: Waterproof Oxford cloth (Waterproof/wear-resistant/moistureproof). GRS certified, PFC free.<br/><strong>Other materials</strong>: Nylon herringbone, Polyester, Neoprene Foams, Polvethylene Foams.</p>",
             "page": ""
@@ -214,7 +214,7 @@
         "collapsible_tab_dGrBQ8": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "Free Worldwide Shipping & 60 Days Returns",
             "icon": "none",
             "content": "<p><strong>Processing Time:</strong> Orders ship within <strong>1-2 business days</strong>.</p><p><strong>Delivery Time:</strong> Estimated <strong>5-7 business days</strong>. Refer to our shipping policy for more details.</p><p><strong>Returns Policy: </strong>We stand by the quality of our products and want you to be completely satisfied with your purchase. If you are not satisfied, we offer a <strong>60-day return policy.</strong> All returned products within this time period will be inspected before a full refund is issued. Refer to our <a href=\"/policies/refund-policy\" title=\"Refund Policy\">refund policy</a> for more details.</p>",
             "page": ""
