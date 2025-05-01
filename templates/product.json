@@ -81,7 +81,7 @@
         "custom_liquid_aNxG8P": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Odour and Water Resistant</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag</p>"
+            "custom_liquid": "<span style=\"line-height: 1.2;\">• Odour and Water Resistant</span>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Theft Proof</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Built-In Vacuum Compression</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• Premium Materials</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Standard 1 Year Warranty</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> 60 Days Return Guarantee</p>\n<p style=\"font-size: 1.2rem; line-height: 1.2;\">• <b>FREE</b> Lombok Necessity Bag</p>"
           }
         },
         "variant_picker_nkHHkr": {
@@ -135,7 +135,7 @@
             "gift_text_colour": "#000000",
             "stroke_colour": "#dddddd",
             "bundle_title": "Exclusive Lombok Bundle",
-            "bundle_description": "Get a Necessity Bag to organize your cables and keep your belongings <b>FREE</b> and a Portable Vacuum Pump at an <b>additional 20% Off</b>! Limited Time Only!",
+            "bundle_description": "Get a Necessity Bag to organize your cables and keep your belongings FREE and a Portable Vacuum Pump at an additional 20% Off! Limited Time Only!",
             "incomplete_text": "Complete the bundle to get this FREE!",
             "complete_text": "You have unlocked this!",
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
@@ -156,6 +156,7 @@
         },
         "info_e3VLkp": {
           "type": "info",
+          "disabled": true,
           "settings": {
             "text": "Free Shipping within 5-7 Days",
             "background": false,
