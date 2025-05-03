@@ -297,7 +297,7 @@
       ],
       "name": "Testimonials",
       "settings": {
-        "title": "What fellow travelers are saying",
+        "title": "What fellow travelers <i>are saying</i>",
         "show_stars": true,
         "stars_color": "#000000",
         "background_color": "#f8f8f9",
