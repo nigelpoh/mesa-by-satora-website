@@ -27,30 +27,30 @@
     {%- endif -%}
     {%- if section.blocks.size == 1 -%}
       {% comment %}
-      <div
-        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
-        role="region"
-        aria-label="{{ 'sections.header.announcement' | t }}"
-        {{ section.blocks.first.shopify_attributes }}
-      >
-        {%- if section.blocks.first.settings.text != blank -%}
-          {%- if section.blocks.first.settings.link != blank -%}
-            <a
-              href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            >
-          {%- endif -%}
-          <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
+        <div
+          class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
+          role="region"
+          aria-label="{{ 'sections.header.announcement' | t }}"
+          {{ section.blocks.first.shopify_attributes }}
+        >
+          {%- if section.blocks.first.settings.text != blank -%}
             {%- if section.blocks.first.settings.link != blank -%}
-              {{- 'icon-arrow.svg' | inline_asset_content -}}
+              <a
+                href="{{ section.blocks.first.settings.link }}"
+                class="announcement-bar__link link link--text focus-inset animate-arrow"
+              >
             {%- endif -%}
-          </p>
-          {%- if section.blocks.first.settings.link != blank -%}
-            </a>
+            <p class="announcement-bar__message h5">
+              <span>{{ section.blocks.first.settings.text | escape }}</span>
+              {%- if section.blocks.first.settings.link != blank -%}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              {%- endif -%}
+            </p>
+            {%- if section.blocks.first.settings.link != blank -%}
+              </a>
+            {%- endif -%}
           {%- endif -%}
-        {%- endif -%}
-      </div>
+        </div>
       {% endcomment %}
       {%- if section.blocks.first.type == 'announcement' -%}
         <div
@@ -60,23 +60,23 @@
           id="Slide-{{ section.id }}-0"
           {{ section.blocks.first.shopify_attributes }}
         >
-         {%- if section.blocks.first.settings.text != blank -%}
-          {%- if section.blocks.first.settings.link != blank -%}
-            <a
-              href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            >
-          {%- endif -%}
-          <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
+          {%- if section.blocks.first.settings.text != blank -%}
             {%- if section.blocks.first.settings.link != blank -%}
-              {{- 'icon-arrow.svg' | inline_asset_content -}}
+              <a
+                href="{{ section.blocks.first.settings.link }}"
+                class="announcement-bar__link link link--text focus-inset animate-arrow"
+              >
             {%- endif -%}
-          </p>
-          {%- if section.blocks.first.settings.link != blank -%}
-            </a>
+            <p class="announcement-bar__message h5">
+              <span>{{ section.blocks.first.settings.text | escape }}</span>
+              {%- if section.blocks.first.settings.link != blank -%}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              {%- endif -%}
+            </p>
+            {%- if section.blocks.first.settings.link != blank -%}
+              </a>
+            {%- endif -%}
           {%- endif -%}
-        {%- endif -%}
         </div>
       {%- elsif section.blocks.first.type == 'urgency_announcement' -%}
         <div
@@ -98,17 +98,19 @@
                   class="announcement-bar__link link link--text focus-inset animate-arrow"
                 >
               {%- endif -%}
-              
+
               <div class="announcement-bar">
                 <div class="announcement-bar__content container">
-                  <p class="announcement-bar__message h5" style = "padding:0;min-height:0;">
+                  <p class="announcement-bar__message h5" style="padding:0;min-height:0;">
                     <span>{{ section.blocks.first.settings.text | escape }}</span>
                     {%- if section.blocks.first.settings.link != blank -%}
                       {{- 'icon-arrow.svg' | inline_asset_content -}}
                     {%- endif -%}
                   </p>
                   <div class="countdown-display" id="countdown-display-{{ section.id }}-0">
-                    <p class="announcement-bar__message h5 announcement-bar__message_width_restrict">{{ section.blocks.first.settings.countdown_text }}</p>
+                    <p class="announcement-bar__message h5 announcement-bar__message_width_restrict">
+                      {{ section.blocks.first.settings.countdown_text }}
+                    </p>
                     <span id="countdown-timer-{{ section.id }}-0" class="countdown-timer" style="display: none;"></span>
                     <div class="countdown-item">
                       <span class="countdown-value days h5">--</span>
@@ -132,16 +134,16 @@
                   </div>
                 </div>
               </div>
-              
+
               {%- if section.blocks.first.settings.link != blank -%}
                 {{- 'icon-arrow.svg' | inline_asset_content -}}
               {%- endif -%}
-              
+
               {%- if section.blocks.first.settings.link != blank -%}
                 </a>
               {%- endif -%}
             {%- endif -%}
-            
+
             <style>
               .announcement-bar {
                 background-color: #000;
@@ -151,73 +153,73 @@
                 font-family: Arial, sans-serif;
                 width: 100%;
               }
-              
+
               .announcement-bar__content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
               }
-              
+
               .announcement-bar__message_width_restrict {
                 max-width: 5rem;
                 text-align: left;
                 margin-right: 1.5rem !important;
               }
-              
+
               .announcement-bar__title {
                 font-size: 24px;
                 font-weight: bold;
                 margin: 0;
               }
-              
+
               .announcement-bar__message {
                 margin: 0;
               }
-              
+
               .countdown-display {
                 display: flex;
                 align-items: center;
                 gap: 10px;
               }
-              
+
               .countdown-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
               }
-              
+
               .countdown-value {
                 font-size: 24px;
                 font-weight: bold;
               }
-              
+
               .countdown-label {
                 font-size: 12px;
                 text-transform: uppercase;
               }
-              
+
               .countdown-separator {
                 font-size: 24px;
                 font-weight: bold;
               }
-              
+
               @media screen and (max-width: 768px) {
                 .announcement-bar__content {
                   flex-direction: column;
                   gap: 10px;
                 }
-                
+
                 .countdown-value {
                   font-size: 20px;
                 }
-                
+
                 .countdown-label {
                   font-size: 10px;
                 }
               }
             </style>
-            
+
             <script>
               (function() {
                 const targetYear = {{ section.blocks.first.settings.countdown_year | default: 2025 }};
@@ -350,18 +352,24 @@
                             class="announcement-bar__link link link--text focus-inset animate-arrow"
                           >
                         {%- endif -%}
-                        
+
                         <div class="announcement-bar">
                           <div class="announcement-bar__content container">
-                            <p class="announcement-bar__message h5" style = "padding:0;min-height:0;">
+                            <p class="announcement-bar__message h5" style="padding:0;min-height:0;">
                               <span>{{ block.settings.text | escape }}</span>
                               {%- if block.settings.link != blank -%}
                                 {{- 'icon-arrow.svg' | inline_asset_content -}}
                               {%- endif -%}
                             </p>
                             <div class="countdown-display" id="countdown-display-{{ section.id }}-0">
-                              <p class="announcement-bar__message h5 announcement-bar__message_width_restrict">{{ block.settings.countdown_text }}</p>
-                              <span id="countdown-timer-{{ section.id }}-0" class="countdown-timer" style="display: none;"></span>
+                              <p class="announcement-bar__message h5 announcement-bar__message_width_restrict">
+                                {{ block.settings.countdown_text }}
+                              </p>
+                              <span
+                                id="countdown-timer-{{ section.id }}-0"
+                                class="countdown-timer"
+                                style="display: none;"
+                              ></span>
                               <div class="countdown-item">
                                 <span class="countdown-value days h5">--</span>
                                 <span class="countdown-label h5">DAYS</span>
@@ -384,16 +392,16 @@
                             </div>
                           </div>
                         </div>
-                        
+
                         {%- if block.settings.link != blank -%}
                           {{- 'icon-arrow.svg' | inline_asset_content -}}
                         {%- endif -%}
-                        
+
                         {%- if block.settings.link != blank -%}
                           </a>
                         {%- endif -%}
                       {%- endif -%}
-                      
+
                       <style>
                         .announcement-bar {
                           background-color: #000;
@@ -403,73 +411,73 @@
                           font-family: Arial, sans-serif;
                           width: 100%;
                         }
-                        
+
                         .announcement-bar__content {
                           display: flex;
                           flex-direction: column;
                           justify-content: center;
                           align-items: center;
                         }
-                        
+
                         .announcement-bar__message_width_restrict {
                           max-width: 5rem;
                           text-align: left;
                           margin-right: 1.5rem !important;
                         }
-                        
+
                         .announcement-bar__title {
                           font-size: 24px;
                           font-weight: bold;
                           margin: 0;
                         }
-                        
+
                         .announcement-bar__message {
                           margin: 0;
                         }
-                        
+
                         .countdown-display {
                           display: flex;
                           align-items: center;
                           gap: 10px;
                         }
-                        
+
                         .countdown-item {
                           display: flex;
                           flex-direction: column;
                           align-items: center;
                         }
-                        
+
                         .countdown-value {
                           font-size: 24px;
                           font-weight: bold;
                         }
-                        
+
                         .countdown-label {
                           font-size: 12px;
                           text-transform: uppercase;
                         }
-                        
+
                         .countdown-separator {
                           font-size: 24px;
                           font-weight: bold;
                         }
-                        
+
                         @media screen and (max-width: 768px) {
                           .announcement-bar__content {
                             flex-direction: column;
                             gap: 10px;
                           }
-                          
+
                           .countdown-value {
                             font-size: 20px;
                           }
-                          
+
                           .countdown-label {
                             font-size: 10px;
                           }
                         }
                       </style>
-                      
+
                       <script>
                         (function() {
                           const targetYear = {{ block.settings.countdown_year | default: 2025 }};
@@ -592,13 +600,13 @@
       "unit": "s",
       "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
       "default": 5
-    },    
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-4"
-    },  
+    },
     {
       "type": "checkbox",
       "id": "show_line_separator",
@@ -612,7 +620,7 @@
     {
       "type": "paragraph",
          "content": "t:sections.announcement-bar.settings.paragraph.content"
-    },             
+    },
     {
       "type": "checkbox",
       "id": "show_social",
@@ -641,7 +649,7 @@
       "name": "t:sections.announcement-bar.blocks.announcement.name",
       "settings": [
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "text",
           "default": "t:sections.announcement-bar.blocks.announcement.settings.text.default",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
