@@ -48,10 +48,11 @@
         "announcement_tCQLA7",
         "urgency_announcement_9Wbkhc"
       ],
+      "custom_css": [],
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-2",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
