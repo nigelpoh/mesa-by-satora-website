@@ -58,7 +58,7 @@
         ".title {text-align: center;}"
       ],
       "settings": {
-        "collection": "travel-essentials",
+        "collection": "lombok-series",
         "products_to_show": 8,
         "title": "Top essentials",
         "heading_size": "h1",
@@ -112,7 +112,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Now",
-            "button_link": "shopify://collections/travel-essentials",
+            "button_link": "shopify://collections/lombok-series",
             "button_style_secondary": false
           }
         }
