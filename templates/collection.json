@@ -86,6 +86,7 @@
           "type": "link",
           "settings": {
             "header": "Header",
+            "image": "shopify://shop_images/IMG_5140_1.webp",
             "link": ""
           }
         },
