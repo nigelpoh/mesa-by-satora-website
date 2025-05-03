@@ -29,7 +29,7 @@
           widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
           style: 'width:100%;height:auto;'
       }}
-      <h2>{{ block.settings.header }}</h2>
+      <h2>{{ block.settings.body }}</h2>
     </div>
   {% endfor %}
 </div>
@@ -44,8 +44,8 @@
       "settings": [
         {
           "type": "text",
-          "id": "header",
-          "label": "Header"
+          "id": "body",
+          "label": "Body"
         },
         {
           "type": "image_picker",
