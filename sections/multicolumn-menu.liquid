@@ -29,7 +29,7 @@
   {%- for block in section.blocks -%}
     <a
       class="menu-item-arrow"
-      style="display: flex; flex-direction: column; width: 100%;"
+      style="display: flex; flex-direction: column; width: 100%;text-decoration: none;"
       href="{{ block.settings.link.url }}"
     >
       {{
@@ -41,7 +41,7 @@
           style: 'width:100%;height:auto;'
       }}
       <h2>{{ block.settings.body }}</h2>
-      <span style="display:flex;text-decoration: none;color:rgba(var(--color-foreground), 1);font-size: 1.5rem;align-items:center;">
+      <span style="display:flex;color:rgba(var(--color-foreground), 1);font-size: 1.5rem;align-items:center;">
         {{- block.settings.link_text -}}
         <div
           style="display:flex;align-items:center;justify-content:center;margin-left: 1rem;width:1.5rem;height:1.5rem;"
