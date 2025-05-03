@@ -80,6 +80,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
       {{ settings.type_italics_font | font_face: font_display: 'swap' }}
+      {{ settings.type_header_strong_font | font_face: font_display: 'swap' }}
 
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
@@ -135,6 +136,10 @@
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
+
+        --font-heading-bold-family: {{ settings.type_header_strong_font.family }}, {{ settings.type_header_strong_font.fallback_families }};
+        --font-heading-bold-style: {{ settings.type_header_strong_font.style }};
+        --font-heading-bold-weight: {{ settings.type_header_strong_font.weight }};
 
         --font-italics-family: {{ settings.type_italics_font.family }}, {{ settings.type_italics_font.fallback_families }};
         --font-italics-style: {{ settings.type_italics_font.style }};
