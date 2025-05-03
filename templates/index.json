@@ -39,7 +39,7 @@
       "settings": {
         "image": "shopify://shop_images/landing_photo.webp",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "top-left",
         "desktop_content_alignment": "left",
