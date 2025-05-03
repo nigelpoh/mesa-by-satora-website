@@ -113,7 +113,7 @@
                       {{ block.settings.button_label | escape }}
                     </a>
                   {%- endif -%}
-                {%- when "table" -%}
+                {%- when 'table' -%}
                   <style>
                     .table-grid {
                       display: grid;
@@ -130,11 +130,13 @@
                       font-size: 1.2rem;
                     }
                   </style>
-                  <div class = "table-grid">
+                  <div class="table-grid">
                     {% for spec in block.settings.specifications %}
-                      <div class = "table-row">
-                        <div class = "table-column" style = "grid-column: span 1 / span 1;"><b>{{ spec.title }}</b></div>
-                        <div class = "table-column" style = "grid-column: span 2 / span 2;">{{ spec.description}} </div>
+                      <div class="table-row">
+                        <div class="table-column" style="grid-column: span 1 / span 1;">
+                          <b>{{ spec.title }}</b>
+                        </div>
+                        <div class="table-column" style="grid-column: span 2 / span 2;">{{ spec.description }}</div>
                       </div>
                     {% endfor %}
                   </div>
@@ -243,7 +245,7 @@
     {
       "type": "header",
       "content": "t:sections.image-with-text.settings.header.content"
-    }, 
+    },
     {
       "type": "checkbox",
       "default": false,
@@ -265,7 +267,7 @@
       ],
       "default": "no-overlap",
       "label": "t:sections.image-with-text.settings.content_layout.label"
-    },       
+    },
     {
       "type": "select",
       "id": "desktop_content_position",
@@ -329,7 +331,7 @@
     {
       "type": "header",
       "content": "t:sections.image-with-text.settings.header_colors.content"
-    },        
+    },
     {
       "type": "color_scheme",
       "id": "section_color_scheme",
@@ -415,7 +417,7 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "caption",
           "default": "t:sections.image-with-text.blocks.caption.settings.text.default",
           "label": "t:sections.image-with-text.blocks.caption.settings.text.label"
