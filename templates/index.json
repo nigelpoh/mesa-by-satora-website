@@ -35,7 +35,9 @@
         "heading",
         "button"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".media > img {fit-content: \"cover\";}"
+      ],
       "settings": {
         "image": "shopify://shop_images/landing_photo.webp",
         "image_overlay_opacity": 0,
