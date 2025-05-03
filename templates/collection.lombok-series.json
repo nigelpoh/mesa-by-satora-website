@@ -121,7 +121,7 @@
         "buttons_GawzHe"
       ],
       "custom_css": [
-        ".media > img {fit-content: cover;}"
+        ".media > img {object-fit: cover;}"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
