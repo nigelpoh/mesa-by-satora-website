@@ -267,6 +267,24 @@ h5,
   word-break: break-word;
 }
 
+h1 > strong,
+h2 > strong,
+h3 > strong,
+h4 > strong,
+h5 > strong,
+.h0 > strong,
+.h1 > strong,
+.h2 > strong,
+.h3 > strong,
+.h4 > strong,
+.h5 > strong {
+  font-family: var(--font-heading-bold-family);
+  font-style: var(--font-heading-bold-style);
+  font-weight: var(--font-heading-bold-weight);
+}
+
+
+
 .hxxl {
   font-size: clamp(calc(var(--font-heading-scale) * 5.6rem), 14vw, calc(var(--font-heading-scale) * 7.2rem));
   line-height: 1.1;
