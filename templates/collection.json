@@ -33,7 +33,8 @@
         "heading_ER9xAw"
       ],
       "custom_css": [
-        "i {font-size: 2.5rem;}"
+        "i {font-size: 2.5rem;}",
+        ".rich-text__blocks>*+* {margin: 0;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
