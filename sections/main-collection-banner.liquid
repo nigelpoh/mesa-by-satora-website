@@ -23,20 +23,20 @@
     padding: 0;
   }
   .coll-wrapper-desktop {
-    display: block;
+    display: none;
   }
   .coll-wrapper-mobile {
-    display: none;
+    display: block;
   }
   .collection-hero--with-image .collection-hero__text-wrapper {
     padding-left: 4rem;
   }
-  screen and (min-width: 750px) {
+  @media screen and (min-width: 750px) {
     .coll-wrapper-desktop {
-      display: none;
+      display: block;
     }
     .coll-wrapper-mobile {
-      display: block;
+      display: none;
     }
   }
 {%- endstyle -%}
