@@ -36,7 +36,7 @@
         "button"
       ],
       "custom_css": [
-        ".media > img {fit-content: cover;}"
+        ".media > img {object-fit: cover;}"
       ],
       "settings": {
         "image": "shopify://shop_images/landing_photo.webp",
