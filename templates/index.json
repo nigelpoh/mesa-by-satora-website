@@ -40,7 +40,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Travel has never felt <em>this effortless</em>.",
+            "heading": "Travel has never felt <i>this effortless</i>.",
             "heading_size": "h1"
           }
         },
