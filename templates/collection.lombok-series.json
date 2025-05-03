@@ -92,7 +92,7 @@
         "heading_QCeTKb": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Save on Fees with Compression",
             "heading_size": "h1"
           }
         },
@@ -102,23 +102,11 @@
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_style": "body"
           }
-        },
-        "buttons_GawzHe": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
         }
       },
       "block_order": [
         "heading_QCeTKb",
-        "text_J8idrF",
-        "buttons_GawzHe"
+        "text_J8idrF"
       ],
       "custom_css": [
         ".media > img {object-fit: cover;}"
@@ -129,10 +117,10 @@
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
+        "desktop_content_position": "top-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": true
