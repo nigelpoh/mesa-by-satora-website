@@ -85,25 +85,25 @@
         "link_6iLbRw": {
           "type": "link",
           "settings": {
-            "header": "Header",
+            "body": "",
             "image": "shopify://shop_images/IMG_5140_1.webp",
-            "link": ""
+            "link": "shopify://collections/lombok-series"
           }
         },
         "link_VWeLwL": {
           "type": "link",
           "settings": {
-            "header": "Header",
+            "body": "",
             "image": "shopify://shop_images/Light_and_compact_c3cc2381-fac6-4bc0-8c2d-0db92d44e6aa.webp",
-            "link": ""
+            "link": "shopify://collections/lombok-series"
           }
         },
         "link_NpmLYd": {
           "type": "link",
           "settings": {
-            "header": "Header",
+            "body": "",
             "image": "shopify://shop_images/Man_Carrying_Backpack_1.webp",
-            "link": ""
+            "link": "shopify://collections/lombok-series"
           }
         }
       },
