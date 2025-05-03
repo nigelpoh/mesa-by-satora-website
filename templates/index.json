@@ -358,7 +358,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/IMG_5140_1.webp",
+        "image": "shopify://shop_images/bottom_landing_img.webp",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "none",
