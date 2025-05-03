@@ -143,7 +143,27 @@
         "unit": "%",
         "label": "t:settings_schema.typography.settings.body_scale.label",
         "default": 100
-      }
+      },
+      {
+        "type": "header",
+        "content": "Italics Font"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_italics_font",
+        "default": "assistant_n4",
+        "label": "Font for Italics"
+      },
+      {
+        "type": "range",
+        "id": "italics_scale",
+        "min": 80,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "Italics Font Scale",
+        "default": 100
+      },
     ]
   },
   {
