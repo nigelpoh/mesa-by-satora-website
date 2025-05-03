@@ -23,6 +23,7 @@
       "block_order": [
         "heading_KHYrVa"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
@@ -160,6 +161,7 @@
       "name": "Image/Video Slider",
       "settings": {
         "heading": "Trusted and Used by Travelers Worldwide",
+        "description": "",
         "infinite": true,
         "autoplay": true,
         "dots": true,
