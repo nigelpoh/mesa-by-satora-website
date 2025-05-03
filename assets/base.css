@@ -3607,6 +3607,11 @@ details-disclosure > details {
 }
 
 i {
-  font-family: "Fraunces", serif;
-  font-weight: 300;
+  font-family: var(--font-italics-family);
+  font-style: var(--font-italics-style);
+  font-weight: var(--font-italics-weight);
+  letter-spacing: calc(var(--font-italics-scale) * 0.06rem);
+  color: rgb(var(--color-foreground));
+  line-height: calc(1 + 0.3 / max(1, var(--font-italics-scale)));
+  word-break: break-word;
 }
