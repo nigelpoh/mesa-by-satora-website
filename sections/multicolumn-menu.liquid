@@ -1,9 +1,4 @@
 {% style %}
-  .desktop-multicolumn-menu {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5rem;
-  }
   .menu-item-arrow:hover .svg-arrow {
     transform: translateX(0.7rem);
   }
@@ -12,7 +7,7 @@
     transition: transform 0.3s ease;
   }
 {% endstyle %}
-<div class="desktop-multicolumn-menu page-width">
+<div class="page-width">
   {%- liquid
     assign padding_multiplier = 1
     if section.settings.layout == 'section'
