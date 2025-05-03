@@ -20,7 +20,7 @@
     calc(100vw - {{ mobile_padding }})
   {%- endcapture -%}
   {%- for block in section.blocks -%}
-    <div style="display: flex; flex-direction: column; width: 100%;">
+    <a style="display: flex; flex-direction: column; width: 100%;" href="{{ block.settings.link.url }}">
       {{
         block.settings.image
         | image_url: width: 3200
@@ -30,10 +30,15 @@
           style: 'width:100%;height:auto;'
       }}
       <h2>{{ block.settings.body }}</h2>
-      <a href="{{ block.settings.link.url }}" style="text-decoration: none; color:rgba(var(--color-foreground), 1);">
+      <span style="text-decoration: none; color:rgba(var(--color-foreground), 1);">
         {{- block.settings.link_text -}}
-      </a>
-    </div>
+        <div style="margin-left: 3rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+            <path style="fill:#232326" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/>
+          </svg>
+        </div>
+      </span>
+    </a>
   {% endfor %}
 </div>
 {% schema %}
