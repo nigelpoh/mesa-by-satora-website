@@ -94,6 +94,7 @@
           "type": "link",
           "settings": {
             "header": "Header",
+            "image": "shopify://shop_images/Light_and_compact_c3cc2381-fac6-4bc0-8c2d-0db92d44e6aa.webp",
             "link": ""
           }
         },
@@ -101,6 +102,7 @@
           "type": "link",
           "settings": {
             "header": "Header",
+            "image": "shopify://shop_images/Man_Carrying_Backpack_1.webp",
             "link": ""
           }
         }
