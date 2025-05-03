@@ -22,6 +22,12 @@
   .splide__arrow {
     background: none;
   }
+  .splide__arrow--next {
+    right: 0rem;
+  }
+  .splide__arrow--prev {
+    left: 0rem;
+  }
 {%- endstyle -%}
 <div class="multicolumn multicolumn--{{ section.id }} color-{{ section.settings.color_scheme }} gradient{% if section.settings.title == blank %} no-heading{% endif %} content-for-grouping animate-section animate--hidden {{ section.settings.visibility }}">
   {%- liquid
