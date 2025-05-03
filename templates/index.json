@@ -87,9 +87,9 @@
         "caption_V6y6EL": {
           "type": "caption",
           "settings": {
-            "caption": "<p>&lt;i&gt;Fit More&lt;/i&gt;</p>",
+            "caption": "<em><i>Fit More</i></em>",
             "text_style": "subtitle",
-            "text_size": "medium"
+            "text_size": "large"
           }
         },
         "heading_8XhfD7": {
