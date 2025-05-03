@@ -39,7 +39,7 @@
       "settings": {
         "image": "shopify://shop_images/landing_photo.webp",
         "image_overlay_opacity": 0,
-        "image_height": "adapt",
+        "image_height": "large",
         "image_behavior": "none",
         "desktop_content_position": "top-left",
         "desktop_content_alignment": "left",
@@ -297,7 +297,7 @@
       ],
       "name": "Testimonials",
       "settings": {
-        "title": "What fellow travelers <i>are saying</i>",
+        "title": "What fellow travelers <em>are saying</em>",
         "show_stars": true,
         "stars_color": "#000000",
         "background_color": "#f8f8f9",
