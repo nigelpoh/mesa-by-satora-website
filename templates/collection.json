@@ -81,6 +81,34 @@
     },
     "multicolumn_menu_8TrjJ3": {
       "type": "multicolumn-menu",
+      "blocks": {
+        "link_6iLbRw": {
+          "type": "link",
+          "settings": {
+            "header": "Header",
+            "link": ""
+          }
+        },
+        "link_VWeLwL": {
+          "type": "link",
+          "settings": {
+            "header": "Header",
+            "link": ""
+          }
+        },
+        "link_NpmLYd": {
+          "type": "link",
+          "settings": {
+            "header": "Header",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_6iLbRw",
+        "link_VWeLwL",
+        "link_NpmLYd"
+      ],
       "name": "Multicolumn Menu",
       "settings": {}
     }
