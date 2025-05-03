@@ -84,10 +84,18 @@
     "image_with_text_LQ3gyb": {
       "type": "image-with-text",
       "blocks": {
+        "caption_V6y6EL": {
+          "type": "caption",
+          "settings": {
+            "caption": "<p>&lt;i&gt;Fit More&lt;/i&gt;</p>",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
         "heading_8XhfD7": {
           "type": "heading",
           "settings": {
-            "heading": "<i>We Will Handle The Rest</i>Fit More, Fuss Less.",
+            "heading": "Fit More, Fuss Less.",
             "heading_size": "h1"
           }
         },
@@ -108,6 +116,7 @@
         }
       },
       "block_order": [
+        "caption_V6y6EL",
         "heading_8XhfD7",
         "text_yNVyeQ",
         "button_etKAqa"
