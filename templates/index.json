@@ -40,8 +40,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Lombok Carry-On Pack",
-            "heading_size": "h0"
+            "heading": "Travel has never felt <i>this effortless</i>.",
+            "heading_size": "h1"
           }
         },
         "button": {
@@ -64,10 +64,10 @@
         "image": "shopify://shop_images/closeup_1.webp",
         "image_2": "shopify://shop_images/closeup_2.webp",
         "image_overlay_opacity": 0,
-        "image_height": "small",
+        "image_height": "medium",
         "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "top-left",
+        "desktop_content_alignment": "left",
         "show_text_box": false,
         "color_scheme": "scheme-3",
         "stack_images_on_mobile": false,
