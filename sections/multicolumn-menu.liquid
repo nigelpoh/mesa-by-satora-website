@@ -5,21 +5,21 @@
   }
 {% endstyle %}
 <div class="desktop-multicolumn-menu">
+  {%- liquid
+    assign padding_multiplier = 1
+    if section.settings.layout == 'section'
+      assign padding_multiplier = 2
+    endif
+    assign desktop_tablet_padding = 100 | times: padding_multiplier | append: 'px'
+    assign mobile_padding = 30 | times: padding_multiplier | append: 'px'
+  -%}
+  {%- capture sizes -%}
+    (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ desktop_tablet_padding }}) / 2),
+    (min-width: 750px) calc((100vw - {{ desktop_tablet_padding }}) / 2),
+    calc(100vw - {{ mobile_padding }})
+  {%- endcapture -%}
   {%- for block in section.blocks -%}
-    <div style="">
-      {%- liquid
-        assign padding_multiplier = 1
-        if section.settings.layout == 'section'
-          assign padding_multiplier = 2
-        endif
-        assign desktop_tablet_padding = 100 | times: padding_multiplier | append: 'px'
-        assign mobile_padding = 30 | times: padding_multiplier | append: 'px'
-      -%}
-      {%- capture sizes -%}
-        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ desktop_tablet_padding }}) / 2),
-        (min-width: 750px) calc((100vw - {{ desktop_tablet_padding }}) / 2),
-        calc(100vw - {{ mobile_padding }})
-      {%- endcapture -%}
+    <div style="display: flex; flex-direction: column;">
       {{
         block.settings.image
         | image_url: width: 3200
