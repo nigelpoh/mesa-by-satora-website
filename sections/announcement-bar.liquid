@@ -68,7 +68,7 @@
               >
             {%- endif -%}
             <p class="announcement-bar__message h5">
-              <span>{{ section.blocks.first.settings.text | escape }}</span>
+              <span>{{ section.blocks.first.settings.text }}</span>
               {%- if section.blocks.first.settings.link != blank -%}
                 {{- 'icon-arrow.svg' | inline_asset_content -}}
               {%- endif -%}
@@ -102,7 +102,7 @@
               <div class="announcement-bar">
                 <div class="announcement-bar__content container">
                   <p class="announcement-bar__message h5" style="padding:0;min-height:0;">
-                    <span>{{ section.blocks.first.settings.text | escape }}</span>
+                    <span>{{ section.blocks.first.settings.text }}</span>
                     {%- if section.blocks.first.settings.link != blank -%}
                       {{- 'icon-arrow.svg' | inline_asset_content -}}
                     {%- endif -%}
@@ -319,7 +319,7 @@
                           >
                         {%- endif -%}
                         <p class="announcement-bar__message h5">
-                          <span>{{ block.settings.text | escape }}</span>
+                          <span>{{ block.settings.text }}</span>
                           {%- if block.settings.link != blank -%}
                             {{- 'icon-arrow.svg' | inline_asset_content -}}
                           {%- endif -%}
@@ -356,7 +356,7 @@
                         <div class="announcement-bar">
                           <div class="announcement-bar__content container">
                             <p class="announcement-bar__message h5" style="padding:0;min-height:0;">
-                              <span>{{ block.settings.text | escape }}</span>
+                              <span>{{ block.settings.text }}</span>
                               {%- if block.settings.link != blank -%}
                                 {{- 'icon-arrow.svg' | inline_asset_content -}}
                               {%- endif -%}
@@ -667,7 +667,7 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "text",
           "default": "t:sections.announcement-bar.blocks.announcement.settings.text.default",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
