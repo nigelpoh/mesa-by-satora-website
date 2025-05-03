@@ -17,15 +17,14 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "SPRING SALE<strong> UP TO 50% OFF</strong> + <strong>FREE</strong> WORLDWIDE SHIPPING",
+            "text": "SPRING SALE<strong> UP TO 50% OFF</strong>",
             "link": ""
           }
         },
         "announcement_tCQLA7": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Free Worldwide Shipping",
+            "text": "<strong>FREE</strong> <strong>SHIPPING </strong>WORLDWIDE",
             "link": ""
           }
         },
