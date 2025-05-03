@@ -10,6 +10,9 @@
   .media>*:not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
     position: relative;
   }
+  .media>img {
+    object-fit: contain;
+  }
 {%- endstyle -%}
 
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
