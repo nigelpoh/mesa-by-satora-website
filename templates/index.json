@@ -319,7 +319,7 @@
         "button_6hxPGY": {
           "type": "button",
           "settings": {
-            "button_label": "Explore More",
+            "button_label": "Explore Now",
             "button_link": "shopify://collections/all",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -336,7 +336,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
