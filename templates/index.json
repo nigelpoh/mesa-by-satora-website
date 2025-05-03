@@ -305,6 +305,42 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "rich_text_nNTimh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pMmKLJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "1 Year Warranty, 60 Days Return",
+            "heading_size": "h1"
+          }
+        },
+        "button_6hxPGY": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore More",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pMmKLJ",
+        "button_6hxPGY"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -313,6 +349,7 @@
     "image_with_text_LQ3gyb",
     "media_slider_JMRpQf",
     "image_with_text_RKmiPK",
-    "testimonials_bjCQQh"
+    "testimonials_bjCQQh",
+    "rich_text_nNTimh"
   ]
 }
