@@ -210,39 +210,6 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_eFgfGC": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify://shop_images/solitary_bag.webp",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
-      }
-    },
-    "image_banner_4FELEL": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify://shop_images/model_2.webp",
-        "image_2": "shopify://shop_images/showcase_bag_open.webp",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
-      }
-    },
     "image_with_text_RKmiPK": {
       "type": "image-with-text",
       "blocks": {
@@ -291,6 +258,53 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "testimonials_bjCQQh": {
+      "type": "testimonials",
+      "blocks": {
+        "column_F9WHAM": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "image_pos": "below_description",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        },
+        "column_VyQpJG": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "image_pos": "below_description",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        },
+        "column_q9nwp6": {
+          "type": "column",
+          "settings": {
+            "title": "Heading",
+            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "image_pos": "below_description",
+            "author": "<em><strong>Author</strong></em>"
+          }
+        }
+      },
+      "block_order": [
+        "column_F9WHAM",
+        "column_VyQpJG",
+        "column_q9nwp6"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "title": "Testimonials",
+        "show_stars": true,
+        "stars_color": "#000000",
+        "background_color": "#f8f8f9",
+        "show_quotes": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -298,8 +312,7 @@
     "featured_collection",
     "image_with_text_LQ3gyb",
     "media_slider_JMRpQf",
-    "image_banner_eFgfGC",
-    "image_banner_4FELEL",
-    "image_with_text_RKmiPK"
+    "image_with_text_RKmiPK",
+    "testimonials_bjCQQh"
   ]
 }
