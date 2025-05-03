@@ -1,6 +1,37 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% style %}
+  .desktop-multicolumn-menu {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
   }
+{% endstyle %}
+<div class="desktop-multicolumn-menu"></div>
+
+{% schema %}
+{
+  "name": "Multicolumn Menu",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Page Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Header"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
