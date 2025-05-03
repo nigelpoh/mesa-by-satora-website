@@ -40,7 +40,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Travel has never felt <i>this effortless</i>.",
+            "heading": "Travel has never felt <em>this effortless</em>.",
             "heading_size": "h1"
           }
         },
@@ -62,8 +62,7 @@
       ],
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/closeup_1.webp",
-        "image_2": "shopify://shop_images/closeup_2.webp",
+        "image": "shopify://shop_images/landing_photo.webp",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "none",
