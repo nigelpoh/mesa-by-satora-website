@@ -4,8 +4,11 @@
     gap: 0.5rem;
   }
 {% endstyle %}
-<div class="desktop-multicolumn-menu"></div>
-
+<div class="desktop-multicolumn-menu">
+  {%- for block in section.blocks -%}
+    {{ block.settings.header }}
+  {% endfor %}
+</div>
 {% schema %}
 {
   "name": "Multicolumn Menu",
