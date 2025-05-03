@@ -125,6 +125,12 @@
         "default": 100
       },
       {
+        "type": "font_picker",
+        "id": "type_header_strong_font",
+        "default": "assistant_n4",
+        "label": "Font for Header (Strong)"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.typography.settings.header__2.content"
       },
