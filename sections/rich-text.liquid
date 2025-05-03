@@ -41,7 +41,11 @@
                 {% endif %}
               >
                 {% if block.settings.text_style == 'italics' %}
-                  {{ block.settings.caption | escape }}
+                  <i>
+                {% endif %}
+                {{ block.settings.caption | escape }}
+                {% if block.settings.text_style == 'italics' %}
+                  </i>
                 {% endif %}
               </p>
             {%- when 'text' -%}
