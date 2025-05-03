@@ -9,38 +9,13 @@
  */
 {
   "sections": {
-    "rich_text_Rm6bC7": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_KHYrVa": {
-          "type": "heading",
-          "settings": {
-            "heading": "World's First Built-in Vacuum System Backpack",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": [
-        "heading_KHYrVa"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-4",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Travel has never felt <i><em>this effortless</i></em>",
+            "heading": "Travel has never felt <em>this effortless</em>",
             "heading_size": "h1"
           }
         },
@@ -80,8 +55,8 @@
       "settings": {
         "collection": "travel-essentials",
         "products_to_show": 8,
-        "title": "Our Travel Essentials",
-        "heading_size": "h2",
+        "title": "Most Beloved Essentials",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -258,7 +233,6 @@
     }
   },
   "order": [
-    "rich_text_Rm6bC7",
     "image_banner",
     "featured_collection",
     "media_slider_JMRpQf",
