@@ -120,8 +120,12 @@
         "text_J8idrF",
         "buttons_GawzHe"
       ],
+      "custom_css": [
+        ".media > img {fit-content: cover;}"
+      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
+        "image": "shopify://shop_images/lombok_series_bottom_landing.webp",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "image_behavior": "none",
