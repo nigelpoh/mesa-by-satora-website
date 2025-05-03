@@ -20,7 +20,7 @@
     calc(100vw - {{ mobile_padding }})
   {%- endcapture -%}
   {%- for block in section.blocks -%}
-    <div>
+    <div style="display: flex; flex-direction: column;">
       {{
         block.settings.image
         | image_url: width: 3200
