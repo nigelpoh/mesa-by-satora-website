@@ -58,7 +58,7 @@
       "settings": {
         "collection": "travel-essentials",
         "products_to_show": 8,
-        "title": "Top Essentials",
+        "title": "Top essentials",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -297,7 +297,7 @@
       ],
       "name": "Testimonials",
       "settings": {
-        "title": "Testimonials",
+        "title": "What fellow travelers are saying",
         "show_stars": true,
         "stars_color": "#000000",
         "background_color": "#f8f8f9",
