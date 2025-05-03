@@ -4,7 +4,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
   }
-  .desktop-multicolumn-menu:hover .svg-arrow {
+  .menu-item-arrow:hover .svg-arrow {
     transform: translateX(3px);
   }
 
@@ -27,7 +27,11 @@
     calc(100vw - {{ mobile_padding }})
   {%- endcapture -%}
   {%- for block in section.blocks -%}
-    <a style="display: flex; flex-direction: column; width: 100%;" href="{{ block.settings.link.url }}">
+    <a
+      class="menu-item-arrow"
+      style="display: flex; flex-direction: column; width: 100%;"
+      href="{{ block.settings.link.url }}"
+    >
       {{
         block.settings.image
         | image_url: width: 3200
