@@ -52,11 +52,14 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "custom_css": [
+        ".title {text-align: center;}"
+      ],
       "settings": {
         "collection": "travel-essentials",
         "products_to_show": 8,
         "title": "Top Essentials",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
