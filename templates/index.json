@@ -60,9 +60,7 @@
         "heading",
         "button"
       ],
-      "custom_css": [
-        "i {font-weight: 400;}"
-      ],
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/closeup_1.webp",
         "image_2": "shopify://shop_images/closeup_2.webp",
