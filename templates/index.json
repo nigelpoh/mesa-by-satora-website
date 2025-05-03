@@ -15,7 +15,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Travel has never felt <i><em>this effortless</i></em>",
+            "heading": "Travel has never felt <em>this effortless</em>",
             "heading_size": "h1"
           }
         },
