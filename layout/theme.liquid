@@ -35,16 +35,29 @@
     <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
-    
-    <link rel="stylesheet" type="text/css" href="{{ 'extra.css' | asset_url }}" /> 
-    
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" crossorigin/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"  crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ 'extra.css' | asset_url }}">
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      crossorigin
+    >
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-    
+
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -119,8 +132,13 @@
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
+        --font-italics-family: {{ settings.type_italics_font.family }}, {{ settings.type_italics_font.fallback_families }};
+        --font-italics-style: {{ settings.type_italics_font.style }};
+        --font-italics-weight: {{ settings.type_italics_font.weight }};
+
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+        --font-italics-scale: {{ settings.italics_scale | times: 1.0 | divided_by: settings.body_scale }};
 
         --media-padding: {{ settings.media_padding }}px;
         --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
@@ -455,7 +473,7 @@
           obs.disconnect();
         }
       });
-    
+
       observer1.observe(document.body, {
         childList: true,
         subtree: true,
@@ -467,7 +485,7 @@
           obs.disconnect();
         }
       });
-    
+
       observer2.observe(document.body, {
         childList: true,
         subtree: true,
@@ -479,7 +497,7 @@
           obs.disconnect();
         }
       });
-    
+
       observer3.observe(document.body, {
         childList: true,
         subtree: true,
@@ -491,7 +509,7 @@
           obs.disconnect();
         }
       });
-    
+
       observer4.observe(document.body, {
         childList: true,
         subtree: true,
@@ -503,7 +521,7 @@
           obs.disconnect();
         }
       });
-    
+
       observer5.observe(document.body, {
         childList: true,
         subtree: true,
@@ -511,7 +529,7 @@
       function toTitleCase(str) {
         return str.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
       }
-    
+
       const observer6 = new MutationObserver((mutations, obs) => {
         const title = document.querySelector('.Avada-Fbt__ProductContent-title');
         if (title) {
@@ -519,14 +537,14 @@
           obs.disconnect();
         }
       });
-    
+
       observer6.observe(document.body, {
         childList: true,
         subtree: true,
       });
       (function() {
         const targetUrl = "https://bundle.aov.ai/client/trackingAddToCart";
-      
+
         function openCartDrawer() {
           const openCartBtn = document.querySelector('[data-cart-trigger]');
           if (openCartBtn) {
@@ -539,7 +557,7 @@
             }
           }
         }
-      
+
         // Intercept fetch
         const originalFetch = window.fetch;
         window.fetch = async function (...args) {
@@ -549,7 +567,7 @@
           }
           return originalFetch.apply(this, args);
         };
-      
+
         // Intercept XMLHttpRequest
         const originalOpen = XMLHttpRequest.prototype.open;
         XMLHttpRequest.prototype.open = function(method, url) {
