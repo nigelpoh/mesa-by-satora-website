@@ -114,7 +114,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/lombok_series_bottom_landing.webp",
-        "image_overlay_opacity": 0,
+        "image_overlay_opacity": 10,
         "image_height": "medium",
         "image_behavior": "none",
         "desktop_content_position": "top-left",
