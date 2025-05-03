@@ -19,6 +19,9 @@
   .splide__pagination {
     bottom: 0;
   }
+  .splide__arrow {
+    background: none;
+  }
 {%- endstyle -%}
 <div class="multicolumn multicolumn--{{ section.id }} color-{{ section.settings.color_scheme }} gradient{% if section.settings.title == blank %} no-heading{% endif %} content-for-grouping animate-section animate--hidden {{ section.settings.visibility }}">
   {%- liquid
