@@ -16,7 +16,7 @@
           "type": "caption",
           "settings": {
             "caption": "Shop",
-            "text_style": "subtitle",
+            "text_style": "italics",
             "text_size": "large"
           }
         },
