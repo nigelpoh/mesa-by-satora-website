@@ -9,8 +9,42 @@
  */
 {
   "sections": {
+    "rich_text_NJ4rEU": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_ggy899": {
+          "type": "caption",
+          "settings": {
+            "caption": "Shop",
+            "text_style": "subtitle",
+            "text_size": "large"
+          }
+        },
+        "heading_ER9xAw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Categories",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "caption_ggy899",
+        "heading_ER9xAw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "custom_css": [
         ".collection-hero__title {padding-left: 4rem;}"
       ],
@@ -42,6 +76,7 @@
     }
   },
   "order": [
+    "rich_text_NJ4rEU",
     "banner",
     "product-grid"
   ]
