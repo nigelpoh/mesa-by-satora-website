@@ -18,6 +18,16 @@
         "color_scheme": "scheme-1"
       }
     },
+    "custom_liquid_trit6G": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div><a href = \"/collections/all\" style = \"color:#000;text-decoration:none;margin-left:2rem;\">All Products</a> / <span style = \"opacity:70%\">{{collection.title}}</span></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -31,7 +41,7 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "enable_filtering": true,
+        "enable_filtering": false,
         "filter_type": "horizontal",
         "enable_sorting": true,
         "padding_top": 36,
@@ -41,6 +51,7 @@
   },
   "order": [
     "banner",
+    "custom_liquid_trit6G",
     "product-grid"
   ]
 }
