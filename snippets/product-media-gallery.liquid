@@ -41,7 +41,6 @@
     assign media_width = 0.45
   endif
 -%}
-{{ product.selected_or_first_available_variant.title }}
 <media-gallery
   id="MediaGallery-{{ section.id }}"
   role="region"
@@ -62,6 +61,7 @@
       role="list"
     >
       {%- if product.selected_or_first_available_variant.featured_media != null -%}
+        {{ product.selected_or_first_available_variant.title }}
         {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <li
           id="Slide-{{ section.id }}-{{ featured_media.id }}"
