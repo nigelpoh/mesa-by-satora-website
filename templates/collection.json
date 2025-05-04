@@ -87,7 +87,7 @@
           "settings": {
             "body": "Hello there this is about bags",
             "image": "shopify://shop_images/bag_menu_item.webp",
-            "link": "shopify://collections/lombok-series",
+            "link": "shopify://collections/our-bags",
             "link_text": "BAGS"
           }
         },
@@ -96,7 +96,7 @@
           "settings": {
             "body": "Hello there this is about bags",
             "image": "shopify://shop_images/accessories_menu_item.webp",
-            "link": "shopify://collections/lombok-series",
+            "link": "shopify://collections/our-accessories",
             "link_text": "ACCESSORIES"
           }
         }
