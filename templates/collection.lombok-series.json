@@ -167,7 +167,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "",
+        "collection": "getaway-collection",
         "products_to_show": 4,
         "title": "",
         "heading_size": "h1",
@@ -186,8 +186,8 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 0,
         "padding_bottom": 36
       }
