@@ -106,7 +106,9 @@
         "link_VWeLwL"
       ],
       "name": "Multicolumn Menu",
-      "settings": {}
+      "settings": {
+        "desktop_img": "shopify://shop_images/Multi_Compartment.webp"
+      }
     }
   },
   "order": [
