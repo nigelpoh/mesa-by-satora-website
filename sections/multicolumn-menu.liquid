@@ -6,8 +6,18 @@
   .svg-arrow {
     transition: transform 0.3s ease;
   }
+  .mc-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 750px) {
+    .mc-menu {
+      flex-direction: row;
+    }
+  }
+  @media screen and
 {% endstyle %}
-<div class="page-width">
+<div class="page-width mc-menu">
   {%- liquid
     assign padding_multiplier = 1
     if section.settings.layout == 'section'
