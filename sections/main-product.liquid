@@ -656,7 +656,10 @@
                         {% if block.settings.free_gifts_always.count > 0
                           or block.settings.free_gifts_optional.count > 0
                         %}
-                          <div style="display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};">
+                          <div
+                            style="display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};"
+                            id="upsell-header-complete"
+                          >
                             {{ block.settings.complete_text }}
                           </div>
                         {% endif %}
@@ -953,6 +956,7 @@
                     const totalItems = document.getElementById('bundle-total-items');
                     const totalPrice = document.getElementById('bundle-total-price');
                     const incompleteText = document.getElementById('bundle-incomplete-text');
+                    const completeText = document.getElementById('upsell-header-complet');
                     const totalItemsText = document.querySelector('.bundle-total-items-text');
                     const totalSavings = document.getElementById('bundle-total-savings');
                     const compareAtPriceBlock = document.getElementById('bundle-compare-price');
@@ -980,6 +984,9 @@
                           oG.checked = true;
                           g.classList.remove('greyed-out');
                           incompleteText.style.display = 'none';
+                          {% if block.settings.free_gifts_always.count > 0 or block.settings.free_gifts_optional.count > 0%}
+                            completeText.style.display = "flex";
+                          {% endif %}
                         });
                       } else {
                         optionalGifts.forEach(g => {
@@ -987,6 +994,9 @@
                           oG.checked = false;
                           g.classList.add('greyed-out');
                           incompleteText.style.display = 'flex';
+                          {% if block.settings.free_gifts_always.count > 0 or block.settings.free_gifts_optional.count > 0%}
+                            completeText.style.display = "none";
+                          {% endif %}
                         });
                       }
 
