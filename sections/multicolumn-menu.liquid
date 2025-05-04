@@ -8,6 +8,7 @@
   }
   .mc-menu {
     display: flex;
+    justify-content: space-between;
   }
   .mc-menu-pic {
     display: none;
@@ -71,7 +72,7 @@
       </a>
     {% endfor %}
   </div>
-  <div class="mc-menu-pic" style="object-fit: cover;">
+  <div class="mc-menu-pic">
     {{
       section.settings.desktop_img
       | image_url: width: 3200
