@@ -94,7 +94,16 @@
         {% endif %}
 
         {% assign variant_name = product.selected_or_first_available_variant.title | downcase %}
-        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id or media.alt contains variant_name == false and media.alt contains 'variant' -%}
+        {% assign flag_display = true %}
+        {%- if media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          {% assign flag_display = false %}
+        {% endif %}
+        {% unless media.alt contains variant_name and media.alt contains 'variant' %}
+          {% if media.alt contains 'variant' %}
+            {% assign flag_display = false %}
+          {% endif %}
+        {% endunless %}
+        {% if flag_display %}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}"
             class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
@@ -122,7 +131,7 @@
               lazy_load: lazy_load
             %}
           </li>
-        {%- endunless -%}
+        {%- endif -%}
       {%- endfor -%}
     </ul>
     <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
