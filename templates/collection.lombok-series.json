@@ -80,16 +80,57 @@
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 20
+      }
+    },
+    "image_banner_TdqqxN": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_kgcVcT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Save on Fees with Compression",
+            "heading_size": "h1"
+          }
+        },
+        "text_n8Vcca": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kgcVcT",
+        "text_n8Vcca"
+      ],
+      "custom_css": [
+        ".media > img {object-fit: cover;}"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lombok_series_bottom_landing.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
       }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "image_with_text_yqnKNm"
+    "image_with_text_yqnKNm",
+    "image_banner_TdqqxN"
   ]
 }
