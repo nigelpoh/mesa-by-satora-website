@@ -116,7 +116,7 @@
         "caption_HCfVGg": {
           "type": "caption",
           "settings": {
-            "caption": "Top Picks For Travelers Like You",
+            "caption": "Top Picks For You",
             "text_style": "italics",
             "text_size": "large"
           }
@@ -151,7 +151,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "",
+        "collection": "lombok-series",
         "products_to_show": 4,
         "title": "",
         "heading_size": "h1",
