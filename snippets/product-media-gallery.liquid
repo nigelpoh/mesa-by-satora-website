@@ -93,7 +93,7 @@
           {% continue %}
         {% endif %}
 
-        {% assign variant_name = product.selected_or_first_available_variant.title | lowercase %}
+        {% assign variant_name = product.selected_or_first_available_variant.title | downcase %}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id or (media.alt contains variant_name and media.alt contains "variant") -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}"
