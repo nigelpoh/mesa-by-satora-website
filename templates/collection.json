@@ -22,7 +22,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class = \"page-width\"><a href = \"/collections/all\" style = \"color:#000;text-decoration:none;margin-left:2rem;\">All Products</a> / <span style = \"opacity:70%\">{{collection.title}}</span></div>",
+        "custom_liquid": "<div class = \"page-width\"><a href = \"/collections/all\" style = \"color:#000;text-decoration:none;\">All Products</a> / <span style = \"opacity:70%\">{{collection.title}}</span></div>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
