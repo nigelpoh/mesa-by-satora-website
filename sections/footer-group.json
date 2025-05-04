@@ -11,6 +11,16 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_liquid_89rxyU": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<hr style = \"margin:0\"/>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "newsletter_jXNPPg": {
       "type": "newsletter",
       "blocks": {
@@ -74,6 +84,7 @@
     }
   },
   "order": [
+    "custom_liquid_89rxyU",
     "newsletter_jXNPPg",
     "custom_liquid_fqAcJy",
     "footer"
