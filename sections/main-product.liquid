@@ -984,7 +984,7 @@
                           oG.checked = true;
                           g.classList.remove('greyed-out');
                           incompleteText.style.display = 'none';
-                          {% if block.settings.free_gifts_always.count > 0 or block.settings.free_gifts_optional.count > 0%}
+                          {% if block.settings.free_gifts_always.count == 0 %}
                             completeText.style.display = "flex";
                           {% endif %}
                         });
@@ -994,7 +994,7 @@
                           oG.checked = false;
                           g.classList.add('greyed-out');
                           incompleteText.style.display = 'flex';
-                          {% if block.settings.free_gifts_always.count > 0 or block.settings.free_gifts_optional.count > 0%}
+                          {% if block.settings.free_gifts_always.count == 0 %}
                             completeText.style.display = "none";
                           {% endif %}
                         });
