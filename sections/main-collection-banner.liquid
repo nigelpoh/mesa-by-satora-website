@@ -7,43 +7,11 @@
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
     }
   }
-  .media>*:not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
-    position: relative;
-  }
-  .media>img {
-    object-fit: contain;
-  }
-  .collection-hero__image-container {
-    height: auto;
-  }
-  .collection-hero.collection-hero--with-image {
-    padding: 0;
-  }
-  .collection-hero--with-image .collection-hero__text-wrapper {
-    padding: 3rem 2rem 0 2rem;
-  }
-  .coll-wrapper-desktop {
-    display: none;
-  }
-  .coll-wrapper-mobile {
-    display: block;
-  }
-  @media screen and (min-width: 750px) {
-    .coll-wrapper-desktop {
-      display: block;
-    }
-    .coll-wrapper-mobile {
-      display: none;
-    }
-    .collection-hero--with-image .collection-hero__text-wrapper {
-      padding-left: 4rem;
-    }
-  }
 {%- endstyle -%}
 
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    <div class="collection-hero__text-wrapper coll-wrapper-desktop">
+  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
@@ -74,16 +42,6 @@
         >
       </div>
     {%- endif -%}
-    <div class="collection-hero__text-wrapper coll-wrapper-mobile">
-      <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
-      </h1>
-
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
-    </div>
   </div>
 </div>
 
