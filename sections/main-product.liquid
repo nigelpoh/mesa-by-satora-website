@@ -653,10 +653,14 @@
                       </div>
 
                       <div class="bundle-gifts">
-                        {% if block.settings.free_gifts_always.count > 0 %}
+                        {% if block.settings.free_gifts_always.count > 0
+                          or block.settings.free_gifts_optional.count > 0
+                        %}
                           <div style="display: flex; padding: 1rem; font-size: 1.2rem; font-weight: 600; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};">
                             {{ block.settings.complete_text }}
                           </div>
+                        {% endif %}
+                        {% if block.settings.free_gifts_always.count > 0 %}
                           {% for product in block.settings.free_gifts_always %}
                             {% assign compare_at_price = product.selected_or_first_available_variant.compare_at_price %}
                             {% if compare_at_price == null
