@@ -3640,7 +3640,7 @@ details-disclosure > details {
   }
 }
 
-i {
+em, i {
   font-family: var(--font-italics-family);
   font-style: var(--font-italics-style);
   font-weight: var(--font-italics-weight);
