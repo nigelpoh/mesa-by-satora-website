@@ -542,6 +542,9 @@
       "block_order": [
         "tydal_reviews_reviews_widget_niHLeK"
       ],
+      "custom_css": [
+        ".scroll-trigger {background-color: #f7f4f1;}"
+      ],
       "settings": {
         "include_margins": true
       }
