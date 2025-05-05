@@ -171,7 +171,7 @@
             assign qty_rules = true
           endif
         -%}
-        <div class="card__information">
+        <div class="card__information" style = "padding: 0.8rem 1rem;">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -326,6 +326,7 @@
             <variant-card-selects
               id="variant-card-selects-{{ section.id }}-{{ card_product.id }}"
               data-section="cp-{{ section.id }}-{{ card_product.id }}"
+              style = "padding-top: 1rem;"
               {{ block.shopify_attributes }}
               {%- for option in card_product.options_with_values -%}
                 {% assign variant_titles = card_product.variants | map: 'title' %}
@@ -370,7 +371,7 @@
                   id="{{ product_form_id }}-submit"
                   type="submit"
                   name="add"
-                  class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                  class="quick-add__submit button button--full-width button--tertiary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
                   aria-haspopup="dialog"
                   aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                   aria-live="polite"
@@ -378,6 +379,7 @@
                   {% if card_product.selected_or_first_available_variant.available == false %}
                     disabled
                   {% endif %}
+                  style = "border: rgb(var(--color-foreground)) 1px solid;background: transparent; color: rgb(var(--color-foreground));"
                 >
                   <span>
                     {%- if card_product.selected_or_first_available_variant.available -%}
