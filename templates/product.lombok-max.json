@@ -299,7 +299,7 @@
         "sticky_atc_6igmBV"
       ],
       "custom_css": [
-        ".product__title > h1 {font-size: 2.5rem; font-family: \"Fraunces\"; font-style: normal; margin-bottom: 0; font-weight: 500;}",
+        ".product__title > h1 {font-size: 2.5rem; font-family: \"Fraunces\"; font-style: normal; margin-bottom: 0;}",
         ".product__title {margin-bottom: 0;}",
         ".product__info-container > .shopify-app-block {margin-top: 0;}"
       ],
