@@ -148,8 +148,8 @@
             "gift_background_colour": "#dedede",
             "gift_text_colour": "#000000",
             "stroke_colour": "#dddddd",
-            "bundle_title": "<b>The Lombok Bundle</b>",
-            "bundle_description": "<b>FREE</b> Lombok Organizer and <b>EXTRA 20% OFF</b> Lombok Portable Vacuum Pump",
+            "bundle_title": "The Lombok Bundle",
+            "bundle_description": "FREE Lombok Organizer and EXTRA 20% OFF Lombok Portable Vacuum Pump",
             "incomplete_text": "Complete the bundle to get this FREE!",
             "complete_text": "You have unlocked this!",
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
@@ -191,6 +191,15 @@
             "heading": "Is it Carry On Approved?",
             "icon": "none",
             "content": "<p>Yes! The Lombok Carry-On Pack is designed to fit under airline seats, even on the strictest carriers. Its compact build meets personal item size limits while still giving you maximum packing space.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_aRKjyz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can This Bag Be Used",
+            "icon": "none",
+            "content": "<p>The <strong>Lombok Carry-On Pack</strong> is more than a travel essential—its adaptable design makes it an ideal companion for a variety of lifestyles and daily routines. Here’s how it seamlessly integrates into your world:</p><p>• <strong>For Students</strong> – Elegantly organized for academic life, with ample space for textbooks, laptops, and study essentials.</p><p>• <strong>For Hiking</strong> – Built for adventure, offering generous capacity for gear, hydration, and trail-side necessities.</p><p>• <strong>For Daily Commutes</strong> – A polished yet practical choice for transporting your work or school essentials with ease and style.</p><p>• <strong>For the Gym</strong> – Thoughtfully designed to carry your workout attire, shoes, and accessories. Integrated ventilation helps maintain freshness and prevents moisture buildup.</p><p>Wherever life takes you, the Lombok Carry-On Pack adapts with purpose and sophistication.</p>",
             "page": ""
           }
         },
@@ -291,6 +300,7 @@
         "info_e3VLkp",
         "description",
         "collapsible_tab_gAjgme",
+        "collapsible_tab_aRKjyz",
         "collapsible_tab_JntjPi",
         "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
@@ -850,6 +860,7 @@
       "blocks": {
         "collapsible_row_bCzBwD": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "What warranty coverage accompanies the Lombok Carry-On Pack?",
             "icon": "question_mark",
@@ -859,6 +870,7 @@
         },
         "collapsible_row_hPpaH4": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Where should the Portable Vacuum be stored within the bag?",
             "icon": "question_mark",
@@ -887,7 +899,7 @@
         "collapsible_row_mx7iCh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can the Lombok Carry-On Pack be used for purposes other than travel?",
+            "heading": "Is the Lombok Carry-On Pack suitable for everyday use?",
             "icon": "question_mark",
             "row_content": "<p>The <strong>Lombok Carry-On Pack</strong> is more than a travel essential—its adaptable design makes it an ideal companion for a variety of lifestyles and daily routines. Here’s how it seamlessly integrates into your world:</p><p>• <strong>For Students</strong> – Elegantly organized for academic life, with ample space for textbooks, laptops, and study essentials.</p><p>• <strong>For Hiking</strong> – Built for adventure, offering generous capacity for gear, hydration, and trail-side necessities.</p><p>• <strong>For Daily Commutes</strong> – A polished yet practical choice for transporting your work or school essentials with ease and style.</p><p>• <strong>For the Gym</strong> – Thoughtfully designed to carry your workout attire, shoes, and accessories. Integrated ventilation helps maintain freshness and prevents moisture buildup.</p><p>Wherever life takes you, the Lombok Carry-On Pack adapts with purpose and sophistication.</p>",
             "page": ""
@@ -895,6 +907,7 @@
         },
         "collapsible_row_UBJTpt": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Does the Lombok Carry-On Pack meet airline standards for personal item dimensions?",
             "icon": "question_mark",
