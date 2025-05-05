@@ -182,13 +182,21 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {}
+        },
+        "collapsible_tab_JntjPi": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "<p>The Lombok Max Carry-On is built for travelers who pack smart and move freely. Its sleek design features a built-in vacuum compression system, so you can carry more while staying within airline limits—no baggage fees, no hassle. With organized compartments and a durable, waterproof build, it's ready for weekend getaways, business trips, or spontaneous escapes. Travel light, stay ready, and go anywhere—on your terms.</p>",
+            "page": ""
+          }
         },
         "collapsible_tab_gAjgme": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Is it Carry On Approved?",
+            "heading": "Does it fit under the seat as a personal item on flights and is it carry-on approved?",
             "icon": "none",
             "content": "<p>Yes! The Lombok Carry-On Pack is designed to fit under airline seats, even on the strictest carriers. Its compact build meets personal item size limits while still giving you maximum packing space.</p>",
             "page": ""
@@ -197,27 +205,18 @@
         "collapsible_tab_aRKjyz": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Is the Lombok Carry-On Pack suitable for everyday use?",
+            "heading": "Is it suitable for everyday use?",
             "icon": "none",
-            "content": "<p>Absolutely. While it’s built for travel, the Lombok Carry-On Pack is just as useful in daily life:</p><ul><li>Fits laptops, books, and campus essentials with organized ease.</li><li>Sleek, professional, and perfect for work or school.</li><li>Spacious enough for gear, snacks, and hydration on the trail.</li><li>Room for clothes, shoes, and accessories—plus ventilation to keep things fresh.</li></ul><p>Wherever you're headed, it adapts to your routine with style and function.</p>",
+            "content": "<p>Absolutely! While it’s built for travel, the Lombok Carry-On Pack is just as useful in daily life:</p><ul><li>Fits laptops, books, and campus essentials with organized ease.</li><li>Sleek, professional, and perfect for work or school.</li><li>Spacious enough for gear, snacks, and hydration on the trail.</li><li>Room for clothes, shoes, and accessories—plus ventilation to keep things fresh.</li></ul><p>Wherever you're headed, it adapts to your routine with style and function.</p>",
             "page": ""
           }
         },
-        "collapsible_tab_JntjPi": {
+        "collapsible_tab_MKJtwP": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Description",
+            "heading": "Is it Easy to Pack and Access On the Go?",
             "icon": "none",
-            "content": "<p>Travel smarter and more efficiently with the Lombok Carry-On Pack – the ultimate space-saving travel companion. Designed with a vacuum compression system, this backpack maximizes packing efficiency by reducing bulk, allowing you to carry more without exceeding airline size limits. Its compact yet spacious design helps you avoid extra baggage fees while keeping your essentials neatly organized. Made from durable, waterproof materials, it's built to withstand any journey, whether you're on a business trip or an adventure abroad. Pack less, travel more—without compromise.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_ByHUAc": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Specifications",
-            "icon": "none",
-            "content": "<p><strong>Dimensions:</strong><br/>Before expansion: 49 x 32 x 15 cm<br/>After expansion: 49 x 32 x 20 cm</p><p><strong>Airlines Carry-on limit:</strong><br/>Inches: 22 x 14 x 9<br/>Centimeters: 56 x 45 x 25</p><p><strong>Main material</strong>: Waterproof Oxford cloth (Waterproof/wear-resistant/moistureproof). GRS certified, PFC free.<br/><strong>Other materials</strong>: Nylon herringbone, Polyester, Neoprene Foams, Polvethylene Foams.</p>",
+            "content": "<p>With our sleek, rechargeable portable vacuum, packing or unpacking takes just 1–2 minutes giving you a compact, travel-ready setup with zero hassle.</p>",
             "page": ""
           }
         },
@@ -236,6 +235,16 @@
             "heading": "One-Year Warranty",
             "icon": "none",
             "content": "<p>We stand behind the quality and durability of our backpack. This <strong>1-Year Standard Warranty</strong> covers defects in materials and workmanship under normal use for <strong>one (1) year</strong> from the date of purchase.</p><h3><strong>Warranty Coverage:</strong></h3><ul><li>Covers <strong>manufacturing defects</strong> in materials and craftsmanship.</li><li>Includes <strong>zippers, stitching, straps, and hardware</strong> that fail under normal use.</li></ul><h3><strong>How to Claim:</strong></h3><ol><li>Contact our <strong>customer support team</strong> with proof of purchase and a description of the issue.</li><li>We will assess the claim and, if approved, offer <strong>repair, replacement, or an equivalent solution</strong> at our discretion.</li><li>The customer may be responsible for <strong>shipping costs</strong> associated with warranty claims.</li></ol><p>For any questions or to submit a claim, please reach out to us at hello@satora.store</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_ByHUAc": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Specifications",
+            "icon": "none",
+            "content": "<p><strong>Dimensions:</strong><br/>Before expansion: 49 x 32 x 15 cm<br/>After expansion: 49 x 32 x 20 cm</p><p><strong>Airlines Carry-on limit:</strong><br/>Inches: 22 x 14 x 9<br/>Centimeters: 56 x 45 x 25</p><p><strong>Main material</strong>: Waterproof Oxford cloth (Waterproof/wear-resistant/moistureproof). GRS certified, PFC free.<br/><strong>Other materials</strong>: Nylon herringbone, Polyester, Neoprene Foams, Polvethylene Foams.</p>",
             "page": ""
           }
         },
@@ -299,12 +308,13 @@
         "payment_options_NJemVU",
         "info_e3VLkp",
         "description",
+        "collapsible_tab_JntjPi",
         "collapsible_tab_gAjgme",
         "collapsible_tab_aRKjyz",
-        "collapsible_tab_JntjPi",
-        "collapsible_tab_ByHUAc",
+        "collapsible_tab_MKJtwP",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc",
+        "collapsible_tab_ByHUAc",
         "share",
         "sticky_atc_6igmBV"
       ],
@@ -880,6 +890,7 @@
         },
         "collapsible_row_JdxMRj": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Does the bag fit under the airplane seat?",
             "icon": "question_mark",
@@ -889,8 +900,9 @@
         },
         "collapsible_row_pkRhrM": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
-            "heading": "How quickly can I pack and access my belongings?",
+            "heading": "Is it easy to pack and access on the go?",
             "icon": "question_mark",
             "row_content": "<p>With our sleek, rechargeable portable vacuum, packing and unpacking is effortlessly efficient—taking just 1–2 minutes. Enjoy a compact, travel-ready setup wherever you go.</p>",
             "page": ""
@@ -898,6 +910,7 @@
         },
         "collapsible_row_mx7iCh": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Is the Lombok Carry-On Pack suitable for everyday use?",
             "icon": "question_mark",
