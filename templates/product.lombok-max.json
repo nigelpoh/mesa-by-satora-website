@@ -168,6 +168,10 @@
             "show_klarna": true
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "info_e3VLkp": {
           "type": "info",
           "disabled": true,
@@ -179,10 +183,6 @@
             "padding": 0,
             "icon": "plane"
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
         },
         "collapsible_tab_gAjgme": {
           "type": "collapsible_tab",
@@ -287,8 +287,8 @@
         "tracker_UhAThg",
         "upsell_bundle_t3py8H",
         "payment_options_NJemVU",
-        "info_e3VLkp",
         "description",
+        "info_e3VLkp",
         "collapsible_tab_gAjgme",
         "collapsible_tab_aRKjyz",
         "collapsible_tab_MKJtwP",
