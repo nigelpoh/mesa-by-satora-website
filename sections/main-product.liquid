@@ -267,6 +267,8 @@
                               src="{{ 'payment-mastercard.svg' | asset_url }}"
                               alt="Mastercard"
                               class="icon icon--full-color"
+                              width="50"
+                              height="50"
                             >
                           {% else %}
                             {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
@@ -276,7 +278,7 @@
                     {%- endfor -%}
                     {% if block.settings.show_klarna %}
                       <li class="list-payment__item">
-                        <img src="{{ 'payment-klarna.svg' | asset_url }}" alt="Klarna" class="icon icon--full-color">
+                        <img src="{{ 'payment-klarna.svg' | asset_url }}" alt="Klarna" class="icon icon--full-color" width="50" height="50">
                       </li>
                     {% endif %}
                   </ul>

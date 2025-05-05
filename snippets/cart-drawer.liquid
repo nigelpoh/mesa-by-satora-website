@@ -606,8 +606,10 @@
                     <div class="upsell-product">
                       <div class="upsell-product__image">
                         <img
-                          src="{{ upsell_product.featured_image | img_url: '200x' }}"
+                          src="{{ upsell_product.featured_image | image_url: width: 400 }}"
                           alt="{{ upsell_product.title }}"
+                          width="400"
+                          height="400"
                         >
                       </div>
                       <div class="upsell-product__details">
