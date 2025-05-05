@@ -298,6 +298,9 @@
         "share",
         "sticky_atc_6igmBV"
       ],
+      "custom_css": [
+        ".badge {display: none;}"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
