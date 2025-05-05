@@ -76,7 +76,6 @@
   }
   .bundle-block h3 {
     font-size: 2rem;
-    margin-bottom: 1rem;
   }
   .product__title {
     margin-bottom: 0;
@@ -461,7 +460,7 @@
               {%- when 'upsell_bundle' -%}
                 <div
                   class="bundle-block"
-                  style="border: 1px solid {{ block.settings.stroke_colour }}; margin-bottom: 0;"
+                  style="border: 1px solid {{ block.settings.stroke_colour }}; margin-bottom: 1rem;"
                 >
                   <div style="display: flex; flex-direction: column; padding: 2rem;">
                     <h3 style="margin: 0;">{{ block.settings.bundle_title }}</h3>
