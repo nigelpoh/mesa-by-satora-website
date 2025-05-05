@@ -379,6 +379,12 @@
   box-shadow: none;
   outline: 0;
 }
+.underline-links-hover .quick-add__submit {
+  transition: all 0.3s ease;
+  border: rgb(var(--color-foreground)) 1px solid;
+  background: transparent; 
+  color: rgb(var(--color-foreground));
+}
 
 @media screen and (min-width: 990px) {
   .card .media.media--hover-effect > img:only-child,
@@ -404,6 +410,11 @@
   .underline-links-hover:hover a {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
+  }
+  .underline-links-hover:hover .quick-add__submit {
+    background-color: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    border: 1px solid rgb(var(--color-background));
   }
 }
 
