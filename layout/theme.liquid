@@ -71,7 +71,7 @@
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-      assign italics_font_regular = settings.type_italics_font | font_modify: 'style', 'normal' | font_modify: 'weight', 'medium'
+      assign italics_font_medium = settings.type_italics_font | font_modify: 'style', 'normal' | font_modify: 'weight', 'regular'
     %}
 
     {% style %}
@@ -81,7 +81,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
       {{ settings.type_italics_font | font_face: font_display: 'swap' }}
-      {{ italics_font_regular | font_face: font_display: 'swap'}}
+      {{ italics_font_medium | font_face: font_display: 'swap'}}
       {{ settings.type_header_strong_font | font_face: font_display: 'swap' }}
 
       {% for scheme in settings.color_schemes -%}
