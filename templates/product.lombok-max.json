@@ -299,7 +299,7 @@
         "sticky_atc_6igmBV"
       ],
       "custom_css": [
-        ".badge {display: none;}"
+        ".product__title > h1 {font-size: 2.5rem; font-family: \"Fraunces\"; font-style: normal; margin-bottom: 0;}"
       ],
       "settings": {
         "enable_sticky_info": true,
