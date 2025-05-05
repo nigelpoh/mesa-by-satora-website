@@ -430,5 +430,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".card__badge {display: none;}"
+    ]
   }
 }
