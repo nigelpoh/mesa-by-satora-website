@@ -37,6 +37,46 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_YbjJed": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UDx9if": {
+          "type": "heading",
+          "settings": {
+            "heading": "<i>Save On Those Fees</i>",
+            "heading_size": "h1"
+          }
+        },
+        "text_MGAzqc": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Save Up to £45</strong> on cabin & checked bag fees and avoid risking <strong>£60</strong> in baggage penalties <strong>every trip</strong>!*</p>"
+          }
+        },
+        "caption_ehw7gf": {
+          "type": "caption",
+          "settings": {
+            "caption": "*Based on RyanAir’s official fee chart, May 2025",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "small"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UDx9if",
+        "text_MGAzqc",
+        "caption_ehw7gf"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "image_with_text_yqnKNm": {
       "type": "image-with-text",
       "blocks": {
@@ -196,6 +236,7 @@
   "order": [
     "banner",
     "product-grid",
+    "rich_text_YbjJed",
     "image_with_text_yqnKNm",
     "image_banner_TdqqxN",
     "rich_text_MVKX64",
