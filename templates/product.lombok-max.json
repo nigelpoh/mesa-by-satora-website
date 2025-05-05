@@ -71,6 +71,7 @@
         },
         "custom_liquid_eQQnYY": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<div style = \"background-color:#000;padding:1rem 2rem; margin-bottom:2rem;color:#fff;\"><span style=\"line-height:normal;\"><b>Save Up to £45</b> on cabin & checked bag fees and avoid risking <b>£60</b> in baggage penalties <b>every trip</b>!*</span><br/>\n<span style=\"font-size:0.95rem;color:#fff\">*Based on RyanAir’s official fee chart, May 2025</span></div>"
           }
