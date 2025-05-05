@@ -267,28 +267,28 @@
         "column_F9WHAM": {
           "type": "column",
           "settings": {
-            "title": "Heading",
-            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "title": "Surprisingly Spacious and Seat-Friendly",
+            "text": "<p>I was skeptical about the compression feature, but it really works. I packed way more than I expected and still fit it under the seat. Game changer.</p>",
             "image_pos": "below_description",
-            "author": "<em><strong>Author</strong></em>"
+            "author": "<em><strong>Maya C.</strong></em>"
           }
         },
         "column_VyQpJG": {
           "type": "column",
           "settings": {
-            "title": "Heading",
-            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "title": "No More Baggage Fee Stress",
+            "text": "<p>This bag made traveling so much easier. Everything stayed organized, and I didn’t have to worry about extra baggage fees. Super sleek and practical.</p>",
             "image_pos": "below_description",
-            "author": "<em><strong>Author</strong></em>"
+            "author": "<em><strong>Lena B.</strong></em>"
           }
         },
         "column_q9nwp6": {
           "type": "column",
           "settings": {
-            "title": "Heading",
-            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
+            "title": "Perfect for Quick Getaways",
+            "text": "<p>Used it for a last-minute weekend trip. It fits all my stuff, stayed compact, and slid right over my suitcase handle. Honestly, I’m not going back to regular bags.</p>",
             "image_pos": "below_description",
-            "author": "<em><strong>Author</strong></em>"
+            "author": "<em><strong>Tara N.</strong></em>"
           }
         }
       },
@@ -299,7 +299,7 @@
       ],
       "name": "Testimonials",
       "settings": {
-        "title": "What fellow travelers <i><em>are saying</i></em>",
+        "title": "What fellow travelers <em>are saying</em>",
         "show_stars": true,
         "stars_color": "#000000",
         "background_color": "#f8f8f9",
