@@ -69,6 +69,16 @@
           "type": "price",
           "settings": {}
         },
+        "klarna_on_site_messaging_app_block_HQrRea": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "credit-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": "Or"
+          }
+        },
         "custom_liquid_eQQnYY": {
           "type": "custom_liquid",
           "disabled": true,
@@ -80,16 +90,6 @@
           "type": "custom_liquid",
           "settings": {
             "custom_liquid": "<span style = \"font-size:1.8rem; font-weight:600\">DELIVERY INFORMATION</span><br/>\n<span style = \"font-size:1.5rem; font-weight:400\">Free Worldwide Shipping. Shipped Within 1 to 2 Days.</span>"
-          }
-        },
-        "klarna_on_site_messaging_app_block_HQrRea": {
-          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
-          "settings": {
-            "data_key": "credit-promotion-badge",
-            "theme": "default",
-            "topPadding": "0",
-            "bottomPadding": "0",
-            "messagePrefix": "Or"
           }
         },
         "custom_liquid_aNxG8P": {
@@ -278,9 +278,9 @@
         "tydal_reviews_star_rating_GiPUrh",
         "urgency_mmCwGy",
         "price",
+        "klarna_on_site_messaging_app_block_HQrRea",
         "custom_liquid_eQQnYY",
         "custom_liquid_PNa3ap",
-        "klarna_on_site_messaging_app_block_HQrRea",
         "custom_liquid_aNxG8P",
         "variant_picker_nkHHkr",
         "buy_buttons_aHr84y",
