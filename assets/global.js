@@ -1191,6 +1191,8 @@ class VariantCardSelects extends HTMLElement {
               img.style.display = 'block';
             });
           }
+          const input = document.querySelector(`input[data-section="${sectionId}"]`);
+          if (input) input.value = variantId;
         }
       }
       if (selectedSwatchValue) selectedSwatchValue.innerHTML = value;
