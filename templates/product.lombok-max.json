@@ -297,7 +297,6 @@
         "share",
         "sticky_atc_6igmBV"
       ],
-      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -356,7 +355,6 @@
         "column_nLREGe",
         "column_4cLMKT"
       ],
-      "disabled": true,
       "settings": {
         "title": "What Traveler's Like You Are Saying",
         "show_stars": true,
