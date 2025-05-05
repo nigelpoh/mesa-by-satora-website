@@ -392,7 +392,7 @@
         "image": "shopify://shop_images/packin.gif",
         "height": "adapt",
         "desktop_image_width": "medium",
-        "layout": "image_first",
+        "layout": "text_first",
         "image_behavior": "none",
         "full_width_img": false,
         "content_layout": "no-overlap",
@@ -402,84 +402,6 @@
         "section_color_scheme": "",
         "color_scheme": "",
         "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "media_slider_dP9PHQ": {
-      "type": "media-slider",
-      "blocks": {
-        "video_slide_UiNJCa": {
-          "type": "video_slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/0af4fcab3d0e4c96b8794e7587cb7f2e.HD-1080p-7.2Mbps-33055071.mp4"
-          }
-        },
-        "video_slide_4akmFX": {
-          "type": "video_slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/04b094f94f9a45238b934dc0d603e30c.HD-720p-1.6Mbps-31346218.mp4"
-          }
-        },
-        "video_slide_itVBjC": {
-          "type": "video_slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/05d8910eecc54dd9bb8db2cdfa73b5d3.HD-1080p-7.2Mbps-31371402.mp4"
-          }
-        },
-        "video_slide_mXWiDE": {
-          "type": "video_slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/4068a99af51249b8974954ffd4e50d29.HD-720p-1.6Mbps-33055073.mp4"
-          }
-        },
-        "video_slide_nPgCED": {
-          "type": "video_slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/b0af19c9346a40b49edee526ac786b69.HD-720p-1.6Mbps-31345625.mp4"
-          }
-        },
-        "video_slide_FphEam": {
-          "type": "video_slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/b25f2aa07076406da7ddc85e0f4369b2.HD-1080p-7.2Mbps-31345619.mp4"
-          }
-        },
-        "video_slide_PpW7QQ": {
-          "type": "video_slide",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/fb9948dd8e304badbe458992d0451628.HD-720p-3.0Mbps-31345623.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "video_slide_UiNJCa",
-        "video_slide_4akmFX",
-        "video_slide_itVBjC",
-        "video_slide_mXWiDE",
-        "video_slide_nPgCED",
-        "video_slide_FphEam",
-        "video_slide_PpW7QQ"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Double Your Space Without the Extra Baggage",
-        "description": "Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.",
-        "infinite": true,
-        "autoplay": true,
-        "dots": false,
-        "arrows": true,
-        "center_align": true,
-        "slides_to_show": 3,
-        "slides_to_show_mobile": 1,
-        "slides_to_scroll": 1,
-        "padding_top": 0,
         "padding_bottom": 36
       }
     },
@@ -515,7 +437,7 @@
         "full_width_img": false,
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "right",
+        "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "section_color_scheme": "",
         "color_scheme": "",
@@ -1041,7 +963,6 @@
     "main",
     "testimonials_gR3kGU",
     "image_with_text_GiWYWH",
-    "media_slider_dP9PHQ",
     "image_with_text_K6zmki",
     "comparison_table_R43bqY",
     "image_with_text_UacQeL",
