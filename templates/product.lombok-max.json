@@ -297,6 +297,7 @@
         "share",
         "sticky_atc_6igmBV"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -355,6 +356,7 @@
         "column_nLREGe",
         "column_4cLMKT"
       ],
+      "disabled": true,
       "settings": {
         "title": "What Traveler's Like You Are Saying",
         "show_stars": true,
@@ -438,6 +440,7 @@
         },
         "video_slide_nPgCED": {
           "type": "video_slide",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/b0af19c9346a40b49edee526ac786b69.HD-720p-1.6Mbps-31345625.mp4"
           }
