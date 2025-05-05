@@ -140,127 +140,6 @@
         "padding_bottom": 0
       }
     },
-    "media_slider_JMRpQf": {
-      "type": "media-slider",
-      "blocks": {
-        "video_slide_RmF7dd": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/0af4fcab3d0e4c96b8794e7587cb7f2e.HD-1080p-7.2Mbps-33055071.mp4"
-          }
-        },
-        "video_slide_KDHhbF": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/04b094f94f9a45238b934dc0d603e30c.HD-720p-1.6Mbps-31346218.mp4"
-          }
-        },
-        "video_slide_X4Wmc4": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/05d8910eecc54dd9bb8db2cdfa73b5d3.HD-1080p-7.2Mbps-31371402.mp4"
-          }
-        },
-        "video_slide_jFLCLb": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/4068a99af51249b8974954ffd4e50d29.HD-720p-1.6Mbps-33055073.mp4"
-          }
-        },
-        "video_slide_rtRwhz": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/b0af19c9346a40b49edee526ac786b69.HD-720p-1.6Mbps-31345625.mp4"
-          }
-        },
-        "video_slide_FxR4NQ": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/b25f2aa07076406da7ddc85e0f4369b2.HD-1080p-7.2Mbps-31345619.mp4"
-          }
-        },
-        "video_slide_gmFNkb": {
-          "type": "video_slide",
-          "settings": {
-            "video": "shopify://files/videos/fb9948dd8e304badbe458992d0451628.HD-720p-3.0Mbps-31345623.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "video_slide_RmF7dd",
-        "video_slide_KDHhbF",
-        "video_slide_X4Wmc4",
-        "video_slide_jFLCLb",
-        "video_slide_rtRwhz",
-        "video_slide_FxR4NQ",
-        "video_slide_gmFNkb"
-      ],
-      "disabled": true,
-      "name": "Image/Video Slider",
-      "settings": {
-        "heading": "Trusted and Used by Travelers Worldwide",
-        "description": "",
-        "infinite": true,
-        "autoplay": true,
-        "dots": true,
-        "arrows": true,
-        "center_align": false,
-        "slides_to_show": 3,
-        "slides_to_show_mobile": 2,
-        "slides_to_scroll": 1,
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_RKmiPK": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_Tzxm6w": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "text_ExXQAh": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_qxtwE8": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_Tzxm6w",
-        "text_ExXQAh",
-        "button_qxtwE8"
-      ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "full_width_img": false,
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "testimonials_bjCQQh": {
       "type": "testimonials",
       "blocks": {
@@ -341,7 +220,7 @@
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 80
       }
     },
     "image_banner_gQB33N": {
@@ -381,8 +260,6 @@
     "image_banner",
     "featured_collection",
     "image_with_text_LQ3gyb",
-    "media_slider_JMRpQf",
-    "image_with_text_RKmiPK",
     "testimonials_bjCQQh",
     "rich_text_nNTimh",
     "image_banner_gQB33N"
