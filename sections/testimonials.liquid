@@ -28,6 +28,9 @@
   .splide__arrow--prev {
     left: 0rem;
   }
+  .media>*:not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
+    position: absolute !important;
+  }
 {%- endstyle -%}
 <div class="multicolumn multicolumn--{{ section.id }} color-{{ section.settings.color_scheme }} gradient{% if section.settings.title == blank %} no-heading{% endif %} content-for-grouping animate-section animate--hidden {{ section.settings.visibility }}">
   {%- liquid
