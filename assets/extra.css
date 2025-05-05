@@ -22,7 +22,7 @@ span.price-item.price-item--sale.price-item--last {
 }
 
 .testimonial-card__stars {
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   color: var(--stars-color);
   margin: 0;
   line-height: 1.2;
