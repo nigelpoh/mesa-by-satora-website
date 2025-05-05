@@ -184,15 +184,6 @@
           "type": "description",
           "settings": {}
         },
-        "collapsible_tab_JntjPi": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Description",
-            "icon": "none",
-            "content": "<p>The Lombok Max Carry-On is built for travelers who pack smart and move freely. Its sleek design features a built-in vacuum compression system, so you can carry more while staying within airline limits—no baggage fees, no hassle. With organized compartments and a durable, waterproof build, it's ready for weekend getaways, business trips, or spontaneous escapes. Travel light, stay ready, and go anywhere—on your terms.</p>",
-            "page": ""
-          }
-        },
         "collapsible_tab_gAjgme": {
           "type": "collapsible_tab",
           "settings": {
@@ -235,16 +226,6 @@
             "heading": "One-Year Warranty",
             "icon": "none",
             "content": "<p>We stand behind the quality and durability of our backpack. This <strong>1-Year Standard Warranty</strong> covers defects in materials and workmanship under normal use for <strong>one (1) year</strong> from the date of purchase.</p><h3><strong>Warranty Coverage:</strong></h3><ul><li>Covers <strong>manufacturing defects</strong> in materials and craftsmanship.</li><li>Includes <strong>zippers, stitching, straps, and hardware</strong> that fail under normal use.</li></ul><h3><strong>How to Claim:</strong></h3><ol><li>Contact our <strong>customer support team</strong> with proof of purchase and a description of the issue.</li><li>We will assess the claim and, if approved, offer <strong>repair, replacement, or an equivalent solution</strong> at our discretion.</li><li>The customer may be responsible for <strong>shipping costs</strong> associated with warranty claims.</li></ol><p>For any questions or to submit a claim, please reach out to us at hello@satora.store</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_ByHUAc": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "heading": "Specifications",
-            "icon": "none",
-            "content": "<p><strong>Dimensions:</strong><br/>Before expansion: 49 x 32 x 15 cm<br/>After expansion: 49 x 32 x 20 cm</p><p><strong>Airlines Carry-on limit:</strong><br/>Inches: 22 x 14 x 9<br/>Centimeters: 56 x 45 x 25</p><p><strong>Main material</strong>: Waterproof Oxford cloth (Waterproof/wear-resistant/moistureproof). GRS certified, PFC free.<br/><strong>Other materials</strong>: Nylon herringbone, Polyester, Neoprene Foams, Polvethylene Foams.</p>",
             "page": ""
           }
         },
@@ -308,13 +289,11 @@
         "payment_options_NJemVU",
         "info_e3VLkp",
         "description",
-        "collapsible_tab_JntjPi",
         "collapsible_tab_gAjgme",
         "collapsible_tab_aRKjyz",
         "collapsible_tab_MKJtwP",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc",
-        "collapsible_tab_ByHUAc",
         "share",
         "sticky_atc_6igmBV"
       ],
