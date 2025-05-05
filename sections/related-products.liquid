@@ -18,6 +18,11 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .quick-add__submit:hover, .quick-add__submit:active {
+    background-color: rgb(var(--background-color));
+    color: rgb(var(--foreground-color));
+    border: 1px solid rgb(var(--foreground-color));
+  }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
