@@ -61,6 +61,11 @@ if (!customElements.get('product-info')) {
       }
 
       handleOptionValueChange({ data: { event, target, selectedOptionValues } }) {
+        for (let className of event.target.classList) {
+          if (className.includes('bundle')) {
+            return;
+          }
+        }
         if (!this.contains(event.target)) return;
 
         this.resetProductFormState();
