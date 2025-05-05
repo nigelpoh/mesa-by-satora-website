@@ -2854,6 +2854,7 @@ details[open] > .header__menu-item .icon-plus {
 details[closed] > .header__menu-item .icon-plus {
   transition: transform 0.3s ease;
   transform: rotate(0deg);
+}
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
