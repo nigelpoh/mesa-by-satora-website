@@ -41,6 +41,9 @@
   {% if additional_props %}
     {{ additional_props }}
   {% endif %}
+  {% if include_variant_id and variant_id %}
+    data-variant-id="{{ variant_id }}"
+  {% endif %}
 >
 <label
   for="{{ id }}"

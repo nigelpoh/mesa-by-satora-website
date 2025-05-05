@@ -18,6 +18,11 @@
 {% endcomment %}
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
+  if block 
+    assign swatch_shape = block.settings.swatch_shape
+  else
+    assign swatch_shape = 'circle'
+  endif
 -%}
 
 {%- for value in option.values -%}
@@ -40,11 +45,11 @@
   -%}
 
   {%- capture input_id -%}
-    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+    {{ section.id }}-{{ product.id }}-{{ option.position }}-{{ forloop.index0 -}}
   {%- endcapture -%}
 
   {%- capture input_name -%}
-    {{ option.name }}-{{ option.position }}
+    {{ option.name }}-{{ option.position }}-{{ product.id }}
   {%- endcapture -%}
 
   {%- capture input_dataset -%}
@@ -66,13 +71,15 @@
     {%
       render 'swatch-input',
       id: input_id,
+      include_variant_id: include_variant_id,
+      variant_id: product.variants[forloop.index0].id,
       name: input_name,
       value: value | escape,
       swatch: value.swatch,
       product_form_id: product_form_id,
       checked: value.selected,
       visually_disabled: option_disabled,
-      shape: block.settings.swatch_shape,
+      shape: swatch_shape,
       help_text: help_text,
       additional_props: input_dataset
     %}
