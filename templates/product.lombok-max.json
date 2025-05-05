@@ -525,7 +525,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 76,
         "padding_bottom": 0
@@ -542,9 +542,7 @@
       "block_order": [
         "tydal_reviews_reviews_widget_niHLeK"
       ],
-      "custom_css": [
-        ".scroll-trigger {background-color: #f7f4f1;}"
-      ],
+      "custom_css": [],
       "settings": {
         "include_margins": true
       }
