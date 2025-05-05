@@ -336,8 +336,8 @@ cart-drawer-items {
   word-break: break-word;
 }
 
-.cart-drawer details[open] > summary .icon-caret {
-  transform: rotate(180deg);
+.cart-drawer details[open] > summary .icon {
+  transform: rotate(90deg);
 }
 
 .cart-drawer .cart__checkout-button {

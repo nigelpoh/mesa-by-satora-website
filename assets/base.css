@@ -672,7 +672,7 @@ summary {
   position: relative;
 }
 
-summary .icon-caret {
+summary .icon-caret, summary .icon-plus {
   position: absolute;
   height: 0.6rem;
   right: 1.5rem;
@@ -2837,8 +2837,23 @@ details[open]:hover > .header__menu-item {
 }
 
 details[open] > .header__menu-item .icon-caret {
+  transition: transform 0.3s ease;
   transform: rotate(180deg);
 }
+
+details[closed] > .header__menu-item .icon-caret {  
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+details[open] > .header__menu-item .icon-plus {
+  transition: transform 0.3s ease;
+  transform: rotate(45deg);
+}
+
+details[closed] > .header__menu-item .icon-plus {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
