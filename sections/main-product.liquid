@@ -1693,14 +1693,19 @@
       <div class="sticky-atc-container page-width{% if block.settings.desktop_full_button_width %} sticky-atc--desktop-btn-full{% endif %}{% if block.settings.mobile_full_button_width %} sticky-atc--mobile-btn-full{% endif %}">
         {%- if block.settings.mobile_show_image or block.settings.desktop_show_image -%}
           <div class="sticky-atc__image{% unless block.settings.mobile_show_image %} mobile-hidden{% endunless %}{% unless block.settings.desktop_show_image %} desktop-hidden{% endunless %}">
-            <img
-              id="sticky-atc-image-{{ section.id }}"
-              src="{{ product.featured_image | image_url: width: 500 }}"
-              alt="{{ product.featured_image.alt | escape }}"
-              loading="lazy"
-              width="auto"
-              height="auto"
-            >
+            {% for variant in product.variants %}
+              <img
+                id="sticky-atc-image-{{ section.id }}"
+                src="{{ variant.featured_image | image_url: width: 500 }}"
+                alt="{{ variant.featured_image.alt | escape }}"
+                loading="lazy"
+                width="auto"
+                height="auto"
+                {% if variant.id != product.selected_or_first_available_variant.id %}
+                  style="display:none;"
+                {% endif %}
+              >
+            {% endfor %}
           </div>
         {%- endif -%}
         <div class="sticky-atc__left">
