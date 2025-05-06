@@ -85,6 +85,39 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "sticky_atc_Mwnfke": {
+          "type": "sticky_atc",
+          "settings": {
+            "function": "add_to_cart",
+            "prods": [],
+            "display_when": "after_scroll",
+            "button_label": "Add to Cart",
+            "enable_custom_btn_color": false,
+            "custom_btn_color": "#dd1d1d",
+            "custom_bar_color": "#ffffff",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)",
+            "picker_type": "combined",
+            "desktop_show_image": true,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": false,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": false,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": true,
+            "mobile_variant_picker": false,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
+          }
         }
       },
       "block_order": [
@@ -99,7 +132,8 @@
         "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc",
-        "share"
+        "share",
+        "sticky_atc_Mwnfke"
       ],
       "settings": {
         "enable_sticky_info": true,
