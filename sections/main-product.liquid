@@ -1093,35 +1093,37 @@
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
                         submitBtn.addEventListener('click', (e) => {
-                          form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
-                          form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
+                          const atc_btn = document.querySelector('.shopify-app-block button:last-of-type');
+                          console.log(atc_btn)
+                          // form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
+                          // form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
 
-                          let anyChecked = false;
-                          let index = 0;
-                          let discount_index = 0;
-                          let checks = [];
-                          savingsCheckboxes.forEach((checkbox) => {
-                            if (checkbox.checked) {
-                              anyChecked = true;
-                              const variantId = checkbox.getAttribute('value');
-                              const checker = checkbox.getAttribute('checker');
-                              const inputID = document.createElement('input');
-                              inputID.type = 'hidden';
-                              inputID.name = 'items[' + index + '][id]';
-                              inputID.value = variantId;
-                              inputID.classList.add('bundle-cart-item');
-                              form.appendChild(inputID);
-                              const inputQuantity = document.createElement('input');
-                              inputQuantity.type = 'hidden';
-                              inputQuantity.name = 'items[' + index + '][quantity]';
-                              inputQuantity.value = 1;
-                              inputQuantity.classList.add('bundle-cart-item');
-                              form.appendChild(inputQuantity);
-                              if(checker != null && checker.trim() != "") {
-                                checks.push(checker);
-                              }
-                              index++;
-                            }
+                          // let anyChecked = false;
+                          // let index = 0;
+                          // let discount_index = 0;
+                          // let checks = [];
+                          // savingsCheckboxes.forEach((checkbox) => {
+                          //   if (checkbox.checked) {
+                          //     anyChecked = true;
+                          //     const variantId = checkbox.getAttribute('value');
+                          //     const checker = checkbox.getAttribute('checker');
+                          //     const inputID = document.createElement('input');
+                          //     inputID.type = 'hidden';
+                          //     inputID.name = 'items[' + index + '][id]';
+                          //     inputID.value = variantId;
+                          //     inputID.classList.add('bundle-cart-item');
+                          //     form.appendChild(inputID);
+                          //     const inputQuantity = document.createElement('input');
+                          //     inputQuantity.type = 'hidden';
+                          //     inputQuantity.name = 'items[' + index + '][quantity]';
+                          //     inputQuantity.value = 1;
+                          //     inputQuantity.classList.add('bundle-cart-item');
+                          //     form.appendChild(inputQuantity);
+                          //     if(checker != null && checker.trim() != "") {
+                          //       checks.push(checker);
+                          //     }
+                          //     index++;
+                          //   }
                           });
                           if (!anyChecked) {
                             e.preventDefault();
