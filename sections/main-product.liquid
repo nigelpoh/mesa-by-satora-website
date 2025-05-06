@@ -97,6 +97,11 @@
     margin-left: 1rem;
     justify-content:center;
   }
+  .price-bundle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 {% endstyle %}
 
 <product-info
@@ -577,7 +582,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div style="display: flex; flex-direction: column;">
+                              <div class="price-bundle">
                                 <span style="font-size: 1.2rem;">
                                   {{- product.selected_or_first_available_variant.price | money -}}
                                 </span>
@@ -678,7 +683,7 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div style="display: flex; flex-direction: column;">
+                                <div class="price-bundle">
                                   <span style="font-size: 1.2rem;">{{ discounted_price | money }}</span>
                                   {% if compare_at_price > discounted_price %}
                                     <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
@@ -795,7 +800,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div style="display: flex; flex-direction: column;">
+                                  <div class="price-bundle">
                                     <span style="font-size: 1.2rem;font-weight: bold;">FREE</span>
                                     <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
                                   </div>
@@ -906,7 +911,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div style="display: flex; flex-direction: column;">
+                                  <div class="price-bundle">
                                     <span style="font-size: 1.2rem;font-weight: bold;">FREE</span>
                                     <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
                                   </div>
