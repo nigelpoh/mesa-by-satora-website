@@ -138,10 +138,22 @@
             "heading": "Specifications",
             "heading_size": "h1"
           }
+        },
+        "table_XTPJMi": {
+          "type": "table",
+          "settings": {
+            "specifications": [
+              "lombok-pump-dimensions",
+              "lombok-pump-battery-capacity",
+              "lombok-pump-charging-type",
+              "lombok-pump-materials"
+            ]
+          }
         }
       },
       "block_order": [
-        "heading_97Kirr"
+        "heading_97Kirr",
+        "table_XTPJMi"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
