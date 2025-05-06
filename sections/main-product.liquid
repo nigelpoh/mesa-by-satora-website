@@ -90,6 +90,13 @@
     display: flex;
     align-items: center;
   }
+  .selection-bundle {
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    margin-left: 1rem; 
+    justify-content:center;
+  }
 {% endstyle %}
 
 <product-info
@@ -545,7 +552,7 @@
                                     >
                                   {% endfor %}
                                 </div>
-                                <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                <div class = "selection-bundle"">
                                   <span style="font-size: 1.2rem;">{{ product.title }}</span>
                                   <div style="display: flex; flex-direction: row; gap: 0.5rem;">
                                     <div style="display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
@@ -646,7 +653,7 @@
                                       {% endif %}
                                     {% endif %}
                                   </div>
-                                  <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                  <div class = "selection-bundle"">
                                     <span style="font-size: 1.2rem;padding-right: 1rem;">{{ product.title }}</span>
                                     <div style="display: flex; flex-direction: row; gap: 0.5rem;">
                                       <div style="display: flex; align-items: center; justify-content: center; border: 1px solid {{ block.settings.stroke_colour }}; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
@@ -760,7 +767,7 @@
                                         >
                                       {% endfor %}
                                     </div>
-                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                    <div class = "selection-bundle"">
                                       <span style="font-size: 1.2rem;">{{ product.title }}</span>
                                       <div style="display: flex; flex-direction: row; gap: 0.5rem;">
                                         <div style="display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
@@ -871,7 +878,7 @@
                                         >
                                       {% endfor %}
                                     </div>
-                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-left: 1rem;">
+                                    <div class = "selection-bundle"">
                                       <span style="font-size: 1.2rem;">{{ product.title }}</span>
                                       <div style="display: flex; flex-direction: row; gap: 0.5rem;">
                                         <div style="display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
