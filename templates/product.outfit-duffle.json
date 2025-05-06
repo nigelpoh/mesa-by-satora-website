@@ -297,86 +297,6 @@
         "padding_bottom": 36
       }
     },
-    "image_with_text_GiWYWH": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_bi7Ten": {
-          "type": "heading",
-          "settings": {
-            "heading": "Double Your Space Without the Extra Baggage",
-            "heading_size": "h1"
-          }
-        },
-        "text_VLYRMx": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_bi7Ten",
-        "text_VLYRMx"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/packin.gif",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "full_width_img": false,
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "center",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_K6zmki": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_Crh9mJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Anti-Theft Features That Have Your Back",
-            "heading_size": "h1"
-          }
-        },
-        "text_CigPJX": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Worried about pickpockets? Our built-in TSA-approved lock system keeps your valuables secure no matter where your journey takes you.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_Crh9mJ",
-        "text_CigPJX"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/TSA_Locked_Bag.webp",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "full_width_img": false,
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "right",
-        "mobile_content_alignment": "center",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "image_with_text_UacQeL": {
       "type": "image-with-text",
       "blocks": {
@@ -403,7 +323,7 @@
         "table_qJb4Yi"
       ],
       "settings": {
-        "image": "shopify://shop_images/Compress_Bag_Sketched_Measured.webp",
+        "image": "shopify://shop_images/outfit_duffel.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -457,8 +377,6 @@
   "order": [
     "main",
     "testimonials_gR3kGU",
-    "image_with_text_GiWYWH",
-    "image_with_text_K6zmki",
     "image_with_text_UacQeL",
     "related-products",
     "17424752903b53050f"
