@@ -261,7 +261,17 @@
           </li>
         {%- endif -%}
         {%- for media in product.media -%}
-          {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          {% assign variant_name = product.selected_or_first_available_variant.title | downcase %}
+          {% assign flag_display = true %}
+          {%- if media.id == product.selected_or_first_available_variant.featured_media.id -%}
+            {% assign flag_display = false %}
+          {% endif %}
+          {% unless media.alt contains variant_name and media.alt contains 'variant' %}
+            {% if media.alt contains 'variant' %}
+              {% assign flag_display = false %}
+            {% endif %}
+          {% endunless %}
+          {% if flag_display %}
             {%- liquid
               capture media_index
                 if media.media_type == 'model'
@@ -321,7 +331,7 @@
                 }}
               </button>
             </li>
-          {%- endunless -%}
+          {%- endif -%}
         {%- endfor -%}
       </ul>
       <button
