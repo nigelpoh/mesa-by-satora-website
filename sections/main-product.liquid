@@ -1095,7 +1095,9 @@
                         submitBtn.addEventListener('click', (e) => {
                           console.log("Hello there is it submitted!")
                           const atc_btn = document.querySelector('.shopify-app-block button:last-of-type');
-                          console.log(atc_btn)
+                          if (atc_btn) {
+                            atc_btn.click();
+                          }
                           // form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
                           // form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
 
