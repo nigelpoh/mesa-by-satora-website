@@ -36,14 +36,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -51,19 +43,6 @@
         "tydal_reviews_star_rating_GiPUrh": {
           "type": "shopify://apps/tydal-reviews/blocks/star-rating/5f785e18-66cc-4519-8181-565d1cce1705",
           "settings": {}
-        },
-        "urgency_mmCwGy": {
-          "type": "urgency",
-          "disabled": true,
-          "settings": {
-            "position": "center",
-            "padding": 5,
-            "urgency": "50% OFF LIMITED TIME ONLY",
-            "text_color": "#ffffff",
-            "background_color": "#000000",
-            "urgency_dot": true,
-            "urgency_dot_colour": "#dd1d1d"
-          }
         },
         "price": {
           "type": "price",
@@ -77,13 +56,6 @@
             "topPadding": "0",
             "bottomPadding": "0",
             "messagePrefix": "Or"
-          }
-        },
-        "custom_liquid_eQQnYY": {
-          "type": "custom_liquid",
-          "disabled": true,
-          "settings": {
-            "custom_liquid": "<div style = \"background-color:#000;padding:1rem 2rem; margin-bottom:2rem;color:#fff;\"><span style=\"line-height:normal;\"><b>Save Up to £45</b> on cabin & checked bag fees and avoid risking <b>£60</b> in baggage penalties <b>every trip</b>!*</span><br/>\n<span style=\"font-size:0.95rem;color:#fff\">*Based on RyanAir’s official fee chart, May 2025</span></div>"
           }
         },
         "custom_liquid_PNa3ap": {
@@ -110,21 +82,6 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
-          }
-        },
-        "tracker_UhAThg": {
-          "type": "tracker",
-          "disabled": true,
-          "settings": {
-            "text": "People Are Viewing This Now",
-            "background": false,
-            "bg_colour": "",
-            "text_colour": "#000000",
-            "lower_bound": 10,
-            "upper_bound": 20,
-            "freq": 2,
-            "padding": 0,
-            "icon": "eye"
           }
         },
         "upsell_bundle_t3py8H": {
@@ -172,18 +129,6 @@
           "type": "description",
           "settings": {}
         },
-        "info_e3VLkp": {
-          "type": "info",
-          "disabled": true,
-          "settings": {
-            "text": "Free Shipping within 5-7 Days",
-            "background": false,
-            "bg_colour": "",
-            "text_colour": "#000000",
-            "padding": 0,
-            "icon": "plane"
-          }
-        },
         "collapsible_tab_gAjgme": {
           "type": "collapsible_tab",
           "settings": {
@@ -229,13 +174,6 @@
             "page": ""
           }
         },
-        "share": {
-          "type": "share",
-          "disabled": true,
-          "settings": {
-            "share_label": "Share"
-          }
-        },
         "sticky_atc_6igmBV": {
           "type": "sticky_atc",
           "settings": {
@@ -273,28 +211,22 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "tydal_reviews_star_rating_GiPUrh",
-        "urgency_mmCwGy",
         "price",
         "klarna_on_site_messaging_app_block_HQrRea",
-        "custom_liquid_eQQnYY",
         "custom_liquid_PNa3ap",
         "custom_liquid_aNxG8P",
         "variant_picker_nkHHkr",
         "buy_buttons_aHr84y",
-        "tracker_UhAThg",
         "upsell_bundle_t3py8H",
         "payment_options_NJemVU",
         "description",
-        "info_e3VLkp",
         "collapsible_tab_gAjgme",
         "collapsible_tab_aRKjyz",
         "collapsible_tab_MKJtwP",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc",
-        "share",
         "sticky_atc_6igmBV"
       ],
       "custom_css": [],
@@ -356,7 +288,7 @@
       "settings": {
         "title": "What fellow travelers <em>are saying</em>",
         "show_stars": true,
-        "stars_color": "#000000",
+        "stars_color": "#121212",
         "background_color": "#f8f8f9",
         "show_quotes": false,
         "padding_top": 36,
