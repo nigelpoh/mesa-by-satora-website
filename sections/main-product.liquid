@@ -983,6 +983,12 @@
                           .sticky_atc_button:before, .sticky_atc_button:after {
                             box-shadow: none;
                           }
+                          .sticky_atc_button:not([disabled]):hover::after {
+                            --border-offset: 1.3px;
+                            box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+                                rgba(48,92,222, var(--border-opacity)),
+                              0 0 0 calc(var(--buttons-border-width) + 1px) rgba(48,92,222, var(--alpha-button-background));
+                          }
                         </style>
                         <button
                           id="ProductSubmitButton-{{ section.id }}"
