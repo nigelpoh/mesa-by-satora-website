@@ -184,6 +184,13 @@ if (!customElements.get('product-info')) {
           }
 
           if (isBundle) {
+            document.querySelectorAll('.sticky-atc__image > img').forEach((img) => {
+              if (img.dataset.variantId != variant?.id) {
+                img.style.display = 'none';
+              } else {
+                img.style.display = 'block';
+              }
+            });
             this.updateMedia(html, variant?.featured_media?.id);
           }
 
