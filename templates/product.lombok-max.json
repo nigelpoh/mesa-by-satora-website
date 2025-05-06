@@ -216,8 +216,8 @@
           "settings": {
             "heading": "Free Worldwide Shipping & 60 Days Returns",
             "icon": "none",
-            "content": "",
-            "page": "shipping-returns"
+            "content": "{{ metaobjects.one_year_warranty_definition[\"shipping-returns-policy-definition\"].text | metafield_tag }}",
+            "page": ""
           }
         },
         "collapsible_tab_GgQyyc": {
