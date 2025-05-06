@@ -214,7 +214,7 @@
         "collapsible_tab_dGrBQ8": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Free Worldwide Shipping & 60 Days Returns",
+            "heading": "Free Worldwide Shipping & 60 Day Returns",
             "icon": "none",
             "content": "{{ metaobjects.one_year_warranty_definition[\"shipping-returns-policy-definition\"].text | metafield_tag }}",
             "page": ""
