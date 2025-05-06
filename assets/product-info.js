@@ -254,7 +254,7 @@ if (!customElements.get('product-info')) {
 
         const mediaGallerySourceList = this.querySelectorAll('media-gallery ul');
         const mediaGalleryDestinationList = html.querySelectorAll('media-gallery ul');
-        
+
         for (let i = 0; i < mediaGallerySourceList.length; i++) {
           const mediaGallerySource = mediaGallerySourceList[i];
           const mediaGalleryDestination = mediaGalleryDestinationList[i];
@@ -367,6 +367,7 @@ if (!customElements.get('product-info')) {
           }
         }
 
+        this.querySelector(`media-gallery`)?.setClickListenersThumbnails();
         // set featured media as active in the media gallery
         this.querySelector(`media-gallery`)?.setActiveMedia?.(
           `${this.dataset.section}-${variantFeaturedMediaId}`,
