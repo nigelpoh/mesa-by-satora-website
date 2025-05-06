@@ -184,7 +184,10 @@
         "table_adNTQQ": {
           "type": "table",
           "settings": {
-            "specifications": []
+            "specifications": [
+              "lombok-organizer-dimensions",
+              "lombok-organizer-materials"
+            ]
           }
         }
       },
@@ -194,6 +197,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "image": "shopify://shop_images/lombok_organizer.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -203,8 +207,8 @@
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-3",
-        "color_scheme": "scheme-3",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
         "padding_top": 36,
         "padding_bottom": 36
       }
