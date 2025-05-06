@@ -176,7 +176,7 @@
           "settings": {
             "function": "add_to_cart",
             "prods": [
-              "lombok-necessity-bag"
+              "the-lombok-organizer"
             ],
             "display_when": "after_scroll",
             "button_label": "BUY NOW",
