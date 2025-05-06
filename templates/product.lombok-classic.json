@@ -338,7 +338,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/packin.gif",
+        "image": "shopify://shop_images/classic_vacuum_short.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
