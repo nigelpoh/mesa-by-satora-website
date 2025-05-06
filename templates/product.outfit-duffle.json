@@ -1,0 +1,466 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "tydal_reviews_star_rating_GiPUrh": {
+          "type": "shopify://apps/tydal-reviews/blocks/star-rating/5f785e18-66cc-4519-8181-565d1cce1705",
+          "settings": {}
+        },
+        "urgency_mmCwGy": {
+          "type": "urgency",
+          "disabled": true,
+          "settings": {
+            "position": "center",
+            "padding": 5,
+            "urgency": "50% OFF LIMITED TIME ONLY",
+            "text_color": "#ffffff",
+            "background_color": "#000000",
+            "urgency_dot": true,
+            "urgency_dot_colour": "#dd1d1d"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "custom_liquid_PNa3ap": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<span style = \"font-size:1.8rem; font-weight:600\">DELIVERY INFORMATION</span><br/>\n<span style = \"font-size:1.5rem; font-weight:400\">Free Worldwide Shipping. Shipped Within 1 to 2 Days.</span>"
+          }
+        },
+        "klarna_on_site_messaging_app_block_HQrRea": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "credit-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": "Or"
+          }
+        },
+        "custom_liquid_aNxG8P": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<ul style = \"padding-inline-start:0;margin-inline-start: 1.5rem;\">\n<li style=\"font-size: 1.5rem;\">Odour and Water Resistant</li>\n<li style=\"font-size: 1.5rem;\">Theft Proof</li>\n<li style=\"font-size: 1.5rem;\">Built-In Vacuum System</li>\n<li style=\"font-size: 1.5rem;\"> Premium Materials</li>\n<li style=\"font-size: 1.5rem;\"> Expandable for Maximum Space</li>\n\n</ul>"
+          }
+        },
+        "variant_picker_nkHHkr": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_aHr84y": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "tracker_UhAThg": {
+          "type": "tracker",
+          "disabled": true,
+          "settings": {
+            "text": "People Are Viewing This Now",
+            "background": false,
+            "bg_colour": "",
+            "text_colour": "#000000",
+            "lower_bound": 10,
+            "upper_bound": 20,
+            "freq": 2,
+            "padding": 0,
+            "icon": "eye"
+          }
+        },
+        "payment_options_NJemVU": {
+          "type": "payment_options",
+          "settings": {
+            "show_visa": true,
+            "show_mastercard": true,
+            "show_amex": true,
+            "show_paypal": true,
+            "show_shopify_pay": true,
+            "show_apple_pay": true,
+            "show_google_pay": true,
+            "show_klarna": true
+          }
+        },
+        "info_e3VLkp": {
+          "type": "info",
+          "disabled": true,
+          "settings": {
+            "text": "Free Shipping within 5-7 Days",
+            "background": false,
+            "bg_colour": "",
+            "text_colour": "#000000",
+            "padding": 0,
+            "icon": "plane"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "collapsible_tab_gAjgme": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is it Carry On Approved?",
+            "icon": "none",
+            "content": "<p>Yes! The Lombok Carry-On Pack is designed to fit under airline seats, even on the strictest carriers. Its compact build meets personal item size limits while still giving you maximum packing space.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_JntjPi": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "<p>Travel smarter and more efficiently with the Lombok Carry-On Pack – the ultimate space-saving travel companion. Designed with a vacuum compression system, this backpack maximizes packing efficiency by reducing bulk, allowing you to carry more without exceeding airline size limits. Its compact yet spacious design helps you avoid extra baggage fees while keeping your essentials neatly organized. Made from durable, waterproof materials, it's built to withstand any journey, whether you're on a business trip or an adventure abroad. Pack less, travel more—without compromise.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_ByHUAc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Specifications",
+            "icon": "none",
+            "content": "<p><strong>Dimensions:</strong><br/>Before expansion: 49 x 32 x 15 cm<br/>After expansion: 49 x 32 x 20 cm</p><p><strong>Airlines Carry-on limit:</strong><br/>Inches: 22 x 14 x 9<br/>Centimeters: 56 x 45 x 25</p><p><strong>Main material</strong>: Waterproof Oxford cloth (Waterproof/wear-resistant/moistureproof). GRS certified, PFC free.<br/><strong>Other materials</strong>: Nylon herringbone, Polyester, Neoprene Foams, Polvethylene Foams.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_dGrBQ8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Free Worldwide Shipping & 60 Day Returns",
+            "icon": "none",
+            "content": "<p><strong>Processing Time:</strong> Orders ship within <strong>1-2 business days</strong>.</p><p><strong>Delivery Time:</strong> Estimated <strong>5-7 business days</strong>. Refer to our shipping policy for more details.</p><p><strong>Returns Policy: </strong>We stand by the quality of our products and want you to be completely satisfied with your purchase. If you are not satisfied, we offer a <strong>60-day return policy.</strong> All returned products within this time period will be inspected before a full refund is issued. Refer to our <a href=\"/policies/refund-policy\" title=\"Refund Policy\">refund policy</a> for more details.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_GgQyyc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "One-Year Warranty",
+            "icon": "none",
+            "content": "<p>We stand behind the quality and durability of our backpack. This <strong>1-Year Standard Warranty</strong> covers defects in materials and workmanship under normal use for <strong>one (1) year</strong> from the date of purchase.</p><h3><strong>Warranty Coverage:</strong></h3><ul><li>Covers <strong>manufacturing defects</strong> in materials and craftsmanship.</li><li>Includes <strong>zippers, stitching, straps, and hardware</strong> that fail under normal use.</li></ul><h3><strong>How to Claim:</strong></h3><ol><li>Contact our <strong>customer support team</strong> with proof of purchase and a description of the issue.</li><li>We will assess the claim and, if approved, offer <strong>repair, replacement, or an equivalent solution</strong> at our discretion.</li><li>The customer may be responsible for <strong>shipping costs</strong> associated with warranty claims.</li></ol><p>For any questions or to submit a claim, please reach out to us at hello@satora.store</p>",
+            "page": ""
+          }
+        },
+        "sticky_atc_6igmBV": {
+          "type": "sticky_atc",
+          "settings": {
+            "function": "add_to_cart",
+            "prods": [
+              "lombok-necessity-bag"
+            ],
+            "display_when": "after_scroll",
+            "button_label": "BUY NOW",
+            "enable_custom_btn_color": false,
+            "custom_btn_color": "#dd1d1d",
+            "custom_bar_color": "#ffffff",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)",
+            "picker_type": "separate",
+            "desktop_show_image": true,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": true,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": false,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": true,
+            "mobile_variant_picker": false,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "tydal_reviews_star_rating_GiPUrh",
+        "urgency_mmCwGy",
+        "price",
+        "custom_liquid_PNa3ap",
+        "klarna_on_site_messaging_app_block_HQrRea",
+        "custom_liquid_aNxG8P",
+        "variant_picker_nkHHkr",
+        "buy_buttons_aHr84y",
+        "tracker_UhAThg",
+        "payment_options_NJemVU",
+        "info_e3VLkp",
+        "description",
+        "collapsible_tab_gAjgme",
+        "collapsible_tab_JntjPi",
+        "collapsible_tab_ByHUAc",
+        "collapsible_tab_dGrBQ8",
+        "collapsible_tab_GgQyyc",
+        "sticky_atc_6igmBV"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "testimonials_gR3kGU": {
+      "type": "testimonials",
+      "blocks": {
+        "column_cVDmw7": {
+          "type": "column",
+          "settings": {
+            "title": "It Passed the Fit Check",
+            "text": "<p>I wasn’t totally sure at first if the bag would actually hold everything. I definitely had my doubts. But it ended up proving me completely wrong. It turned out to be just right. I was able to fit everything I needed for my two-week trip to Italy without any issues.</p>",
+            "image": "shopify://shop_images/Back_Slot_Luggage_38369004-6957-4be7-8dbf-e08922479ca0.webp",
+            "image_pos": "above_stars",
+            "author_avatar": "shopify://shop_images/avatar_1_reviews.webp",
+            "author": "<em><strong>Jaden T.</strong></em>"
+          }
+        },
+        "column_nLREGe": {
+          "type": "column",
+          "settings": {
+            "title": "Impressive Features",
+            "text": "<p>I was genuinely impressed by the quality and attention to detail. This bag feels much more premium than other travel bags I’ve used. It’s sturdy, well-made, and fits more than I expected. I’ve even started using it for the gym because it’s so convenient.</p>",
+            "image": "shopify://shop_images/Fits_well_5cd6ac84-b16b-4afd-bbd8-8906c993ee97.webp",
+            "image_pos": "above_stars",
+            "author_avatar": "shopify://shop_images/avatar_2_reviews.webp",
+            "author": "<em><strong>Jackson L.</strong></em>"
+          }
+        },
+        "column_4cLMKT": {
+          "type": "column",
+          "settings": {
+            "title": "Really Comfortable",
+            "text": "<p>I got this backpack a few weeks ago and took it on a short trip to Spain. Honestly, I’m really impressed. It fit way more than I expected and still slid perfectly under the airplane seat. The padded straps made it super comfortable to carry around all day.</p>",
+            "image": "shopify://shop_images/Fits_under_seat_e9f72a0b-348f-42e1-bf05-163b05f8111f.webp",
+            "image_pos": "above_stars",
+            "author_avatar": "shopify://shop_images/avatar_3_reviews.webp",
+            "author": "<em><strong>Cassie G.</strong></em>"
+          }
+        }
+      },
+      "block_order": [
+        "column_cVDmw7",
+        "column_nLREGe",
+        "column_4cLMKT"
+      ],
+      "settings": {
+        "title": "What Traveler's Like You Are Saying",
+        "show_stars": true,
+        "stars_color": "#ffd700",
+        "background_color": "#f8f8f9",
+        "show_quotes": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_GiWYWH": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bi7Ten": {
+          "type": "heading",
+          "settings": {
+            "heading": "Double Your Space Without the Extra Baggage",
+            "heading_size": "h1"
+          }
+        },
+        "text_VLYRMx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wish you could pack more without the bulk? Tired of leaving souvenirs behind because your bag’s bursting? Our built-in vacuum compression system shrinks your clothes to save space, while smart compartments keep everything perfectly organized — so you can bring more, stress less, and travel smarter.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bi7Ten",
+        "text_VLYRMx"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/packin.gif",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "full_width_img": false,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_K6zmki": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Crh9mJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Anti-Theft Features That Have Your Back",
+            "heading_size": "h1"
+          }
+        },
+        "text_CigPJX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Worried about pickpockets? Our built-in TSA-approved lock system keeps your valuables secure no matter where your journey takes you.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Crh9mJ",
+        "text_CigPJX"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/TSA_Locked_Bag.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "full_width_img": false,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_UacQeL": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_k4ttXA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Specifications",
+            "heading_size": "h1"
+          }
+        },
+        "table_qJb4Yi": {
+          "type": "table",
+          "settings": {
+            "specifications": [
+              "lombok-carry-on-pack-volume",
+              "lombok-carry-on-pack-dimensions",
+              "lombok-carry-on-pack-materials"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "heading_k4ttXA",
+        "table_qJb4Yi"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Compress_Bag_Sketched_Measured.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "full_width_img": false,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "17424752903b53050f": {
+      "type": "apps",
+      "blocks": {
+        "tydal_reviews_reviews_widget_niHLeK": {
+          "type": "shopify://apps/tydal-reviews/blocks/reviews-widget/5f785e18-66cc-4519-8181-565d1cce1705",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "tydal_reviews_reviews_widget_niHLeK"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "testimonials_gR3kGU",
+    "image_with_text_GiWYWH",
+    "image_with_text_K6zmki",
+    "image_with_text_UacQeL",
+    "related-products",
+    "17424752903b53050f"
+  ]
+}
