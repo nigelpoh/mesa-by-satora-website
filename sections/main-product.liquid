@@ -102,6 +102,13 @@
     flex-direction: column;
     justify-content: center;
   }
+  .price-bundle > span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .price-bundle > s {
+    font-size: 1.2rem;
+  }
 {% endstyle %}
 
 <product-info
@@ -583,10 +590,10 @@
                                 </div>
                               </div>
                               <div class="price-bundle">
-                                <span style="font-size: 1.2rem;">
+                                <span>
                                   {{- product.selected_or_first_available_variant.price | money -}}
                                 </span>
-                                <s style="font-size: 1.1rem;">
+                                <s>
                                   {{- product.selected_or_first_available_variant.compare_at_price | money -}}
                                 </s>
                               </div>
@@ -684,9 +691,9 @@
                                   </div>
                                 </div>
                                 <div class="price-bundle">
-                                  <span style="font-size: 1.2rem;">{{ discounted_price | money }}</span>
+                                  <span>{{ discounted_price | money }}</span>
                                   {% if compare_at_price > discounted_price %}
-                                    <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                    <s>{{ compare_at_price | money }}</s>
                                   {% endif %}
                                 </div>
                               </label>
@@ -801,8 +808,8 @@
                                     </div>
                                   </div>
                                   <div class="price-bundle">
-                                    <span style="font-size: 1.2rem;font-weight: bold;">FREE</span>
-                                    <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                    <span>FREE</span>
+                                    <s>{{ compare_at_price | money }}</s>
                                   </div>
                                 </label>
                               </div>
@@ -912,8 +919,8 @@
                                     </div>
                                   </div>
                                   <div class="price-bundle">
-                                    <span style="font-size: 1.2rem;font-weight: bold;">FREE</span>
-                                    <s style="font-size: 1.1rem;">{{ compare_at_price | money }}</s>
+                                    <span>FREE</span>
+                                    <s>{{ compare_at_price | money }}</s>
                                   </div>
                                 </label>
                               </div>
