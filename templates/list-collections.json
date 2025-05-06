@@ -109,6 +109,10 @@
         "caption_n8DVKt",
         "heading_MgjJPa"
       ],
+      "custom_css": [
+        "i {font-size: 2.5rem;}",
+        ".rich-text__blocks > * + * {margin: 0;}"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
