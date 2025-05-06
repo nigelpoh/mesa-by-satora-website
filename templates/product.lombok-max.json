@@ -225,7 +225,7 @@
           "settings": {
             "heading": "One-Year Warranty",
             "icon": "none",
-            "content": "<p>We stand behind the quality and durability of our backpack. This <strong>1-Year Standard Warranty</strong> covers defects in materials and workmanship under normal use for <strong>one (1) year</strong> from the date of purchase.</p><h3><strong>Warranty Coverage:</strong></h3><ul><li>Covers <strong>manufacturing defects</strong> in materials and craftsmanship.</li><li>Includes <strong>zippers, stitching, straps, and hardware</strong> that fail under normal use.</li></ul><h3><strong>How to Claim:</strong></h3><ol><li>Contact our <strong>customer support team</strong> with proof of purchase and a description of the issue.</li><li>We will assess the claim and, if approved, offer <strong>repair, replacement, or an equivalent solution</strong> at our discretion.</li><li>The customer may be responsible for <strong>shipping costs</strong> associated with warranty claims.</li></ol><p>For any questions or to submit a claim, please reach out to us at hello@satora.store</p>",
+            "content": "{{ metaobjects.one_year_warranty_definition[\"one-year-warranty-definition\"].text | metafield_tag }}",
             "page": ""
           }
         },
