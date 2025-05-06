@@ -408,9 +408,9 @@
           "type": "table",
           "settings": {
             "specifications": [
-              "lombok-carry-on-volume",
-              "lombok-carry-on-dimensions",
-              "lombok-carry-on-materials"
+              "lombok-classic-carry-on-volume",
+              "lombok-classic-carry-on-materials",
+              "lombok-classic-carry-on-dimensions"
             ]
           }
         }
