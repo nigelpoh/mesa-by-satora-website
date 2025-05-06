@@ -313,7 +313,8 @@
             "specifications": [
               "outfit-duffel-dimensions",
               "outfit-duffel-materials",
-              "outfit-duffel-volume"
+              "outfit-duffel-volume",
+              "outfit-duffel-weight"
             ]
           }
         }
