@@ -9,30 +9,6 @@
  */
 {
   "sections": {
-    "rich_text_TtXaTT": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_yCkWrq": {
-          "type": "heading",
-          "settings": {
-            "heading": "World's First Built-in Vacuum System Backpack",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": [
-        "heading_yCkWrq"
-      ],
-      "disabled": true,
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-4",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -264,7 +240,7 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
@@ -1001,7 +977,6 @@
     }
   },
   "order": [
-    "rich_text_TtXaTT",
     "main",
     "testimonials_gR3kGU",
     "image_with_text_GiWYWH",
