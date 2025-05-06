@@ -991,10 +991,10 @@
                           }
                         </style>
                         <button
-                          id="ProductSubmitButton-{{ section.id }}"
+                          id="ProductSubmitButton-{{ section.id }}-Bundle"
                           type="submit"
                           name="add"
-                          class="product-form__submit button button--full-width button--primary"
+                          class="product-form__submit button button--full-width button--primary sticky_atc_button"
                           style="background-color: #305CDE; color: #fff; border: none; margin: 1rem; width: calc(100% - 2rem); font-family: var(--font-body);letter-spacing: 0.1rem;font-weight: 600;"
                           {% if product.selected_or_first_available_variant.available == false
                             or quantity_rule_soldout
@@ -1013,6 +1013,18 @@
 
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
+
+                    const btn = document.getElementById('ProductSubmitButton-{{ section.id }}-Bundle');
+                    btn.disabled = true;
+
+                    const interval = setInterval(() => {
+                      const target = document.querySelector('.shopify-app-block button:last-of-type');
+                      if (target) {
+                        btn.disabled = false;
+                        clearInterval(interval);
+                      }
+                    }, 100);
+
                     const form = document.querySelector('#bundle-form form');
                     const checkboxes = document.querySelectorAll('.bundle-addon');
                     const savingsCheckboxes = document.querySelectorAll('.savings-checkbox');
