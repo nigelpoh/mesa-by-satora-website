@@ -44,23 +44,13 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {}
-        },
-        "collapsible_tab_JntjPi": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Product Description",
-            "icon": "none",
-            "content": "<p>Stay effortlessly organized on the go with the Lombok Necessity Bag, your all-in-one solution for storing and protecting cables, chargers, USB drives, power banks, and more. Designed with a double-layer interior, this compact yet spacious travel organizer ensures that everything has its place, so you’ll never have to dig through your bag for tangled cords or misplaced accessories. With quick-access compartments and secure storage, you can travel stress-free, knowing your essentials are neatly packed and always within reach.</p>",
-            "page": ""
-          }
         },
         "collapsible_tab_ByHUAc": {
           "type": "collapsible_tab",
@@ -106,7 +96,6 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "collapsible_tab_JntjPi",
         "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc",
