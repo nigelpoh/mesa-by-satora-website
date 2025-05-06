@@ -410,7 +410,7 @@
             "specifications": [
               "lombok-carry-on-pack-volume",
               "lombok-carry-on-pack-dimensions",
-              "lombok-carry-on-pack-materials"
+              "lombok-carry-on-materials"
             ]
           }
         }
