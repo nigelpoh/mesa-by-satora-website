@@ -64,10 +64,32 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "multicolumn_menu_gKxyzi": {
+      "type": "multicolumn-menu",
+      "blocks": {
+        "link_Pib6K3": {
+          "type": "link",
+          "settings": {
+            "body": "Effortless, fee-free travel with carry-on approved bags, smart compartments, and built-in compression.",
+            "image": "shopify://shop_images/bags_display.webp",
+            "link": "shopify://collections/lombok-series",
+            "link_text": "THE LOMBOK SERIES"
+          }
+        }
+      },
+      "block_order": [
+        "link_Pib6K3"
+      ],
+      "name": "Multicolumn Menu",
+      "settings": {
+        "desktop_img": "shopify://shop_images/Classic_carry_Woman_1.webp"
+      }
     }
   },
   "order": [
     "main",
-    "rich_text_BkYqm4"
+    "rich_text_BkYqm4",
+    "multicolumn_menu_gKxyzi"
   ]
 }
