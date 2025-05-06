@@ -391,8 +391,8 @@
           "type": "table",
           "settings": {
             "specifications": [
-              "lombok-carry-on-pack-volume",
-              "lombok-carry-on-pack-dimensions",
+              "lombok-carry-on-volume",
+              "lombok-carry-on-dimensions",
               "lombok-carry-on-materials"
             ]
           }
