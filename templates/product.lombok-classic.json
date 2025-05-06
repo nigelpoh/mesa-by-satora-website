@@ -356,7 +356,7 @@
       "settings": {
         "title": "What fellow travelers <em>are saying</em>",
         "show_stars": true,
-        "stars_color": "#000000",
+        "stars_color": "#121212",
         "background_color": "#f8f8f9",
         "show_quotes": false,
         "padding_top": 36,
