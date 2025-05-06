@@ -129,6 +129,38 @@
         "padding_bottom": 12
       }
     },
+    "image_with_text_6XTMWg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_97Kirr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Specifications",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_97Kirr"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lombok_pump.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "full_width_img": false,
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -166,6 +198,7 @@
   },
   "order": [
     "main",
+    "image_with_text_6XTMWg",
     "related-products",
     "17424752903b53050f"
   ]
