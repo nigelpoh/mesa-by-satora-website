@@ -20,6 +20,37 @@
         "color_scheme": "scheme-1"
       }
     },
+    "rich_text_DwUWwb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tdPq9H": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Elevate Your Trip. Save When You Bundle.</em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_jThXF8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For a limited time, get a <strong>free</strong> Lombok Organizer and <strong>20% off</strong> the Pocket-Sized Pump when you bundle it with a Lombok Max or Classic Carry-On</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tdPq9H",
+        "text_jThXF8"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -238,6 +269,7 @@
   },
   "order": [
     "banner",
+    "rich_text_DwUWwb",
     "product-grid",
     "rich_text_YbjJed",
     "image_with_text_yqnKNm",
