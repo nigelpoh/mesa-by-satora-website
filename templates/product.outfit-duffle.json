@@ -311,9 +311,9 @@
           "type": "table",
           "settings": {
             "specifications": [
-              "lombok-carry-on-volume",
-              "lombok-carry-on-dimensions",
-              "lombok-carry-on-materials"
+              "outfit-duffel-dimensions",
+              "outfit-duffel-materials",
+              "outfit-duffel-volume"
             ]
           }
         }
