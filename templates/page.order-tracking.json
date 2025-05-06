@@ -11,13 +11,53 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_MH4wpB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WRrePy": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Track Your Order</em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_qHxdyM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enter your information below to track your order</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WRrePy",
+        "text_qHxdyM"
+      ],
+      "custom_css": [],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "order_tracking_cHtCyp": {
+      "type": "order-tracking",
+      "name": "Track Your Order",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_MH4wpB",
+    "order_tracking_cHtCyp"
   ]
 }
