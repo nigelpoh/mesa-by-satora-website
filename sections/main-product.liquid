@@ -1120,7 +1120,7 @@
                               anyChecked = true;
                             }
                           })
-                          if (allChecked == false) {
+                          // if (allChecked == false) {
                             savingsCheckboxes.forEach((checkbox) => {
                               if (checkbox.checked) {
                                 const variantId = checkbox.getAttribute('value');
@@ -1143,7 +1143,7 @@
                                 index++;
                               }
                             });
-                          }
+                          // }
                           if (!anyChecked) {
                             e.preventDefault();
                           // } else if (allChecked) {
