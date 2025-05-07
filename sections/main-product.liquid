@@ -499,6 +499,7 @@
                   </details>
                 </div>
               {%- when 'upsell_bundle' -%}
+                {{ product.metafields.reviews.rating.value }}
                 <div
                   class="bundle-block"
                   style="border: 1px solid {{ block.settings.stroke_colour }}; margin-bottom: 0;"
