@@ -1126,6 +1126,24 @@
                           let index = 0;
                           let discount_index = 0;
                           let checks = [];
+                          let discounts = [];
+                          window.AVADA_BUNDLE.allOffers.forEach((offer) => {
+                            savingsCheckboxes.forEach((checkbox) => {
+                              if (checkbox.checked) {
+                                const productId = checkbox.getAttribute('product-id');
+                                offer.triggerProducts.forEach((trigger) => {
+                                  if (productId == trigger.id) {
+                                    discounts.push({
+                                      _aovDiscountId: offer.discountCodeAppId,
+                                      _aovMinQtyDiscount: offer.minProductQty,
+                                      _aovUniqueKey: generateDiscountCode(),
+                                      _aov_offerId: offer.id
+                                    })
+                                  }
+                                })
+                              }
+                            })
+                          })
                           // if (allChecked == false) {
                           savingsCheckboxes.forEach((checkbox) => {
                             if (checkbox.checked) {
@@ -1144,44 +1162,39 @@
                               inputQuantity.value = 1;
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
+
+                              discounts.forEach((discount) => {
+                                const inputID1 = document.createElement('input');
+                                inputID1.type = 'hidden';
+                                inputID1.name = 'items[' + index + '][properties][_aovDiscountId]';
+                                inputID1.value = discount._aovDiscountId;
+                                form.appendChild(inputID1);
+
+                                const inputID2 = document.createElement('input');
+                                inputID2.type = 'hidden';
+                                inputID2.name = 'items[' + index + '][properties][_aovMinQtyDiscount]';
+                                inputID2.value = discount._aovMinQtyDiscount;
+                                form.appendChild(inputID2);
+
+                                const inputID3 = document.createElement('input');
+                                inputID3.type = 'hidden';
+                                inputID3.name = 'items[' + index + '][properties][_aovUniqueKey]';
+                                inputID3.value = discount._aovUniqueKey;
+                                form.appendChild(inputID3);
+
+                                const inputID4 = document.createElement('input');
+                                inputID4.type = 'hidden';
+                                inputID4.name = 'items[' + index + '][properties][_aov_offerId]';
+                                inputID4.value = discount._aov_offerId;
+                                form.appendChild(inputID4);
+                              })
+
                               if(checker != null && checker.trim() != "") {
                                 checks.push(checker);
                               }
                               index++;
                             }
                           });
-                          window.AVADA_BUNDLE.allOffers.forEach((offer) => {
-                            savingsCheckboxes.forEach((checkbox) => {
-                              if (checkbox.checked) {
-                                const productId = checkbox.getAttribute('product-id');
-                                offer.triggerProducts.forEach((trigger) => {
-                                  if (productId == trigger.id) {
-                                    const inputID1 = document.createElement('input');
-                                    inputID1.type = 'hidden';
-                                    inputID1.name = 'items[properties][_aovDiscountId]';
-                                    inputID1.value = offer.discountCodeAppId;
-
-                                    const inputID2 = document.createElement('input');
-                                    inputID2.type = 'hidden';
-                                    inputID2.name = 'items[properties][_aovMinQtyDiscount]';
-                                    inputID2.value = offer.minProductQty;
-
-                                    const inputID3 = document.createElement('input');
-                                    inputID3.type = 'hidden';
-                                    inputID3.name = 'items[properties][_aovUniqueKey]';
-                                    inputID3.value = generateDiscountCode();
-
-                                    const inputID4 = document.createElement('input');
-                                    inputID4.type = 'hidden';
-                                    inputID4.name = 'items[properties][_aov_offerId]';
-                                    inputID4.value = offer.id;
-
-                                    form.action = "/cart/add.js?app=aov-change-cart"
-                                  }
-                                })
-                              }
-                            })
-                          })
                           // }
                           if (!anyChecked) {
                             e.preventDefault();
