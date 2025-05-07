@@ -1116,12 +1116,13 @@
                           savingsCheckboxes.forEach((checkbox) => {
                             if (checkbox.checked == false) {
                               allChecked = false;
+                            } else {
+                              anyChecked = true;
                             }
                           })
                           if (allChecked == false) {
                             savingsCheckboxes.forEach((checkbox) => {
                               if (checkbox.checked) {
-                                anyChecked = true;
                                 const variantId = checkbox.getAttribute('value');
                                 const checker = checkbox.getAttribute('checker');
                                 const inputID = document.createElement('input');
