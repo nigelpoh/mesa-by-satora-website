@@ -44,7 +44,7 @@ if (!customElements.get('product-form')) {
         }
         config.body = formData;
 
-        fetch(`${routes.cart_add_url}`, config)
+        fetch(`${routes.cart_add_url}?app=aov-change-cart`, config)
           .then((response) => response.json())
           .then((response) => {
             if (response.status) {
