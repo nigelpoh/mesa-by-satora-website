@@ -86,7 +86,6 @@
         },
         "upsell_bundle_t3py8H": {
           "type": "upsell_bundle",
-          "disabled": true,
           "settings": {
             "add_on_products": [
               "the-lombok-pocket-sized-pump"
