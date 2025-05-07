@@ -1114,30 +1114,35 @@
                           let discount_index = 0;
                           let checks = [];
                           savingsCheckboxes.forEach((checkbox) => {
-                            if (checkbox.checked) {
-                              anyChecked = true;
-                              const variantId = checkbox.getAttribute('value');
-                              const checker = checkbox.getAttribute('checker');
-                              const inputID = document.createElement('input');
-                              inputID.type = 'hidden';
-                              inputID.name = 'items[' + index + '][id]';
-                              inputID.value = variantId;
-                              inputID.classList.add('bundle-cart-item');
-                              form.appendChild(inputID);
-                              const inputQuantity = document.createElement('input');
-                              inputQuantity.type = 'hidden';
-                              inputQuantity.name = 'items[' + index + '][quantity]';
-                              inputQuantity.value = 1;
-                              inputQuantity.classList.add('bundle-cart-item');
-                              form.appendChild(inputQuantity);
-                              if(checker != null && checker.trim() != "") {
-                                checks.push(checker);
-                              }
-                              index++;
-                            } else {
+                            if (checkbox.checked == false) {
                               allChecked = false;
                             }
-                          });
+                          })
+                          if (allChecked == false) {
+                            savingsCheckboxes.forEach((checkbox) => {
+                              if (checkbox.checked) {
+                                anyChecked = true;
+                                const variantId = checkbox.getAttribute('value');
+                                const checker = checkbox.getAttribute('checker');
+                                const inputID = document.createElement('input');
+                                inputID.type = 'hidden';
+                                inputID.name = 'items[' + index + '][id]';
+                                inputID.value = variantId;
+                                inputID.classList.add('bundle-cart-item');
+                                form.appendChild(inputID);
+                                const inputQuantity = document.createElement('input');
+                                inputQuantity.type = 'hidden';
+                                inputQuantity.name = 'items[' + index + '][quantity]';
+                                inputQuantity.value = 1;
+                                inputQuantity.classList.add('bundle-cart-item');
+                                form.appendChild(inputQuantity);
+                                if(checker != null && checker.trim() != "") {
+                                  checks.push(checker);
+                                }
+                                index++;
+                              }
+                            });
+                          }
                           if (!anyChecked) {
                             e.preventDefault();
                           } else if (allChecked) {
@@ -1145,7 +1150,6 @@
                               if (atc_btn) {
                                 atc_btn.click();
                               }
-                            e.preventDefault();
                           }
                           // else {
                             // fetch('/cart.js')
