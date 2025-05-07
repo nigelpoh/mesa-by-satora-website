@@ -234,7 +234,9 @@
         "collapsible_tab_GgQyyc",
         "sticky_atc_6igmBV"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".shopify-app-block[id*=\"aov\"] {display: none;}"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
