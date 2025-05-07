@@ -1105,69 +1105,75 @@
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
                         submitBtn.addEventListener('click', (e) => {
-                          const atc_btn = document.querySelector('.shopify-app-block button:last-of-type');
-                          if (atc_btn) {
-                            atc_btn.click();
-                          }
-                          // form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
-                          // form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
+                          form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
+                          form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
 
-                          // let anyChecked = false;
-                          // let index = 0;
-                          // let discount_index = 0;
-                          // let checks = [];
-                          // savingsCheckboxes.forEach((checkbox) => {
-                          //   if (checkbox.checked) {
-                          //     anyChecked = true;
-                          //     const variantId = checkbox.getAttribute('value');
-                          //     const checker = checkbox.getAttribute('checker');
-                          //     const inputID = document.createElement('input');
-                          //     inputID.type = 'hidden';
-                          //     inputID.name = 'items[' + index + '][id]';
-                          //     inputID.value = variantId;
-                          //     inputID.classList.add('bundle-cart-item');
-                          //     form.appendChild(inputID);
-                          //     const inputQuantity = document.createElement('input');
-                          //     inputQuantity.type = 'hidden';
-                          //     inputQuantity.name = 'items[' + index + '][quantity]';
-                          //     inputQuantity.value = 1;
-                          //     inputQuantity.classList.add('bundle-cart-item');
-                          //     form.appendChild(inputQuantity);
-                          //     if(checker != null && checker.trim() != "") {
-                          //       checks.push(checker);
-                          //     }
-                          //     index++;
-                          //   }
-                          // });
-                          // if (!anyChecked) {
-                          //   e.preventDefault();
-                          // } else {
-                          //   fetch('/cart.js')
-                          //   .then(res => res.json())
-                          //   .then(cart => {
-                          //     waitForCartChange(cart.items, () => {
-                          //       checks.forEach(cks => appCks(cks));
-                          //       const interval = setInterval(() => {
-                          //         fetch('/?sections=cart-drawer')
-                          //         .then(response => response.json())
-                          //         .then(data => {
-                          //           const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
-                          //           const node = html.querySelector('.drawer__inner');
-                          //           const container = document.querySelector('.drawer__inner');
-                          //           if (container) {
-                          //             container.innerHTML = node.innerHTML;
-                          //           }
-                          //         })
-                          //         .catch(error => {
-                          //           console.error('Failed to update cart drawer:', error);
-                          //         });
-                          //       }, 300)
-                          //       setTimeout(() => {
-                          //         clearInterval(interval)
-                          //       }, 5000)
-                          //     });
-                          //   });
-                          // }
+                          let anyChecked = false;
+                          let allChecked = true;
+                          let index = 0;
+                          let discount_index = 0;
+                          let checks = [];
+                          savingsCheckboxes.forEach((checkbox) => {
+                            if (checkbox.checked) {
+                              anyChecked = true;
+                              const variantId = checkbox.getAttribute('value');
+                              const checker = checkbox.getAttribute('checker');
+                              const inputID = document.createElement('input');
+                              inputID.type = 'hidden';
+                              inputID.name = 'items[' + index + '][id]';
+                              inputID.value = variantId;
+                              inputID.classList.add('bundle-cart-item');
+                              form.appendChild(inputID);
+                              const inputQuantity = document.createElement('input');
+                              inputQuantity.type = 'hidden';
+                              inputQuantity.name = 'items[' + index + '][quantity]';
+                              inputQuantity.value = 1;
+                              inputQuantity.classList.add('bundle-cart-item');
+                              form.appendChild(inputQuantity);
+                              if(checker != null && checker.trim() != "") {
+                                checks.push(checker);
+                              }
+                              index++;
+                            } else {
+                              allChecked = false;
+                            }
+                          });
+                          if (!anyChecked) {
+                            e.preventDefault();
+                          } else {
+                            if (allChecked) {
+                              const atc_btn = document.querySelector('.shopify-app-block button:last-of-type');
+                              if (atc_btn) {
+                                atc_btn.click();
+                              }
+                            } else {
+                              fetch('/cart.js')
+                              .then(res => res.json())
+                              .then(cart => {
+                                waitForCartChange(cart.items, () => {
+                                  checks.forEach(cks => appCks(cks));
+                                  const interval = setInterval(() => {
+                                    fetch('/?sections=cart-drawer')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                      const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
+                                      const node = html.querySelector('.drawer__inner');
+                                      const container = document.querySelector('.drawer__inner');
+                                      if (container) {
+                                        container.innerHTML = node.innerHTML;
+                                      }
+                                    })
+                                    .catch(error => {
+                                      console.error('Failed to update cart drawer:', error);
+                                    });
+                                  }, 300)
+                                  setTimeout(() => {
+                                    clearInterval(interval)
+                                  }, 5000)
+                                });
+                              });
+                            }
+                          }
                         });
                       }
                     }
