@@ -1169,8 +1169,13 @@
                               })
                               addToCart.items.push(inputs)
 
-
-                              fetch('/cart/add.js?app=aov-change-cart', {
+                              if(checker != null && checker.trim() != "") {
+                                checks.push(checker);
+                              }
+                              index++;
+                            }
+                          });
+                          fetch('/cart/add.js?app=aov-change-cart', {
                                 method: 'POST',
                                 headers: {
                                   'Content-Type': 'application/json',
@@ -1185,13 +1190,6 @@
                               .catch(error => {
                                 console.error('Error adding to cart:', error);
                               });
-
-                              if(checker != null && checker.trim() != "") {
-                                checks.push(checker);
-                              }
-                              index++;
-                            }
-                          });
                           // }
                           if (!anyChecked) {
                             e.preventDefault();
