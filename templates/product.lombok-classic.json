@@ -234,9 +234,7 @@
         "collapsible_tab_GgQyyc",
         "sticky_atc_6igmBV"
       ],
-      "custom_css": [
-        ".shopify-app-block[id*=\"aov\"] {display: none;}"
-      ],
+      "custom_css": [],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -259,11 +257,11 @@
         "column_cVDmw7": {
           "type": "column",
           "settings": {
-            "title": "It Passed the Fit Check",
-            "text": "<p>I wasn’t totally sure at first if the bag would actually hold everything. I definitely had my doubts. But it ended up proving me completely wrong. It turned out to be just right. I was able to fit everything I needed for my two-week trip to Italy without any issues.</p>",
-            "image": "shopify://shop_images/Back_Slot_Luggage_38369004-6957-4be7-8dbf-e08922479ca0.webp",
+            "title": "Fits More Than It Looks!",
+            "text": "<p>At first, I thought the bag was too small, but it really surprised me! The quality is excellent, and it fit way more than I expected. It held everything I needed for a 4-day trip with no problem, and I didn’t have to pay extra for baggage since it fits perfectly as carry-on. I'm really happy with this purchase!</p>",
+            "image": "shopify://shop_images/lombok_classic_testimonial_1.webp",
             "image_pos": "above_stars",
-            "author": "<em><strong>Jaden T.</strong></em>"
+            "author": "<em><strong>Daniel K.</strong></em>"
           }
         },
         "column_nLREGe": {
