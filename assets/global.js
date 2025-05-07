@@ -1656,7 +1656,7 @@ function appCks(code) {
       .then(function(data) {
         console.log("DATA3", data)
         if(data.checkout && data.checkout.applied_discounts.length > 0){
-          let dksApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/checkout/";
+          let dksApplyUrl = "/discount/"+code+"?v="+Date.now()+"&redirect=/";
           fetch(dksApplyUrl, {}).then(function(response) { return response.text(); })
           let localStorageValue = {
             'code': code.trim(),
