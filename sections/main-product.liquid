@@ -1146,39 +1146,38 @@
                           }
                           if (!anyChecked) {
                             e.preventDefault();
-                          } else if (allChecked) {
-                            const atc_btn = document.querySelector('.shopify-app-block button:last-of-type');
-                              if (atc_btn) {
-                                atc_btn.click();
-                              }
+                          // } else if (allChecked) {
+                          //   const atc_btn = document.querySelector('.shopify-app-block button:last-of-type');
+                          //     if (atc_btn) {
+                          //       atc_btn.click();
+                          //     }
+                          } else {
+                            fetch('/cart.js')
+                            .then(res => res.json())
+                            .then(cart => {
+                              waitForCartChange(cart.items, () => {
+                                checks.forEach(cks => appCks(cks));
+                                const interval = setInterval(() => {
+                                  fetch('/?sections=cart-drawer')
+                                  .then(response => response.json())
+                                  .then(data => {
+                                    const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
+                                    const node = html.querySelector('.drawer__inner');
+                                    const container = document.querySelector('.drawer__inner');
+                                    if (container) {
+                                      container.innerHTML = node.innerHTML;
+                                    }
+                                  })
+                                  .catch(error => {
+                                    console.error('Failed to update cart drawer:', error);
+                                  });
+                                }, 300)
+                                setTimeout(() => {
+                                  clearInterval(interval)
+                                }, 5000)
+                              });
+                            });
                           }
-                          // else {
-                            // fetch('/cart.js')
-                            // .then(res => res.json())
-                            // .then(cart => {
-                              // waitForCartChange(cart.items, () => {
-                              //   checks.forEach(cks => appCks(cks));
-                              //   const interval = setInterval(() => {
-                              //     fetch('/?sections=cart-drawer')
-                              //     .then(response => response.json())
-                              //     .then(data => {
-                              //       const html = new DOMParser().parseFromString(data['cart-drawer'], 'text/html');
-                              //       const node = html.querySelector('.drawer__inner');
-                              //       const container = document.querySelector('.drawer__inner');
-                              //       if (container) {
-                              //         container.innerHTML = node.innerHTML;
-                              //       }
-                              //     })
-                              //     .catch(error => {
-                              //       console.error('Failed to update cart drawer:', error);
-                              //     });
-                              //   }, 300)
-                              //   setTimeout(() => {
-                              //     clearInterval(interval)
-                              //   }, 5000)
-                              // });
-                            // });
-                          // }
                         });
                       }
                     }
