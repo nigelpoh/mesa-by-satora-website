@@ -1126,19 +1126,19 @@
                           let index = 0;
                           let discount_index = 0;
                           let checks = [];
-                          let discounts = [];
+                          let discount = {};
                           window.AVADA_BUNDLE.allOffers.forEach((offer) => {
                             savingsCheckboxes.forEach((checkbox) => {
                               if (checkbox.checked) {
                                 const productId = checkbox.getAttribute('product-id');
                                 offer.triggerProducts.forEach((trigger) => {
                                   if (productId == trigger.id) {
-                                    discounts.push({
-                                      _aovDiscountId: offer.discountCodeAppId,
-                                      _aovMinQtyDiscount: offer.minProductQty,
-                                      _aovUniqueKey: generateDiscountCode(),
-                                      _aov_offerId: offer.id
-                                    })
+                                    discount = {
+                                      "_aovDiscountId": offer.discountCodeAppId,
+                                      "_aovMinQtyDiscount": offer.minProductQty,
+                                      "_aovUniqueKey": generateDiscountCode(),
+                                      "_aov_offerId": offer.id
+                                    }
                                   }
                                 })
                               }
@@ -1152,21 +1152,11 @@
                               const variantId = checkbox.getAttribute('value');
                               const checker = checkbox.getAttribute('checker');
                               const inputID = document.createElement('input');
-
                               var inputs = {
                                 "id": variantId,
                                 "quantity": 1,
-                                "properties": []
+                                "properties": discount
                               }
-
-                              discounts.forEach((discount) => {
-                                inputs.properties.push({
-                                  "_aovDiscountId": discount._aovDiscountId,
-                                  "_aovMinQtyDiscount": discount._aovMinQtyDiscount,
-                                  "_aovUniqueKey": discount._aovUniqueKey,
-                                  "_aov_offerId": discount._aov_offerId
-                                })
-                              })
                               addToCart.items.push(inputs)
 
                               if(checker != null && checker.trim() != "") {
