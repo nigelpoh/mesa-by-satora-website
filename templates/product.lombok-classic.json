@@ -9,16 +9,6 @@
  */
 {
   "sections": {
-    "custom_liquid_kBtGyq": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "rich_text_TtXaTT": {
       "type": "rich-text",
       "blocks": {
@@ -490,7 +480,6 @@
     }
   },
   "order": [
-    "custom_liquid_kBtGyq",
     "rich_text_TtXaTT",
     "main",
     "testimonials_gR3kGU",
