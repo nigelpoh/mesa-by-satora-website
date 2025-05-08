@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "custom_liquid_kBtGyq": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "rich_text_TtXaTT": {
       "type": "rich-text",
       "blocks": {
@@ -111,10 +121,6 @@
             "complete_text": "Your exclusive gift has been unlocked",
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
           }
-        },
-        "aov_bundle_upsell_offer_inline_HipD69": {
-          "type": "shopify://apps/aov-bundle-upsell/blocks/offer-inline/0335d423-143c-4ad7-b224-99a1db74a9ee",
-          "settings": {}
         },
         "payment_options_NJemVU": {
           "type": "payment_options",
@@ -224,7 +230,6 @@
         "variant_picker_nkHHkr",
         "buy_buttons_aHr84y",
         "upsell_bundle_t3py8H",
-        "aov_bundle_upsell_offer_inline_HipD69",
         "payment_options_NJemVU",
         "description",
         "collapsible_tab_gAjgme",
@@ -485,6 +490,7 @@
     }
   },
   "order": [
+    "custom_liquid_kBtGyq",
     "rich_text_TtXaTT",
     "main",
     "testimonials_gR3kGU",
