@@ -73,8 +73,7 @@ if (!customElements.get('product-form')) {
         const items = formDataToJSON(formData).items
         var itemsArray = [];
         Object.entries(items).forEach(function(value, key){
-          console.log(value)
-            itemsArray.push(value);
+            itemsArray.push(value[1]);
         });
         config.body = JSON.stringify({
           "items": itemsArray
