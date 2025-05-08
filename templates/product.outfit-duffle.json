@@ -123,7 +123,6 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {}
         },
         "collapsible_tab_gAjgme": {
@@ -132,24 +131,6 @@
             "heading": "Is it Carry On Approved?",
             "icon": "none",
             "content": "<p>Yes! The Lombok Carry-On Pack is designed to fit under airline seats, even on the strictest carriers. Its compact build meets personal item size limits while still giving you maximum packing space.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_JntjPi": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Description",
-            "icon": "none",
-            "content": "<p>Travel smarter and more efficiently with the Lombok Carry-On Pack – the ultimate space-saving travel companion. Designed with a vacuum compression system, this backpack maximizes packing efficiency by reducing bulk, allowing you to carry more without exceeding airline size limits. Its compact yet spacious design helps you avoid extra baggage fees while keeping your essentials neatly organized. Made from durable, waterproof materials, it's built to withstand any journey, whether you're on a business trip or an adventure abroad. Pack less, travel more—without compromise.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_ByHUAc": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Specifications",
-            "icon": "none",
-            "content": "<p><strong>Dimensions:</strong><br/>Before expansion: 49 x 32 x 15 cm<br/>After expansion: 49 x 32 x 20 cm</p><p><strong>Airlines Carry-on limit:</strong><br/>Inches: 22 x 14 x 9<br/>Centimeters: 56 x 45 x 25</p><p><strong>Main material</strong>: Waterproof Oxford cloth (Waterproof/wear-resistant/moistureproof). GRS certified, PFC free.<br/><strong>Other materials</strong>: Nylon herringbone, Polyester, Neoprene Foams, Polvethylene Foams.</p>",
             "page": ""
           }
         },
@@ -223,8 +204,6 @@
         "info_e3VLkp",
         "description",
         "collapsible_tab_gAjgme",
-        "collapsible_tab_JntjPi",
-        "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc",
         "sticky_atc_6igmBV"
