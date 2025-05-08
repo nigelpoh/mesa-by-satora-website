@@ -42,7 +42,11 @@ if (!customElements.get('product-form')) {
           formData.append('sections_url', window.location.pathname);
           this.cart.setActiveElement(document.activeElement);
         }
-        config.body = formData;
+        var request = {};
+        formData.forEach(function(value, key){
+            request[key] = value;
+        });
+        config.body = request;
 
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
