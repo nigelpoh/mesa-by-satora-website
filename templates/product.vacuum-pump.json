@@ -57,26 +57,7 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {}
-        },
-        "collapsible_tab_JntjPi": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Product Description",
-            "icon": "none",
-            "content": "<p>Say goodbye to bulky luggage. Our <strong>Portable Vacuum Pump</strong> is the ultimate travel companion—<strong>compact, lightweight</strong>, and incredibly easy to use. Designed to remove excess air from your vacuum compression bags, it creates <strong>extra space in seconds</strong> so you can fit more without the bulk.</p><p>Whether you’re packing for a weekend getaway or an extended trip, this sleek device helps you travel efficiently, keeping your bag organized and your load lighter. Just attach, press, and watch it work its magic.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_ByHUAc": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Product Specifications",
-            "icon": "none",
-            "content": "<p><strong>Dimensions: </strong>4.95 x 4.95 x 8.35 cm</p><p><strong>Net Weight: </strong>140g</p><p><strong>Rated Power: </strong>25W</p><p><strong>Battery Capacity: </strong>4440mWh</p>",
-            "page": ""
-          }
         },
         "collapsible_tab_dGrBQ8": {
           "type": "collapsible_tab",
@@ -108,8 +89,6 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "collapsible_tab_JntjPi",
-        "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc"
       ],
