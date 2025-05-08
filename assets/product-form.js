@@ -1,3 +1,31 @@
+function formDataToJSON(formData) {
+  const obj = {};
+
+  for (const [key, value] of formData.entries()) {
+    assignDeep(obj, key, value);
+  }
+
+  return obj;
+}
+
+function assignDeep(obj, keyPath, value) {
+  const keys = keyPath
+    .replace(/\]/g, '')     
+    .split(/\[|\./);        
+
+  let current = obj;
+
+  keys.forEach((key, index) => {
+    if (index === keys.length - 1) {
+      current[key] = value;
+    } else {
+      if (!(key in current)) {
+        current[key] = {};
+      }
+      current = current[key];
+    }
+  });
+}
 if (!customElements.get('product-form')) {
   customElements.define(
     'product-form',
@@ -42,11 +70,7 @@ if (!customElements.get('product-form')) {
           formData.append('sections_url', window.location.pathname);
           this.cart.setActiveElement(document.activeElement);
         }
-        var request = {};
-        formData.forEach(function(value, key){
-            request[key] = value;
-        });
-        config.body = request;
+        config.body = formDataToJSON(formData);
 
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
