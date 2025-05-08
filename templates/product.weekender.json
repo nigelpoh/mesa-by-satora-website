@@ -295,6 +295,7 @@
         "heading_bi7Ten",
         "text_VLYRMx"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/packin.gif",
@@ -335,6 +336,7 @@
         "heading_Crh9mJ",
         "text_CigPJX"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/TSA_Locked_Bag.webp",
