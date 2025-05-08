@@ -112,10 +112,6 @@
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
           }
         },
-        "aov_bundle_upsell_offer_inline_fiXxwx": {
-          "type": "shopify://apps/aov-bundle-upsell/blocks/offer-inline/0335d423-143c-4ad7-b224-99a1db74a9ee",
-          "settings": {}
-        },
         "payment_options_NJemVU": {
           "type": "payment_options",
           "settings": {
@@ -224,7 +220,6 @@
         "variant_picker_nkHHkr",
         "buy_buttons_aHr84y",
         "upsell_bundle_t3py8H",
-        "aov_bundle_upsell_offer_inline_fiXxwx",
         "payment_options_NJemVU",
         "description",
         "collapsible_tab_gAjgme",
