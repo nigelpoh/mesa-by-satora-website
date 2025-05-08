@@ -67,7 +67,7 @@
         "custom_liquid_aNxG8P": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<ul style = \"padding-inline-start:0;margin-inline-start: 1.5rem;\">\n<li style=\"font-size: 1.5rem;\">Odour and Water Resistant</li>\n<li style=\"font-size: 1.5rem;\">Theft Proof Design</li>\n<li style=\"font-size: 1.5rem;\">Built-In Vacuum System</li>\n<li style=\"font-size: 1.5rem;\"> Premium Materials</li>\n<li style=\"font-size: 1.5rem;\"> Expandable for Maximum Space</li>\n<li style=\"font-size: 1.5rem;\"> 17.3 Inch Laptop Sleeve</li>\n<li style=\"font-size: 1.5rem;\"> Trolley Sleeve</li>\n</ul>"
+            "custom_liquid": "<ul style = \"padding-inline-start:0;margin-inline-start: 1.5rem;\">\n<li style=\"font-size: 1.5rem;\">Odour and Water Resistant</li>\n<li style=\"font-size: 1.5rem;\">Built-In Vacuum System</li>\n<li style=\"font-size: 1.5rem;\"> Premium Materials</li>\n<li style=\"font-size: 1.5rem;\"> Expandable for Maximum Space</li>\n<li style=\"font-size: 1.5rem;\"> Dedicated Laptop Compartment</li>\n<li style=\"font-size: 1.5rem;\"> Trolley Sleeve</li>\n</ul>"
           }
         },
         "variant_picker_nkHHkr": {
@@ -134,7 +134,7 @@
           "settings": {
             "heading": "Does it fit under the seat as a personal item on flights and is it carry-on approved?",
             "icon": "none",
-            "content": "<p>Yes! The Lombok Carry-On Pack is designed to fit under airline seats, even on the strictest carriers. Its compact build meets personal item size limits while still giving you maximum packing space.</p>",
+            "content": "<p>Yes! The Lombok Classic Carry-On is designed to fit under airline seats, even on the strictest carriers. Its compact build meets personal item size limits while still giving you maximum packing space.</p>",
             "page": ""
           }
         },
@@ -143,7 +143,7 @@
           "settings": {
             "heading": "Is it suitable for everyday use?",
             "icon": "none",
-            "content": "<p>Absolutely! While it’s built for travel, the Lombok Carry-On Pack is just as useful in daily life:</p><ul><li>Fits laptops, books, and campus essentials with organized ease.</li><li>Sleek, professional, and perfect for work or school.</li><li>Spacious enough for gear, snacks, and hydration on the trail.</li><li>Room for clothes, shoes, and accessories—plus ventilation to keep things fresh.</li></ul><p>Wherever you're headed, it adapts to your routine with style and function.</p>",
+            "content": "<p>Absolutely! While it’s built for travel, the Lombok Classic Carry-On Pack is just as useful in daily life:</p><ul><li>Fits laptops, books, and campus essentials with organized ease.</li><li>Sleek, professional, and perfect for work or school.</li><li>Spacious enough for gear, snacks, and hydration on the trail.</li><li>Room for clothes, shoes, and accessories—plus ventilation to keep things fresh.</li></ul><p>Wherever you're headed, it adapts to your routine with style and function.</p>",
             "page": ""
           }
         },
@@ -378,6 +378,7 @@
         "heading_Crh9mJ",
         "text_CigPJX"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/TSA_Locked_Bag.webp",
