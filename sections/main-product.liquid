@@ -1018,17 +1018,6 @@
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
 
-                    const btn = document.getElementById('ProductSubmitButton-{{ section.id }}-Bundle');
-                    btn.disabled = true;
-
-                    const interval = setInterval(() => {
-                      const target = document.querySelector('.shopify-app-block button:last-of-type');
-                      if (target) {
-                        btn.disabled = false;
-                        clearInterval(interval);
-                      }
-                    }, 100);
-
                     const form = document.querySelector('#bundle-form form');
                     const checkboxes = document.querySelectorAll('.bundle-addon');
                     const savingsCheckboxes = document.querySelectorAll('.savings-checkbox');
