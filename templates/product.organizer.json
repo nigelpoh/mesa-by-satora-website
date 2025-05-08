@@ -52,15 +52,6 @@
           "type": "description",
           "settings": {}
         },
-        "collapsible_tab_ByHUAc": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Product Specifications",
-            "icon": "none",
-            "content": "<p><strong>Dimensions:</strong><br/>11 x 19 x 5.6 cm</p><p><strong>Main material</strong>: Waterproof Oxford cloth (Waterproof/wear-resistant/moistureproof). GRS certified, PFC free.<br/><strong>Other materials</strong>: Nylon herringbone, Polyester, Neoprene Foams, Polvethylene Foams.</p>",
-            "page": ""
-          }
-        },
         "collapsible_tab_dGrBQ8": {
           "type": "collapsible_tab",
           "settings": {
@@ -130,7 +121,6 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "collapsible_tab_ByHUAc",
         "collapsible_tab_dGrBQ8",
         "collapsible_tab_GgQyyc",
         "share",
