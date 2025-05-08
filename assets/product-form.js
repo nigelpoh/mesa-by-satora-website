@@ -70,8 +70,13 @@ if (!customElements.get('product-form')) {
           formData.append('sections_url', window.location.pathname);
           this.cart.setActiveElement(document.activeElement);
         }
+        const items = formDataToJSON(formData).items
+        var itemsArray = [];
+        items.forEach(function(value, key){
+            itemsArray.push(value);
+        });
         config.body = JSON.stringify({
-          "items": formDataToJSON(formData).items
+          "items": itemsArray
         });
 
         fetch(`${routes.cart_add_url}`, config)
