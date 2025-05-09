@@ -88,13 +88,12 @@
           "type": "upsell_bundle",
           "settings": {
             "add_on_products": [
-              "the-lombok-pocket-sized-pump"
-            ],
-            "add_on_discounts": "20%,0%",
-            "add_on_discount_codes": "28NVK7MH23RQ20OFFPUMP,",
-            "free_gifts_optional": [
+              "the-lombok-pocket-sized-pump",
               "the-lombok-organizer"
             ],
+            "add_on_discounts": "20%,20%",
+            "add_on_discount_codes": "",
+            "free_gifts_optional": [],
             "free_gifts_always": [],
             "selection_background_colour": "#f7f4f1",
             "selection_text_colour": "#000000",
