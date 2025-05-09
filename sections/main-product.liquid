@@ -544,7 +544,7 @@
                         >
                           <div class="bundle-addon-block">
                             <label style="display: flex; justify-content: space-between;">
-                              <div style="display: flex;">
+                              <div style="display: flex;align-items:center;">
                                 {% assign compare_price = product.selected_or_first_available_variant.compare_at_price %}
                                 {% if compare_price == null
                                   or compare_price < product.selected_or_first_available_variant.price
