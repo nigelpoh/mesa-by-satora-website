@@ -915,25 +915,29 @@
                                         <div style="display: flex; align-items: center; justify-content: center; border: 1px solid #aaa; padding: 0.2rem 0.5rem;font-size: 1.2rem;">
                                           <span>x1</span>
                                         </div>
-                                        <div
-                                          data-product-id="{{ product.id }}"
-                                          style="display: block; max-width: 15rem;"
-                                        >
-                                          {% if product.variants.size > 1 %}
-                                            {% render 'bundle-variant-picker',
-                                              product: product,
-                                              block: block,
-                                              product_form_id: product_form_id,
-                                              index: 0
-                                            %}
-                                          {% else %}
-                                            {% if product.selected_or_first_available_variant.featured_image %}
-                                              <div style="display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
-                                                <span>{{ product.selected_or_first_available_variant.title }}</span>
-                                              </div>
+                                        {% if block.settings.free_gift_by_email %}
+                                          
+                                        {% else %}
+                                          <div
+                                            data-product-id="{{ product.id }}"
+                                            style="display: block; max-width: 15rem;"
+                                          >
+                                            {% if product.variants.size > 1 %}
+                                              {% render 'bundle-variant-picker',
+                                                product: product,
+                                                block: block,
+                                                product_form_id: product_form_id,
+                                                index: 0
+                                              %}
+                                            {% else %}
+                                              {% if product.selected_or_first_available_variant.featured_image %}
+                                                <div style="display: flex; align-items: center; justify-content: center; padding: 0.2rem 1rem;font-size: 1.2rem;">
+                                                  <span>{{ product.selected_or_first_available_variant.title }}</span>
+                                                </div>
+                                              {% endif %}
                                             {% endif %}
-                                          {% endif %}
-                                        </div>
+                                          </div>
+                                        {% endif %}
                                       </div>
                                     </div>
                                   </div>
