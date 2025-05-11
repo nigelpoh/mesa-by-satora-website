@@ -916,7 +916,7 @@
                                           <span>x1</span>
                                         </div>
                                         {% if block.settings.free_gift_by_email %}
-                                          Will be automatically sent to you (no need to add to cart). By default, all free gifts are <b>{{ product.selected_or_first_available_variant.title }}</b>. If changes are needed, please add in cart note or email us.
+                                          {{ product.selected_or_first_available_variant.title }}
                                         {% else %}
                                           <div
                                             data-product-id="{{ product.id }}"
