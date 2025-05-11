@@ -955,10 +955,6 @@
                       </div>
 
                       <div class="bundle-footer" style="border-radius: 0 0 1rem 1rem;margin-top: 0;">
-                      
-                        {% if block.settings.free_gift_by_email %}
-                          Will be automatically sent to you (no need to add to cart). By default, all free gifts are in the variants specified above. If changes are needed, please add in cart note or email us.
-                        {% endif %}
                         <div style="display: flex; align-items: center; background-color: {{ block.settings.info_background_colour }}; color: {{ block.settings.info_text_colour }}; stroke: {{ block.settings.info_text_colour }}; padding: 1rem;">
                           {% render 'icon-accordion', icon: 'box' %}
                           <div id="bundle-text" style="font-size: 1.3rem;margin-left: 1rem;">
