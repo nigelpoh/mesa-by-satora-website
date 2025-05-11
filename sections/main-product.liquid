@@ -721,9 +721,9 @@
                             style="display: flex; padding: 1rem; font-size: 1.3rem; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};"
                             id="upsell-header-complete"
                           >
-                            {% if block.settings.free_gift_by_email %}<b>{% endif %}{{ block.settings.complete_text }}{% if block.settings.free_gift_by_email %}</b> <br/>{% endif %}
+                            {% if block.settings.free_gift_by_email %}<div><b>{% endif %}{{ block.settings.complete_text }}{% if block.settings.free_gift_by_email %}</b> <br/>{% endif %}
                             {% if block.settings.free_gift_by_email %}
-                              Free gifts are sent automatically (no need to add to cart). For changes, leave a note or email us and we’ll do our best.
+                              Free gifts are sent automatically (no need to add to cart). For changes, leave a note or email us and we’ll do our best.</div>
                             {% endif %}
                           </div>
                         {% endif %}
