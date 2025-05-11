@@ -721,9 +721,9 @@
                             style="display: flex; padding: 1rem; font-size: 1.3rem; background-color: {{ block.settings.add_on_background_colour }}; color: {{ block.settings.add_on_text_colour }};"
                             id="upsell-header-complete"
                           >
-                            {{ block.settings.complete_text }}
+                            {{ block.settings.complete_text }} <br/>
                             {% if block.settings.free_gift_by_email %}
-                              Will be automatically sent to you (no need to add to cart). By default, all free gifts are in the variants specified above. If changes are needed, please add in cart note or email us.
+                              Will be automatically sent to you (no need to add to cart). By default, all free gifts are in the variants specified below. If changes are needed, please add in cart note or email us.
                             {% endif %}
                           </div>
                         {% endif %}
