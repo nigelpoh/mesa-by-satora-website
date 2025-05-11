@@ -722,6 +722,9 @@
                             id="upsell-header-complete"
                           >
                             {{ block.settings.complete_text }}
+                            {% if block.settings.free_gift_by_email %}
+                              Will be automatically sent to you (no need to add to cart). By default, all free gifts are in the variants specified above. If changes are needed, please add in cart note or email us.
+                            {% endif %}
                           </div>
                         {% endif %}
                         {% if block.settings.free_gifts_always.count > 0 %}
