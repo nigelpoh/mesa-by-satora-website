@@ -916,7 +916,7 @@
                                           <span>x1</span>
                                         </div>
                                         {% if block.settings.free_gift_by_email %}
-                                          
+                                          {{ product.selected_or_first_available_variant.title }}
                                         {% else %}
                                           <div
                                             data-product-id="{{ product.id }}"
