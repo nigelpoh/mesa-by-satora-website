@@ -433,7 +433,6 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".card__badge {display: none;}",
       "body,h1,h2,h3,h4,h5,h6,span,p,a {letter-spacing: 0px;}"
     ]
   }
