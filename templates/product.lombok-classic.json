@@ -88,13 +88,15 @@
           "type": "upsell_bundle",
           "settings": {
             "add_on_products": [
-              "the-lombok-pocket-sized-pump",
+              "the-lombok-pocket-sized-pump"
+            ],
+            "add_on_discounts": "20%,",
+            "add_on_discount_codes": "",
+            "free_gifts_optional": [
               "the-lombok-organizer"
             ],
-            "add_on_discounts": "20%,20%",
-            "add_on_discount_codes": "",
-            "free_gifts_optional": [],
             "free_gifts_always": [],
+            "free_gift_by_email": true,
             "selection_background_colour": "#f7f4f1",
             "selection_text_colour": "#000000",
             "add_on_background_colour": "#000000",
@@ -105,7 +107,7 @@
             "gift_text_colour": "#000000",
             "stroke_colour": "#d7d4d2",
             "bundle_title": "The Lombok Classic Bundle",
-            "bundle_description": "<b>EXTRA 20% OFF</b> Lombok Portable Vacuum Pump and Lombok Organizer",
+            "bundle_description": "EXTRA 20% OFF Lombok Portable Vacuum Pump and Lombok Organizer",
             "incomplete_text": "Complete your bundle to unlock this free gift",
             "complete_text": "Your exclusive gift has been unlocked",
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
