@@ -20,7 +20,6 @@ if (!customElements.get('product-form')) {
       }
 
       async onSubmitHandler(evt) {
-        console.log("form...");
         evt.preventDefault();
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
@@ -31,7 +30,6 @@ if (!customElements.get('product-form')) {
         this.querySelector('.loading__spinner').classList.remove('hidden');
 
         if (this.submitButton?.dataset.block === 'true')  {
-          console.log("Blocking...")
           await new Promise((resolve) => {
             const timeout = setTimeout(resolve, 5000);
             document.addEventListener('form-preprocessing:done', () => {
@@ -40,7 +38,6 @@ if (!customElements.get('product-form')) {
             }, { once: true });
           });
         }
-        console.log("Submitting...")
 
         const config = fetchConfig('javascript');
         config.headers['X-Requested-With'] = 'XMLHttpRequest';

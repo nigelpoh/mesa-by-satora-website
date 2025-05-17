@@ -1169,7 +1169,7 @@
                                     return response.text();
                                   })
                                   .then(html => {
-                                    console.log(`Applied discount ${check}`);
+                                    {% comment %} console.log(`Applied discount ${check}`); {% endcomment %}
                                   })
                                   .catch(error => {
                                     console.error(`Fetch error for ${check}:`, error);
@@ -1177,7 +1177,6 @@
                                 })
                               );
                               const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
-                              console.log("Check", cart)
                               if (cart) {
                                 cart.dispatchEvent(new CustomEvent("cartUpdated", { bubbles: true }));
                               }
@@ -1185,7 +1184,6 @@
                               console.error("Discount processing error:", err);
                             }
                           }
-                          console.log("Finished processing discounts. Form will now submit naturally.");
                           document.dispatchEvent(new CustomEvent('form-preprocessing:done'));
                         });
                       }
