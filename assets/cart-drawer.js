@@ -182,7 +182,6 @@ class CartDrawer extends HTMLElement {
       body: JSON.stringify(itemData),
     })
       .then((response) => {
-        console.log("Submitted Form")
         if (!response.ok) {
           throw new Error(
             "Failed to add product to cart: " + response.statusText
