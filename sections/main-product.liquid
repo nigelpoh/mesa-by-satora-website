@@ -1013,6 +1013,7 @@
                           id="ProductSubmitButton-{{ section.id }}-Bundle"
                           type="submit"
                           name="add"
+                          data-block = "true"
                           class="product-form__submit button button--full-width button--primary sticky_atc_button"
                           style="background-color: #305CDE; color: #fff; border: none; margin: 1rem; width: calc(100% - 2rem); font-family: var(--font-body);letter-spacing: 0.1rem;font-weight: 600;"
                           {% if product.selected_or_first_available_variant.available == false
@@ -1047,7 +1048,6 @@
                     const compareAtPriceBlock = document.getElementById('bundle-compare-price');
                     const savingsBlock = document.getElementById('savings-block');
                     const basePrice = {% if is_euro == false %}{{ product.price | money_without_currency }}{% else %}{{ product.price | money_without_currency  | replace:',','x'  | replace:'.','' | replace:'x','.' }}{% endif %};
-
 
                     function updateBundle() {
                       let count = 1;
@@ -1113,60 +1113,80 @@
                     if (form) {
                       const submitBtn = form.querySelector('[type="submit"]');
                       if (submitBtn) {
-                        submitBtn.addEventListener('click', (e) => {
+                        submitBtn.addEventListener('click', async (e) => {
                           form.querySelectorAll('.bundle-cart-item').forEach((el) => el.remove());
                           form.querySelectorAll('input[name="product-id"]').forEach((el) => el.remove());
 
                           let anyChecked = false;
                           let index = 0;
-                          let discount_index = 0;
                           let checks = [];
+
                           savingsCheckboxes.forEach((checkbox) => {
                             if (checkbox.checked && checkbox.getAttribute('data-do-not-add') !== 'true') {
                               anyChecked = true;
+
                               const variantId = checkbox.getAttribute('value');
                               const checker = checkbox.getAttribute('checker');
-                              const inputID = document.createElement('input');
 
+                              const inputID = document.createElement('input');
                               inputID.type = 'hidden';
-                              inputID.name = 'items[' + index + '][id]';
+                              inputID.name = `items[${index}][id]`;
                               inputID.value = variantId;
                               inputID.classList.add('bundle-cart-item');
                               form.appendChild(inputID);
+
                               const inputQuantity = document.createElement('input');
                               inputQuantity.type = 'hidden';
-                              inputQuantity.name = 'items[' + index + '][quantity]';
+                              inputQuantity.name = `items[${index}][quantity]`;
                               inputQuantity.value = 1;
                               inputQuantity.classList.add('bundle-cart-item');
                               form.appendChild(inputQuantity);
 
-                              if(checker != null && checker.trim() != "") {
+                              if (checker && checker.trim() !== "") {
                                 checks.push(checker);
                               }
+
                               index++;
                             }
                           });
-                          checks.forEach((check) => {
-                            fetch("{{shop.url}}/discount/" + check, {
-                              method: "GET",
-                              mode: "cors",
-                              credentials: "include"
-                            })
-                            .then(response => {
-                              if (!response.ok) throw new Error("Network response was not ok");
-                              return response.text();
-                            })
-                            .then(html => {
-                              console.log("Response HTML");
-                            })
-                            .catch(error => {
-                              console.error("Fetch error:", error);
-                            });
-                          })
+
                           if (!anyChecked) {
                             e.preventDefault();
+                            return;
                           }
-                          console.log("End Loop")
+
+                          if (checks.length !== 0) {
+                            try {
+                              await Promise.all(
+                                checks.map((check) => {
+                                  return fetch(`{{shop.url}}/discount/${check}`, {
+                                    method: "GET",
+                                    mode: "cors",
+                                    credentials: "include"
+                                  })
+                                  .then(response => {
+                                    if (!response.ok) throw new Error("Network response was not ok");
+                                    return response.text();
+                                  })
+                                  .then(html => {
+                                    console.log(`Applied discount ${check}`);
+                                  })
+                                  .catch(error => {
+                                    console.error(`Fetch error for ${check}:`, error);
+                                  });
+                                })
+                              );
+                              const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+                              console.log("Check", cart)
+                              if (cart) {
+                                cart.dispatchEvent(new CustomEvent("cartUpdated", { bubbles: true }));
+                              }
+                            } catch (err) {
+                              console.error("Discount processing error:", err);
+                            }
+                          }
+                          console.log("Finished processing discounts. Form will now submit naturally.");
+                          document.dispatchEvent(new CustomEvent('form-preprocessing:done'));
                         });
                       }
                     }
