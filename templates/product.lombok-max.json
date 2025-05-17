@@ -91,12 +91,12 @@
               "the-lombok-pocket-sized-pump"
             ],
             "add_on_discounts": "20%,",
-            "add_on_discount_codes": "",
+            "add_on_discount_codes": "28NVK7MH23RQ20OFFPUMP,",
             "free_gifts_optional": [
               "the-lombok-organizer"
             ],
             "free_gifts_always": [],
-            "free_gift_by_email": true,
+            "free_gift_by_email": false,
             "selection_background_colour": "#f7f4f1",
             "selection_text_colour": "#000000",
             "add_on_background_colour": "#000000",
@@ -107,7 +107,7 @@
             "gift_text_colour": "#000000",
             "stroke_colour": "#d7d4d2",
             "bundle_title": "The Lombok Max Bundle",
-            "bundle_description": "<b>FREE</b> Lombok Organizer and <b>EXTRA 20% OFF</b> Lombok Portable Vacuum Pump",
+            "bundle_description": "FREE Lombok Organizer and EXTRA 20% OFF Lombok Portable Vacuum Pump",
             "incomplete_text": "Complete your bundle to unlock this free gift",
             "complete_text": "Your exclusive gift has been unlocked",
             "bundle_text": "Included: 1 Year Warranty + Free Shipping + 60 Days Return"
