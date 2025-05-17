@@ -52,6 +52,7 @@ class CartItems extends HTMLElement {
         .then((response) => response.text())
         .then((responseText) => {
           const html = new DOMParser().parseFromString(responseText, 'text/html');
+          console.log(html)
           const selectors = ['cart-drawer-items', '.cart-drawer__footer'];
           for (const selector of selectors) {
             const targetElement = document.querySelector(selector);
