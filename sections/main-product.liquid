@@ -1160,16 +1160,16 @@
                               mode: "cors",
                               credentials: "include"
                             })
-                              .then(response => {
-                                if (!response.ok) throw new Error("Network response was not ok");
-                                return response.json();
-                              })
-                              .then(html => {
-                                console.log("Response HTML:", html);
-                              })
-                              .catch(error => {
-                                console.error("Fetch error:", error);
-                              });
+                            .then(response => {
+                              if (!response.ok) throw new Error("Network response was not ok");
+                              return response.json();
+                            })
+                            .then(html => {
+                              console.log("Response HTML:", html);
+                            })
+                            .catch(error => {
+                              console.error("Fetch error:", error);
+                            });
                           })
                           if (!anyChecked) {
                             e.preventDefault();
