@@ -123,6 +123,7 @@
         "text_yNVyeQ",
         "button_etKAqa"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/classic_carry-on_Man_1.webp",
@@ -238,6 +239,7 @@
       "block_order": [
         "heading_Kqj7Nk"
       ],
+      "disabled": true,
       "custom_css": [
         ".media > img {object-fit: cover;}"
       ],
